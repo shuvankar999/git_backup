@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchEstnConsumablesDetails"
+	xmlns:tns="http://www.example.org/FetchEstnConsumablesDetails" elementFormDefault="qualified">
+
+	<complexType name="FetchEstnConsumablesRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="FetchEstnConsumablesResponse">
+		<sequence>
+			<element name="EstnConsmblelist" type="tns:EstnConsmbleObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EstnConsmbleObject">
+		<sequence>
+		
+			<element name="consmblegroupId" type="int" minOccurs="0"></element>
+			<element name="consmblesubGroupId" type="int" minOccurs="0"></element>
+			<element name="consmbleitemId" type="int" minOccurs="0"></element>
+			<element name="consumables" type="string" minOccurs="0"></element>
+			<element name="minAmount" type="decimal" minOccurs="0"></element>
+			<element name="maxAmount" type="decimal" minOccurs="0"></element>
+			<element name="percentage" type="decimal" minOccurs="0"></element>
+			<element name="fee" type="decimal" minOccurs="0"></element>
+			<element name="charges" type="decimal" minOccurs="0"></element>
+			<element name="showHide" type="boolean" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+
+</schema>

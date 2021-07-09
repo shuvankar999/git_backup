@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/UserProfile"
+	xmlns:tns="http://www.example.org/UserProfile" elementFormDefault="qualified">
+
+	<complexType name="UserProfileRequest">
+		<sequence>
+			<element name="UserProfileDetailsList" type="tns:UserProfileObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="UserProfileObject">
+		<sequence>
+			<element name="User_Email" type="string" minOccurs="1"></element>
+			<element name="Login_Pwd" type="string" minOccurs="0"></element>
+			<element name="Token_Nr" type="string" minOccurs="0"></element>
+			<element name="Account_Code" type="string" minOccurs="1"></element>
+			<element name="User_Login_Id" type="string" minOccurs="0"></element>
+			<element name="User_Title_Txt" type="string" minOccurs="0"></element>
+			<element name="User_Forename_Txt" type="string" minOccurs="0"></element>
+			<element name="User_Surname_Txt" type="string" minOccurs="0"></element>
+			<element name="User_Role_Id" type="decimal" minOccurs="0"></element>
+			<element name="User_Pin" type="int" minOccurs="0"></element>
+			<element name="Location" type="string" minOccurs="1"></element>
+			<element name="Language_Id" type="int" minOccurs="0"></element>
+			<element name="Phone_Nr" type="string" minOccurs="1"></element>
+			<element name="Customer_Nr" type="decimal" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="UserProfileResponse">
+		<sequence>
+			<element name="UserProfileResponseList" type="tns:UserProfileStatusObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="UserProfileStatusObject">
+		<sequence>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

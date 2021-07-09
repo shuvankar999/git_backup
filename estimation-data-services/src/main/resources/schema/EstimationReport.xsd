@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EstimationReport" xmlns:tns="http://www.example.org/EstimationReport" elementFormDefault="qualified">
+
+	<complexType name="EstnReportRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="summary" type="boolean" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="BaseModel">
+		<sequence>
+			<element name="listOfLabour" type="tns:LabourDetails" maxOccurs="unbounded"></element>
+			<element name="additionalParts" type="tns:AdditionalPartDetails" minOccurs="0"></element>
+			<element name="CustomJob" type="tns:CustomJobs" minOccurs="0"></element>
+			<element name="otherFees" type="tns:OtherFees" minOccurs="0"></element>
+			<element name="Total_Charges" type="tns:TotalCharge" minOccurs="0"></element>
+			<element name="Branch_Details" type="tns:BranchDetails" minOccurs="0"></element>
+			<element name="Customer_Details" type="tns:CustomerDetails" minOccurs="0"></element>
+			<element name="Estimation_Details" type="tns:EstimationDetails" minOccurs="0"></element>
+			<element name="listOfImages" type="tns:ImageDetails" maxOccurs="unbounded"></element>
+			<element name="Notes" type="string" minOccurs="0"></element>
+			<element name="Comments" type="string" minOccurs="0"></element>
+			<element name="Currency" type="string" minOccurs="0"></element>
+			<element name="CountryCd" type="string" minOccurs="0"></element>
+			<element name="LogoUrl" type="string" minOccurs="0"></element>
+			<element name="Report_Loc" type="string" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="LabourDetails">
+		<sequence>
+			<element name="Labour_Order" type="string" minOccurs="0"></element>
+			<element name="Lo_Description" type="string" minOccurs="0"></element>
+			<element name="Lo_Task_Count" type="string" minOccurs="0"></element>
+			<element name="Parts_Count" type="string" minOccurs="0"></element>
+			<element name="Tyres_Count" type="string" minOccurs="0"></element>
+			<element name="Supplier_Name" type="string" minOccurs="0"></element>
+			<element name="Labour_Time" type="string" minOccurs="0"></element>
+			<element name="Vat_Amount" type="string" minOccurs="0"></element>
+			<element name="TotalCharge_Price" type="string" minOccurs="0"></element>
+			<element name="listOfTask" type="tns:TaskDetails" maxOccurs="unbounded"></element>
+			<element name="TaskSummary" type="tns:TaskDetails" minOccurs="0"></element>
+			<element name="listOfPart" type="tns:PartDetails" maxOccurs="unbounded"></element>
+			<element name="PartSummary" type="tns:PartDetails" minOccurs="0"></element>
+			<element name="Customer_Comments" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="TaskDetails">
+		<sequence>
+			<element name="Lo_Description" type="string" minOccurs="0"></element>
+			<element name="Lo_Nr" type="string" minOccurs="0"></element>
+			<element name="Lo_Task_Nr" type="string" minOccurs="0"></element>
+			<element name="Task_Description" type="string" minOccurs="0"></element>
+			<element name="Target_Time" type="string" minOccurs="0"></element>
+			<element name="Labour_Rate" type="string" minOccurs="0"></element>
+			<element name="Vat_Amount" type="string" minOccurs="0"></element>
+			<element name="Labour_Charge" type="string" minOccurs="0"></element>
+			<element name="listOfTyre" type="tns:Tyre" maxOccurs="unbounded"></element>
+			<element name="Task_Comments" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>	
+	<complexType name="PartDetails">
+		<sequence>
+			<element name="Lo_Nr" type="string" minOccurs="0"></element>
+			<element name="Lo_Task_Nr" type="string" minOccurs="0"></element>
+			<element name="Part_Nr" type="string" minOccurs="0"></element>
+			<element name="Part_Description" type="string" minOccurs="0"></element>
+			<element name="Quantity" type="string" minOccurs="0"></element>
+			<element name="Vat_Amount" type="string" minOccurs="0"></element>
+			<element name="Price" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Tyre">
+		<sequence>
+			<element name="Lo_Nr" type="string" minOccurs="0"></element>
+			<element name="Lo_Task_Nr" type="string" minOccurs="0"></element>
+			<element name="Tyre_Size" type="string" minOccurs="0"></element>
+			<element name="Application" type="string" minOccurs="0"></element>
+			<element name="Brand" type="string" minOccurs="0"></element>
+			<element name="Tyre_Status" type="string" minOccurs="0"></element>
+			<element name="Lost_Mm" type="string" minOccurs="0"></element>
+			<element name="Change_Type" type="string" minOccurs="0"></element>
+			<element name="Fees" type="string" minOccurs="0"></element>
+			<element name="Tyre_Casing_Vaue" type="string" minOccurs="0"></element>
+			<element name="Charge" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="CustomJobs">
+		<sequence>
+			<element name="Vat_Amount" type="string" minOccurs="0"></element>
+			<element name="Total_Price" type="string" minOccurs="0"></element>
+			<element name="listOfBundle" type="tns:Bundles" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Bundles">
+		<sequence>
+			<element name="Bundle_Name" type="string" minOccurs="0"></element>
+			<element name="Total_Price" type="string" minOccurs="0"></element>
+			<element name="Total_Vat_Amount" type="string" minOccurs="0"></element>
+			<element name="listOfBundleDetails" type="tns:BundleDetails" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="BundleDetails">
+		<sequence>
+			<element name="Bundle_Name" type="string" minOccurs="0"></element>
+			<element name="Group_Cd_Dsc" type="string" minOccurs="0"></element>
+			<element name="Sub_Group" type="string" minOccurs="0"></element>
+			<element name="Activity" type="string" minOccurs="0"></element>
+			<element name="Action_Cd" type="string" minOccurs="0"></element>
+			<element name="MaintenanceAction" type="string" minOccurs="0"></element>
+			<element name="Manufacturer" type="string" minOccurs="0"></element>
+			<element name="Supplier_Part_Nr" type="string" minOccurs="0"></element>
+			<element name="Fees" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="AdditionalPartDetails">
+		<sequence>
+			<element name="Parts_Count" type="string" minOccurs="0"></element>
+			<element name="Total_Price" type="string" minOccurs="0"></element>
+			<element name="Total_Vat" type="string" minOccurs="0"></element>
+			<element name="listOfUnMatchedParts" type="tns:PartDetails" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="OtherFees">
+		<sequence>
+			<element name="Total_Price" type="string" minOccurs="0"></element>
+			<element name="Vat_Amount" type="string" minOccurs="0"></element>
+			<element name="listOfFees" type="tns:Fees" maxOccurs="unbounded"></element>
+			<element name="listOfAdminFees" type="tns:AdminFees" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Fees">
+		<sequence>
+			<element name="Fees_Desc" type="string" minOccurs="0"></element>
+			<element name="Vat_Amount" type="string" minOccurs="0"></element>
+			<element name="Charges" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="AdminFees">
+		<sequence>
+			<element name="feesGroupId" type="string" minOccurs="0"></element>
+			<element name="feesSubGroupId" type="string" minOccurs="0"></element>
+			<element name="feesItemId" type="string" minOccurs="0"></element>
+			<element name="feesDesc" type="string" minOccurs="0"></element>
+			<element name="fee" type="string" minOccurs="0"></element>
+			<element name="Vat_Amount" type="string" minOccurs="0"></element>
+			<element name="Charges" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="TotalCharge">
+		<sequence>
+			<element name="SubTotal" type="string" minOccurs="0"></element>
+			<element name="AfterConcession" type="string" minOccurs="0"></element>
+			<element name="AfterVat" type="string" minOccurs="0"></element>
+			<element name="Total" type="string" minOccurs="0"></element>
+			<element name="VatPercentage" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="BranchDetails">
+		<sequence>
+			<element name="BranchName" type="string" minOccurs="0"></element>
+			<element name="BranchAddr" type="string" minOccurs="0"></element>
+			<element name="BranchPhone" type="string" minOccurs="0"></element>
+			<element name="BranchFax" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="CustomerDetails">
+		<sequence>
+			<element name="CustName" type="string" minOccurs="0"></element>
+			<element name="CustAddr" type="string" minOccurs="0"></element>
+			<element name="CustPhone" type="string" minOccurs="0"></element>
+			<element name="CustFax" type="string" minOccurs="0"></element>
+			<element name="CustEmail" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EstimationDetails">
+		<sequence>
+			<element name="EstNr" type="string" minOccurs="0"></element>
+			<element name="EstDate" type="string" minOccurs="0"></element>
+			<element name="TipTrailerNr" type="string" minOccurs="0"></element>
+			<element name="CustRef" type="string" minOccurs="0"></element>
+			<element name="RegNr" type="string" minOccurs="0"></element>
+			<element name="EstBy" type="string" minOccurs="0"></element>
+			<element name="Branch" type="string" minOccurs="0"></element>
+			<element name="Total" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="ImageDetails">
+		<sequence>
+			<element name="EstWoId" type="string" minOccurs="0"></element>
+			<element name="EstWoTaskId" type="string" minOccurs="0"></element>
+			<element name="PhotoType" type="string" minOccurs="0"></element>
+			<element name="PhotoName" type="string" minOccurs="0"></element>
+			<element name="PhotoLoc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

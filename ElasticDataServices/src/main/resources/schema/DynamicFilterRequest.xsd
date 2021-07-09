@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/DynamicFilterRequest" xmlns:tns="http://www.example.org/DynamicFilterRequest" elementFormDefault="qualified">
+
+	<complexType name="DynamicFilterRequest">
+		<sequence>
+			<element name="filterLst" type="tns:Filter" maxOccurs="unbounded"></element>    
+		</sequence>
+	</complexType>
+	
+	<complexType name="Filter">
+		<sequence>
+			<element name="operation" type="string" minOccurs="0"></element><!-- operations can be like,equals,range -->
+			<element name="condition" type="string" minOccurs="0"></element><!-- condition can be AND,OR -->
+			<element name="value" type="string" minOccurs="0"></element><!-- value for like,equals operation -->
+			<element name="rangeLt" type="string" minOccurs="0"></element><!-- value for lessThan value range operation -->
+			<element name="rangeGt" type="string" minOccurs="0"></element><!-- value for moreThan value range operation -->
+			<element name="includeLower" type="boolean" minOccurs="0"></element>
+			<element name="includeUpper" type="boolean" minOccurs="0"></element>
+			<element name="field" type="string" minOccurs="0"></element><!-- field name on which filter has to be applied -->
+		</sequence>
+	</complexType>
+
+</schema>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+    <sql-query name="imageLocation" callable="true">
+        <return-scalar type="string" column="Img_Loc"/>
+        { call OPSwshp..Get_Image_Location(:appCd,:inspType) }
+
+
+    </sql-query>
+
+    <sql-query name="imageName" callable="true">
+        <return-scalar type="int" column="Intch_Key"/>
+        <return-scalar type="string" column="Insp_Type"/>
+        { call OPSals..pm_ws_getCheckInRejStatus(:intchKey,:inspType) }
+
+
+    </sql-query>
+
+    <!--eclare @Intch_Key  numeric(15,0)
+    declare @Insp_Type  varchar(3)
+    select @Intch_Key = 62037232
+    select @Insp_Type = "CII"
+    execute OPSals..pm_ws_getCheckInRejStatus @Intch_Key, @Insp_Type
+    &#45;&#45;Response: Intch_Key, Insp_Type-->
+    <sql-query name="saveMetaData" callable="true">
+        <return-scalar type="int" column="Output"/>
+        { call OPSals..pm_ws_ins_intch_images_v2(:appCd,:intchKey,:lineNr,:description,:comment,:inspType,:imgType,:imgName,:noOfPics,:imagePath,:deviceSerialNum) }
+    </sql-query>
+
+
+    <sql-query name="getImageCount" callable="true">
+        <return-scalar type="int" column="Img_Count"/>
+        { call OPSals..pm_ws_intch_img_count(:intchKey,:inspType) }
+    </sql-query>
+
+    <sql-query name="updateDocumentStatus" callable="true">
+        <return-scalar type="string" column="ret_value"/>
+        { call OPSals.dbo.pm_ws_update_docuware_status(:intchKey,:inspType,:docName,:notifiFlag) }
+    </sql-query>
+
+
+    <sql-query name="uploadImages" callable="true">
+        <return-scalar type="string" column="Error_Cd"/>
+        { call OPSwshp..Wshp_Upload_Images(:wpNr,:woNr,:wotNr,:imgType,:imgName,:noOfImages,:ssoId) }
+    </sql-query>
+
+
+    <sql-query name="fetchImages" callable="true">
+        <return-scalar type="string" column="Work_Pack_Nr"/>
+        <return-scalar type="int" column="Work_Order_Nr"/>
+        <return-scalar type="int" column="Work_Order_Task_Nr"/>
+        <return-scalar type="string" column="Image_Type"/>
+        <return-scalar type="string" column="Image_Name"/>
+        <return-scalar type="string" column="Image_Loc"/>
+        <return-scalar type="int" column="No_Of_Images"/>
+        { call OPSwshp..Wshp_Fetch_Images(:wpNr,:woNr,:wotNr,:errorCd) }
+    </sql-query>
+
+<!-- 	<sql-query name="fetchImagesMos" callable="true">
+        <return-scalar type="string" column="Work_Pack_Nr"/>
+        <return-scalar type="int" column="Work_Order_Nr"/>
+        <return-scalar type="int" column="Work_Order_Task_Nr"/>
+        <return-scalar type="string" column="Image_Type"/>
+        <return-scalar type="string" column="Image_Name"/>
+        <return-scalar type="string" column="Image_Loc"/>
+        <return-scalar type="int" column="No_Of_Images"/>
+        { call OPSals.dbo.pm_ws_fetch_pre_check_images(:unNr,:errorCd) }
+    </sql-query> -->
+
+	<sql-query name="fetchImagesMos" callable="true">
+		<return-scalar type="int" column="unitNr"/>
+		<return-scalar type="string" column="inspType"/>
+        <return-scalar type="int" column="damageLineNr"/>
+        <return-scalar type="string" column="damageDescription"/>
+        <return-scalar type="string" column="imgType"/>
+        <return-scalar type="string" column="imgName"/>
+        <return-scalar type="string" column="imgComment"/>
+        <return-scalar type="int" column="imgCount"/>
+        <return-scalar type="string" column="imgPath"/>
+        { call OPSals.dbo.pm_ws_fetch_pre_check_images(:unNr,:errorCd) }
+    </sql-query>
+</hibernate-mapping>

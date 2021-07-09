@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/UnitsData"
+	xmlns:tns="http://www.example.org/UnitsData" elementFormDefault="qualified">
+
+	<complexType name="UnitsData">
+		<sequence>
+			<element name="intch_misc_cost_amnt" type="int" minOccurs="0"></element>
+			<element name="intch_out_driver_company" type="string"
+				minOccurs="0"></element>
+			<element name="deal_reference" type="string" minOccurs="0"></element>
+			<element name="unit_tsp" type="string" minOccurs="0"></element>
+			<element name="road_tax_indicator" type="int" minOccurs="0"></element>
+			<element name="unit_model_year" type="int" minOccurs="0"></element>
+			<element name="intch_adj_km" type="string" minOccurs="0"></element>
+			<element name="catgrp_cd" type="string" minOccurs="0"></element>
+			<element name="rates_purchs_value" type="string" minOccurs="0"></element>
+			<element name="unit_status_detail" type="string" minOccurs="0"></element>
+			<element name="unit_respnsbl_company_nr" type="string"
+				minOccurs="0"></element>
+			<element name="intch_adj_electric_hours" type="string"
+				minOccurs="0"></element>
+			<element name="rates_pick_up_rate" type="string" minOccurs="0"></element>
+			<element name="converted_rate_nr" type="int" minOccurs="0"></element>
+			<element name="unit_cd" type="string" minOccurs="0"></element>
+			<element name="unit_status_comment" type="string" minOccurs="0"></element>
+			<element name="rate_offer_accept_date" type="string"
+				minOccurs="0"></element>
+			<element name="intch_in_diesel_litres" type="int" minOccurs="0"></element>
+			<element name="rates_reefer_hour_rate" type="int" minOccurs="0"></element>
+			<element name="reason_cd" type="int" minOccurs="0"></element>
+			<element name="unit_last_km_second" type="int" minOccurs="0"></element>
+			<element name="unit_physical_branch_nr" type="int" minOccurs="0"></element>
+			<element name="intch_adj_diesel_hours" type="int" minOccurs="0"></element>
+			<element name="insrc_company_nr" type="int" minOccurs="0"></element>
+			<element name="unit_last_electric_hours" type="int"
+				minOccurs="0"></element>
+			<element name="guaranteed_residual_value" type="int"
+				minOccurs="0"></element>
+			<element name="unit_last_date_out" type="string" minOccurs="0"></element>
+			<element name="intch_in_parking_location" type="string"
+				minOccurs="0"></element>
+			<element name="unit_built" type="string" minOccurs="0"></element>
+			<element name="rates_contract_type" type="string" minOccurs="0"></element>
+			<element name="unit_comment" type="string" minOccurs="0"></element>
+			<element name="rates_day_rate" type="int" minOccurs="0"></element>
+			<element name="unit_in_out_status" type="string" minOccurs="0"></element>
+			<element name="intch_po_ref" type="string" minOccurs="0"></element>
+			<element name="rates_insrnc_dpp_max" type="string" minOccurs="0"></element>
+			<element name="unit_aquired_refrnc" type="string" minOccurs="0"></element>
+			<element name="rates_hour_rate" type="int" minOccurs="0"></element>
+			<element name="rate_enddate" type="string" minOccurs="0"></element>
+			<element name="funder" type="string" minOccurs="0"></element>
+			<element name="unit_catgrp_code" type="string" minOccurs="0"></element>
+			<element name="rates_insrnc_dpp_rate" type="int" minOccurs="0"></element>
+			<element name="intch_out_diesel_litres" type="int" minOccurs="0"></element>
+			<element name="rates_month_rate" type="int" minOccurs="0"></element>
+			<element name="branch_nr" type="int" minOccurs="0"></element>
+			<element name="intch_out_driver_license" type="string"
+				minOccurs="0"></element>
+			<element name="intch_in_electric_hours" type="int" minOccurs="0"></element>
+			<element name="intch_nr" type="int" minOccurs="0"></element>
+			<element name="intch_void_time" type="string" minOccurs="0"></element>
+			<element name="rates_tracking_rate" type="int" minOccurs="0"></element>
+			<element name="intch_in_commit_time" type="string" minOccurs="0"></element>
+			<element name="intch_out_electric_hours" type="int"
+				minOccurs="0"></element>
+			<element name="intch_rate_penalty" type="int" minOccurs="0"></element>
+			<element name="intch_out_driver_name" type="string"
+				minOccurs="0"></element>
+			<element name="intch_billing_termination" type="string"
+				minOccurs="0"></element>
+			<element name="unit_group_cd" type="string" minOccurs="0"></element>
+			<element name="rates_delivery_rate" type="int" minOccurs="0"></element>
+			<element name="rates_tyre_care_rate" type="int" minOccurs="0"></element>
+			<element name="unit_lien_cd" type="int" minOccurs="0"></element>
+			<element name="unit_last_km" type="int" minOccurs="0"></element>
+			<element name="rates_add_charge_flag" type="string"
+				minOccurs="0"></element>
+			<element name="rates_maint_certfct_renwl_ind" type="string"
+				minOccurs="0"></element>
+			<element name="unit_refurb_comment" type="string" minOccurs="0"></element>
+			<element name="tractor_out_license_nr" type="int" minOccurs="0"></element>
+			<element name="unit_nr" type="int" minOccurs="0"></element>
+			<element name="rates_lease_type_cd" type="int" minOccurs="0"></element>
+			<element name="intch_in_driver_comments" type="string"
+				minOccurs="0"></element>
+			<element name="unit_moddate" type="string" minOccurs="0"></element>
+			<element name="unit_sold_date" type="string" minOccurs="0"></element>
+			<element name="intch_in_driver_name" type="string" minOccurs="0"></element>
+			<element name="rates_km_rate" type="int" minOccurs="0"></element>
+			<element name="unit_available_for_sale_ind" type="string"
+				minOccurs="0"></element>
+			<element name="rate_offer_send_date" type="string" minOccurs="0"></element>
+			<element name="unit_category_cd" type="int" minOccurs="0"></element>
+			<element name="invoice_type" type="string" minOccurs="0"></element>
+			<element name="rates_km_free_period" type="string" minOccurs="0"></element>
+			<element name="rates_maintrsp_rungear_ind" type="string"
+				minOccurs="0"></element>
+			<element name="rates_cpi_percentage" type="float" minOccurs="0"></element>
+			<element name="rates_maint_brake_cap_ind" type="string"
+				minOccurs="0"></element>
+			<element name="unit_spec_status" type="string" minOccurs="0"></element>
+			<element name="unit_registr" type="string" minOccurs="0"></element>
+			<element name="pool_unit_owner" type="string" minOccurs="0"></element>
+			<element name="intch_in_km_second" type="string" minOccurs="0"></element>
+			<element name="regstn_date" type="string" minOccurs="0"></element>
+			<element name="rates_mot_cert_length" type="string"
+				minOccurs="0"></element>
+			<element name="rates_purchs_ind" type="string" minOccurs="0"></element>
+			<element name="rates_insrnc_max_covrg" type="string"
+				minOccurs="0"></element>
+			<element name="unit_new_used_leased_ind" type="string"
+				minOccurs="0"></element>
+			<element name="rates_maint_tyre_cap_ind" type="string"
+				minOccurs="0"></element>
+			<element name="intch_out_date" type="string" minOccurs="0"></element>
+			<element name="rates_insrnc_martm_covrg" type="string"
+				minOccurs="0"></element>
+			<element name="rates_quarter_rate" type="int" minOccurs="0"></element>
+			<element name="unit_licence_nr" type="string" minOccurs="0"></element>
+			<element name="rates_insrnc_rate" type="int" minOccurs="0"></element>
+			<element name="tax_cd" type="string" minOccurs="0"></element>
+			<element name="reefer_maint_contract" type="string"
+				minOccurs="0"></element>
+			<element name="rates_addtype_code" type="string" minOccurs="0"></element>
+			<element name="equipment_used_outside_eu" type="string"
+				minOccurs="0"></element>
+			<element name="rates_one_way_traffic_ind" type="string"
+				minOccurs="0"></element>
+			<element name="intch_out_km_second" type="string" minOccurs="0"></element>
+			<element name="intch_out_driver_comments" type="string"
+				minOccurs="0"></element>
+			<element name="intch_direct_debit_ind" type="string"
+				minOccurs="0"></element>
+			<element name="type" type="string" minOccurs="0"></element>
+			<element name="intch_unit_damage_ind" type="string"
+				minOccurs="0"></element>
+			<element name="rates_km_free_base" type="int" minOccurs="0"></element>
+			<element name="intch_out_parking_location" type="string"
+				minOccurs="0"></element>
+			<element name="unit_licence_country_cd" type="string"
+				minOccurs="0"></element>
+			<element name="unit_last_date_in" type="string" minOccurs="0"></element>
+			<element name="mstrls_nr" type="int" minOccurs="0"></element>
+			<element name="intch_in_driver_company" type="string"
+				minOccurs="0"></element>
+			<element name="rate_nr" type="int" minOccurs="0"></element>
+			<element name="intch_expected_return_date" type="string"
+				minOccurs="0"></element>
+			<element name="create_user_id" type="string" minOccurs="0"></element>
+			<element name="intch_out_km" type="int" minOccurs="0"></element>
+			<element name="rates_week_rate" type="int" minOccurs="0"></element>
+			<element name="intch_out_transctn_time" type="string"
+				minOccurs="0"></element>
+			<element name="lease_period_cd" type="string" minOccurs="0"></element>
+			<element name="intch_tyre_replcmnt_ind" type="string"
+				minOccurs="0"></element>
+			<element name="intch_in_km" type="int" minOccurs="0"></element>
+			<element name="maint_date" type="string" minOccurs="0"></element>
+			<element name="unit_last_intch_key" type="int" minOccurs="0"></element>
+			<element name="intch_in_diesel_hours" type="int" minOccurs="0"></element>
+			<element name="intch_out_commit_time" type="string"
+				minOccurs="0"></element>
+			<element name="intch_commtmnt_exp_date" type="string"
+				minOccurs="0"></element>
+			<element name="pool_group_nr" type="int" minOccurs="0"></element>
+			<element name="unit_cost_last_refrnc" type="int" minOccurs="0"></element>
+			<element name="intch_tyre_damage_ind" type="string"
+				minOccurs="0"></element>
+			<element name="intch_in_branch_nr" type="int" minOccurs="0"></element>
+			<element name="rates_min_term_period" type="string"
+				minOccurs="0"></element>
+			<element name="rates_reefer_hour_free_base" type="string"
+				minOccurs="0"></element>
+			<element name="intch_out_upload_time" type="string"
+				minOccurs="0"></element>
+			<element name="unit_last_diesel_hours" type="int" minOccurs="0"></element>
+			<element name="intch_wash_inside_ind" type="string"
+				minOccurs="0"></element>
+			<element name="tractor_in_license_nr" type="int" minOccurs="0"></element>
+			<element name="rates_year_rate" type="int" minOccurs="0"></element>
+			<element name="rates_maintrsp_tyres_ind" type="string"
+				minOccurs="0"></element>
+			<element name="old_rate_nr" type="int" minOccurs="0"></element>
+			<element name="unit_status" type="string" minOccurs="0"></element>
+			<element name="intch_one_way_company_nr" type="int"
+				minOccurs="0"></element>
+			<element name="intch_tyre_replcmnt_amnt" type="int"
+				minOccurs="0"></element>
+			<element name="rates_nr_of_units" type="int" minOccurs="0"></element>
+			<element name="maint_user" type="string" minOccurs="0"></element>
+			<element name="timestamp" type="string" minOccurs="0"></element>
+			<element name="rates_maint_tests_ind" type="string"
+				minOccurs="0"></element>
+			<element name="rates_direct_debit_ind" type="string"
+				minOccurs="0"></element>
+			<element name="intch_wash_outside_ind" type="string"
+				minOccurs="0"></element>
+			<element name="unit_last_park_loc_cd" type="string"
+				minOccurs="0"></element>
+			<element name="intch_in_transctn_time" type="string"
+				minOccurs="0"></element>
+			<element name="unit_aquired_company" type="string" minOccurs="0"></element>
+			<element name="intch_in_company_nr" type="int" minOccurs="0"></element>
+			<element name="unit_physical_company_nr" type="int"
+				minOccurs="0"></element>
+			<element name="intch_in_upload_time" type="int" minOccurs="0"></element>
+			<element name="intch_unit_damage_amnt" type="int" minOccurs="0"></element>
+			<element name="intch_type" type="string" minOccurs="0"></element>
+			<element name="rates_insrnc_damg_excss_amnt" type="int"
+				minOccurs="0"></element>
+			<element name="cost_to_green" type="string" minOccurs="0"></element>
+			<element name="intch_tyre_damage_amnt" type="int" minOccurs="0"></element>
+			<element name="sso_id" type="string" minOccurs="0"></element>
+			<element name="intch_in_driver_license" type="string"
+				minOccurs="0"></element>
+			<element name="pay_term_cd" type="string" minOccurs="0"></element>
+			<element name="create_date" type="string" minOccurs="0"></element>
+			<element name="unit_respnsbl_branch_nr" type="int" minOccurs="0"></element>
+			<element name="intch_po_ref3" type="string" minOccurs="0"></element>
+			<element name="intch_po_ref2" type="string" minOccurs="0"></element>
+			<element name="customer_nr" type="int" minOccurs="0"></element>
+			<element name="unit_manufacturer" type="string" minOccurs="0"></element>
+			<element name="intch_out_diesel_hours" type="int" minOccurs="0"></element>
+			<element name="hh_checkin_flg" type="string" minOccurs="0"></element>
+			<element name="intch_term_count" type="int" minOccurs="0"></element>
+			<element name="billing_frequency" type="string" minOccurs="0"></element>
+			<element name="currency_cd" type="string" minOccurs="0"></element>
+			<element name="rates_maintrsp_reefer_ind" type="string"
+				minOccurs="0"></element>
+			<element name="intch_in_download_time" type="string"
+				minOccurs="0"></element>
+			<element name="unit_desc" type="string" minOccurs="0"></element>
+			<element name="company_nr" type="int" minOccurs="0"></element>
+			<element name="intch_cosmetics_ind" type="string" minOccurs="0"></element>
+			<element name="rates_hidden_remarks" type="string" minOccurs="0"></element>
+			<element name="intch_remarks" type="string" minOccurs="0"></element>
+			<element name="unit_serial_nr" type="string" minOccurs="0"></element>
+			<element name="intch_one_way_branch_nr" type="int" minOccurs="0"></element>
+			<element name="intch_key" type="int" minOccurs="0"></element>
+			<element name="rate_type" type="string" minOccurs="0"></element>
+			<element name="rate_status_cd" type="string" minOccurs="0"></element>
+			<element name="rates_cpi_annivrsry_date" type="string"
+				minOccurs="0"></element>
+			<element name="hh_checkout_flg" type="string" minOccurs="0"></element>
+			<element name="version" type="string" minOccurs="0"></element>
+			<element name="intch_in_date" type="string" minOccurs="0"></element>
+			<element name="rates_remarks" type="string" minOccurs="0"></element>
+			<element name="unit_catgrp_optionals" type="string"
+				minOccurs="0"></element>
+			<element name="rates_insrnc_plan_cd" type="string" minOccurs="0"></element>
+			<element name="rates_min_term_count" type="int" minOccurs="0"></element>
+			<element name="unit_customer_refrnc" type="string" minOccurs="0"></element>
+			<element name="old_mstrls_nr" type="int" minOccurs="0"></element>
+			<element name="invoice_cycle_cd" type="string" minOccurs="0"></element>
+			<element name="maint_user_id" type="string" minOccurs="0"></element>
+			<element name="intch_service_ind" type="string" minOccurs="0"></element>
+			<element name="rates_min_tyre_depth" type="string" minOccurs="0"></element>
+			<element name="rate_startdate" type="string" minOccurs="0"></element>
+			<element name="unit_operational_status" type="string"
+				minOccurs="0"></element>
+			<element name="intch_free_days" type="string" minOccurs="0"></element>
+			<element name="intch_out_download_time" type="string"
+				minOccurs="0"></element>
+			<element name="catgr_id" type="int" minOccurs="0"></element>
+			<element name="rates_advanced_billing_ind" type="string"
+				minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="ArrayOfUnitsData">
+		<sequence>
+			<element name="unitsDataItem" type="tns:UnitsData" maxOccurs="unbounded"></element>
+			<element name="count" type="long" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="RequestTextSearch">
+		<sequence>
+			<element name="text" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ResponseCount">
+		<sequence>
+			<element name="count" type="long" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ElasticSearchRequest">
+		<sequence>
+			<!-- <element name="entity" type="string" minOccurs="0"></element> <element 
+				name="screenName" type="string" minOccurs="0"></element> <element name="screenKey" 
+				type="string" minOccurs="0"></element> -->
+			<element name="searchText" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+
+</schema>

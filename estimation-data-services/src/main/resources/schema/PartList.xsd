@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/PartList"
+	xmlns:tns="http://www.example.org/PartList" elementFormDefault="qualified">
+
+	<complexType name="PartListRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PartListResponse">
+		<sequence>
+			<element name="EstnPartsCountList" type="tns:PartsCountObject"
+				maxOccurs="unbounded"></element>
+			<element name="EstnPartsResponseList" type="tns:PartsResponseObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PartsResponseObject">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="partNumber" type="string" minOccurs="0"></element>
+			<element name="partDesc" type="string" minOccurs="0"></element>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="currency" type="string" minOccurs="0"></element>
+			<element name="qty" type="int" minOccurs="0"></element>
+			<element name="costToTip" type="decimal" minOccurs="0"></element>
+			<element name="retailPrice" type="decimal" minOccurs="0"></element>
+			<element name="dicount" type="decimal" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="PartsCountObject">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="totalParts" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+
+</schema>

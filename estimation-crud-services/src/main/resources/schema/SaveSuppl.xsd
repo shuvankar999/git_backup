@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveSuppl" xmlns:tns="http://www.example.org/SaveSuppl" elementFormDefault="qualified">
+	<complexType name="SaveSupplModel" >
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="concession" type="decimal" minOccurs="0"></element>
+			<element name="custNotes" type="string" minOccurs="0"></element>
+			<element name="internalNotes" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+			<element name="showHide" type="boolean" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="saveAs" type="string" minOccurs="0"></element>
+			<element name="estnStatusId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

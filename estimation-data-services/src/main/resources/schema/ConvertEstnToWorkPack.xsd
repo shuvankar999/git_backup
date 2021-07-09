@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ConvertEstnToWorkPack"
+	xmlns:tns="http://www.example.org/ConvertEstnToWorkPack" elementFormDefault="qualified">
+
+	<complexType name="ConversionRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<!-- <complexType name="ConversionResponse">
+		<sequence>
+			<element name="WPDetailslist" type="tns:WpDetailsObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="WpDetailsObject">
+		<sequence>
+		
+			<element name="workpackNr" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType> -->
+
+</schema>

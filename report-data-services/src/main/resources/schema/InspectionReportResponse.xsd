@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/InspectionReportResponse" xmlns:tns="http://www.example.org/InspectionReportResponse" elementFormDefault="qualified">
+	<complexType name="InspectionReportResponse">
+		<sequence>
+			<element name="InspTranslist" type="tns:InspTranslationObject" maxOccurs="unbounded"></element>
+			<element name="InspHeaderlist" type="tns:InspHeaderObject" maxOccurs="unbounded"></element>
+			<element name="InspChecklist" type="tns:InspCheckObject" maxOccurs="unbounded"></element>
+			<element name="Signlist" type="tns:InspSignObject" maxOccurs="unbounded"></element>
+			<element name="InspDefectlist" type="tns:InspDefectObject" maxOccurs="unbounded"></element>
+			<element name="InspTyrelist" type="tns:TyreObject" maxOccurs="unbounded"></element>
+			<element name="InspBrakelist" type="tns:BrakeObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspTranslationObject">
+		<sequence>
+			<element name="HtrailerNr" type="string" minOccurs="0"></element>
+			<element name="HregNr" type="string" minOccurs="0"></element>
+			<element name="HserviceType" type="string" minOccurs="0"></element>
+			<element name="Hchassis" type="string" minOccurs="0"></element>
+			<element name="Hmileage" type="string" minOccurs="0"></element>
+			<element name="HmotDate" type="string" minOccurs="0"></element>
+			<element name="Hjobdate" type="string" minOccurs="0"></element>
+			<element name="HjobShtNr" type="string" minOccurs="0"></element>
+			<element name="Hoperator" type="string" minOccurs="0"></element>
+			<element name="Hserviceable" type="string" minOccurs="0"></element>
+			<element name="Hdefect" type="string" minOccurs="0"></element>
+			<element name="Hna" type="string" minOccurs="0"></element>
+			<element name="HinspA" type="string" minOccurs="0"></element>
+			<element name="Hbrake" type="string" minOccurs="0"></element>
+			<element name="Hchassis_Susp" type="string" minOccurs="0"></element>
+			<element name="Helectric" type="string" minOccurs="0"></element>
+			<element name="Hsuperstructure" type="string" minOccurs="0"></element>
+			<element name="HaxlesTyre" type="string" minOccurs="0"></element>
+			<element name="Hother" type="string" minOccurs="0"></element>
+			<element name="HinspB" type="string" minOccurs="0"></element>
+			<element name="HaddInspB" type="string" minOccurs="0"></element>
+			<element name="HinspC" type="string" minOccurs="0"></element>
+			<element name="HaddInspC" type="string" minOccurs="0"></element>
+			<element name="Hinspector" type="string" minOccurs="0"></element>
+			<element name="Hdate" type="string" minOccurs="0"></element>
+			<element name="Hroadworthy" type="string" minOccurs="0"></element>
+			<element name="Hsigned" type="string" minOccurs="0"></element>
+			<element name="Hnr" type="string" minOccurs="0"></element>
+			<element name="Hdefects" type="string" minOccurs="0"></element>
+			<element name="Hactions" type="string" minOccurs="0"></element>
+			<element name="HactionBy" type="string" minOccurs="0"></element>
+			<element name="Htyrereadings" type="string" minOccurs="0"></element>
+			<element name="Hbrakereadings" type="string" minOccurs="0"></element>
+			<element name="Hfaxis" type="string" minOccurs="0"></element>
+			<element name="Hcaxis" type="string" minOccurs="0"></element>
+			<element name="Hraxis" type="string" minOccurs="0"></element>
+			<element name="Hmm" type="string" minOccurs="0"></element>
+			<element name="Hpsi" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspHeaderObject">
+		<sequence>
+			<element name="TrailerNr" type="string" minOccurs="0"></element>
+			<element name="RegistrationNr" type="string" minOccurs="0"></element>
+			<element name="ServiceType" type="string" minOccurs="0"></element>
+			<element name="Chassis" type="string" minOccurs="0"></element>
+			<element name="Mileage" type="string" minOccurs="0"></element>
+			<element name="MotDueDate" type="string" minOccurs="0"></element>
+			<element name="JobDate" type="string" minOccurs="0"></element>
+			<element name="JobSheetNr" type="string" minOccurs="0"></element>
+			<element name="Operator" type="string" minOccurs="0"></element>
+			<element name="RoadWorthy" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspCheckObject">
+		<sequence>
+			<element name="MaintCd" type="string" minOccurs="0"></element>
+			<element name="MaintDesc" type="string" minOccurs="0"></element>
+			<element name="CheckListItem" type="string" minOccurs="0"></element>
+			<element name="Description" type="string" minOccurs="0"></element>
+			<element name="Status" type="string" minOccurs="0"></element>
+			<element name="Units" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspSignObject">
+		<sequence>
+			<element name="SignType" type="string" minOccurs="0"></element>
+			<element name="Confirmation" type="string" minOccurs="0"></element>
+			<element name="TipSignature" type="string" minOccurs="0"></element>
+			<element name="Name" type="string" minOccurs="0"></element>
+			<element name="Date" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspDefectObject">
+		<sequence>
+			<element name="Nr" type="string" minOccurs="0"></element>
+			<element name="Defect" type="string" minOccurs="0"></element>
+			<element name="Action" type="string" minOccurs="0"></element>
+			<element name="ActionBy" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="TyreObject">
+		<sequence>
+			<element name="TyreCd" type="string" minOccurs="0"></element>
+			<element name="Depth" type="string" minOccurs="0"></element>
+			<element name="Psi" type="string" minOccurs="0"></element>
+			<element name="Make" type="string" minOccurs="0"></element>
+			<element name="SerialNr" type="string" minOccurs="0"></element>
+			<element name="TyreSize" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="BrakeObject">
+		<sequence>
+			<element name="BrakeCd" type="string" minOccurs="0"></element>
+			<element name="LiningRemPer" type="string" minOccurs="0"></element>
+			<element name="LiningRemMM" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

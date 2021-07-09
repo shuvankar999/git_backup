@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CustomisedJobs"
+	xmlns:tns="http://www.example.org/CustomisedJobs" elementFormDefault="qualified">
+	<complexType name="FetchJobRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="FetchJobResponse">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="JobResponseList" type="tns:JobResponseObjects" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="JobResponseObjects">
+		<sequence>
+			<element name="SupplierSubTaskList" type="tns:SubTaskSupplier" maxOccurs="unbounded"></element>
+			<element name="fee" type="decimal" minOccurs="0"></element>
+			<element name="jobName" type="string" minOccurs="0"></element>
+			<element name="isActive" type="string" minOccurs="0"></element>	
+			<element name="isEnabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SubTaskSupplier">
+		<sequence>
+			<element name="dnaCode" type="string" minOccurs="0"></element>
+			<element name="groups" type="string" minOccurs="0"></element>
+			<element name="subGroup" type="string" minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="maintActionCd" type="string" minOccurs="0"></element>
+			<element name="actionDesc" type="string" minOccurs="0"></element>	
+			<element name="manufacturerId" type="string" minOccurs="0"></element>
+			<element name="manufacturer" type="string" minOccurs="0"></element>
+			<element name="oePartNr" type="string" minOccurs="0"></element>
+			<element name="supplierPartNr" type="string" minOccurs="0"></element>
+			<element name="Parts_Description" type="string" minOccurs="0"></element>		
+				
+		</sequence>
+	</complexType>
+	
+</schema>

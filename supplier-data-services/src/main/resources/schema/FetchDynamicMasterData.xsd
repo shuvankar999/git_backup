@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchDynamicMasterData" xmlns:tns="http://www.example.org/FetchDynamicMasterData" elementFormDefault="qualified">
+
+	<complexType name="FetchDynamicMasterDataRequest">
+		<sequence>
+			<element name="key_name" type="string" minOccurs="0"></element>
+			<element name="sso_Id" type="string" minOccurs="0"></element>
+			<element name="branch_Nr" type="int" minOccurs="0"></element>
+			<element name="language_Id" type="int" minOccurs="0"></element>
+			<element name="company_nr" type="int" minOccurs="0"></element>
+			<element name="Vendor_Status" type="string" minOccurs="0"></element>
+			<element name="Vendor_Category_Ids" type="int" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="AllProcedureDataResponse">
+		<sequence>
+			<element name="key_name" type="string" minOccurs="0"></element>
+			<element name="obj_name" type="string" minOccurs="0"></element>
+			<element name="proc_name" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="FetchDynamicMasterDataResponse">
+		<sequence>
+			<element name="AllProcedureDataResponseLst" type="tns:AllProcedureDataResponse"	maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="CountryDetails">
+		<sequence>
+			<element name="country_skey" type="int" minOccurs="0"></element>
+			<element name="country_name" type="string" minOccurs="0"></element>			
+			<element name="country_code" type="string" minOccurs="0"></element>			
+			<element name="phone_code" type="int" minOccurs="0"></element>
+			<element name="phone_format" type="string" minOccurs="0"></element>
+			<element name="state_req_flag" type="string" minOccurs="0"></element>			
+			<element name="currency_name" type="string" minOccurs="0"></element>
+			<element name="currency_format" type="string" minOccurs="0"></element>
+			<element name="postal_code_format" type="string" minOccurs="0"></element>
+			<element name="country_dialing_cd" type="string" minOccurs="0"></element>
+			<element name="region_name" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="CompanyDetails">
+		<sequence>
+			<element name="company_nr" type="int" minOccurs="0"></element>
+			<element name="company_name" type="string" minOccurs="0"></element>
+			<element name="company_functional_currency_cd" type="string" minOccurs="0"></element>
+			<element name="country_skey" type="int" minOccurs="0"></element>
+			<element name="country_name" type="string" minOccurs="0"></element>			
+			<element name="country_code" type="string" minOccurs="0"></element>			
+			<element name="phone_code" type="int" minOccurs="0"></element>
+			<element name="currency_name" type="string" minOccurs="0"></element>
+			<element name="country_dialing_cd" type="string" minOccurs="0"></element>
+			<element name="region_name" type="string" minOccurs="0"></element>			
+		</sequence>
+	</complexType>
+	
+	<complexType name="LanguageDetails">
+		<sequence>
+			<element name="language_cd" type="string" minOccurs="0"></element>
+			<element name="language_id" type="int" minOccurs="0"></element>			
+			<element name="language_name" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EntitlementInvoiceDetails">
+		<sequence>
+			<element name="invoice" type="int" minOccurs="0"></element>
+			<element name="invoice_value" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EntitlementLORDetails">
+		<sequence>
+			<element name="LOR" type="int" minOccurs="0"></element>
+			<element name="LOR_Value" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="AddressTypeDetails">
+		<sequence>
+			<element name="address_type" type="int" minOccurs="0"></element>
+			<element name="address_type_desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="ParkingLocationDetails">
+		<sequence>
+			<element name="parking_location_cd" type="string" minOccurs="0"></element>
+			<element name="branch_nr" type="string" minOccurs="0"></element>
+			<element name="company_nr" type="string" minOccurs="0"></element>
+			<element name="parking_loctn_desc" type="string" minOccurs="0"></element>			
+		</sequence>
+	</complexType>
+	
+	<complexType name="AssetOperationalStatusDetails">
+		<sequence>
+			<element name="status_cd" type="string" minOccurs="0"></element>
+			<element name="status_desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="CustomerRefTypeValuesDetails">
+		<sequence>
+			<element name="ref_type_id" type="int" minOccurs="0"></element>
+			<element name="description" type="string" minOccurs="0"></element>
+			<element name="ref_id" type="int" minOccurs="0"></element>
+			<element name="rrv_description" type="string" minOccurs="0"></element>
+			<element name="seq" type="int" minOccurs="0"></element>
+			<element name="active_flag" type="string" minOccurs="0"></element>
+			<element name="reserved_flag" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="TpuRefTypeValuesDetails">
+		<sequence>
+			<element name="ref_type_id" type="int" minOccurs="0"></element>
+			<element name="ref_type_desc" type="string" minOccurs="0"></element>
+			<element name="ref_id" type="int" minOccurs="0"></element>
+			<element name="rrv_description" type="string" minOccurs="0"></element>
+			<element name="ref_id_seq" type="int" minOccurs="0"></element>
+			<element name="ref_id_active" type="string" minOccurs="0"></element>
+			<element name="ref_id_reserved" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EquipDynamicTabsDetails">
+		<sequence>
+			<element name="catgr_id" type="int" minOccurs="0"></element>
+			<element name="catgr_desc" type="string" minOccurs="0"></element>
+			<element name="catgr_shortn" type="string" minOccurs="0"></element>
+			<element name="specgr_id" type="int" minOccurs="0"></element>
+			<element name="specgr_shortn" type="string" minOccurs="0"></element>
+			<element name="specgr_descr" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EquipDynamicTabFields">
+		<sequence>
+			<element name="catgr_desc" type="string" minOccurs="0"></element>
+			<element name="catgr_shortn" type="string" minOccurs="0"></element>
+			<element name="specgr_shortn" type="string" minOccurs="0"></element>
+			<element name="specgr_descr" type="string" minOccurs="0"></element>			
+			<element name="catgr_id" type="int" minOccurs="0"></element>
+			<element name="specgr_id" type="int" minOccurs="0"></element>
+			<element name="specitm_seq" type="int" minOccurs="0"></element>
+			<element name="aud_id" type="string" minOccurs="0"></element>
+			<element name="usg_used" type="string" minOccurs="0"></element>
+			<element name="specitm_descr" type="string" minOccurs="0"></element>
+			<element name="specitm_shortn" type="string" minOccurs="0"></element>
+			<element name="specitm_req" type="string" minOccurs="0"></element>
+			<element name="specitm_val_type" type="string" minOccurs="0"></element>
+			<element name="specitm_help" type="string" minOccurs="0"></element>
+			<element name="specitm_limit" type="string" minOccurs="0"></element>
+			<element name="specitm_pos_min" type="int" minOccurs="0"></element>
+			<element name="specitm_pos_max" type="int" minOccurs="0"></element>
+			<element name="specitm_val_min" type="int" minOccurs="0"></element>
+			<element name="specitm_val_max" type="int" minOccurs="0"></element>
+			<element name="specitm_signal" type="string" minOccurs="0"></element>
+			<element name="mod_by" type="string" minOccurs="0"></element>
+			<element name="mod_date" type="string" minOccurs="0"></element>
+			<element name="specitm_date_value" type="string" minOccurs="0"></element>
+			<element name="specitm_order" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EquipDynamicTabFieldPossibleValues">
+		<sequence>
+			<element name="specgr_id" type="int" minOccurs="0"></element>
+			<element name="specitm_seq" type="int" minOccurs="0"></element>
+			<element name="specval_seq" type="int" minOccurs="0"></element>
+			<element name="specval_descr" type="string" minOccurs="0"></element>
+			<element name="mod_by" type="string" minOccurs="0"></element>
+			<element name="mod_date" type="string" minOccurs="0"></element>
+			<element name="specval_shortcode" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EquipmentTypes">
+		<sequence>
+			<element name="catgr_id" type="string" minOccurs="0"></element>
+			<element name="catgr_desc" type="string" minOccurs="0"></element>
+			<element name="catgr_level" type="string" minOccurs="0"></element>			
+			<element name="catgr_of" type="int" minOccurs="0"></element>			
+			<element name="catgr_shortn" type="string" minOccurs="0"></element>
+			<element name="catgr_code" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EquipmentCountryDetails">
+		<sequence>
+			<element name="country_skey" type="int" minOccurs="0"></element>
+			<element name="country_name" type="string" minOccurs="0"></element>
+			<element name="country_code" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EntitlementPoValidDetails">
+		<sequence>
+			<element name="PO_Valid_For" type="int" minOccurs="0"></element>
+			<element name="PO_Valid_For_Value" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="TyreBrands">
+		<sequence>
+			<element name="Language_Id" type="string" minOccurs="0"></element>
+			<element name="Tyre_Cd" type="string" minOccurs="0"></element>
+			<element name="Tyre_Desc" type="string" minOccurs="0"></element>			
+			<element name="Language_Name" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="BranchSettings">
+		<sequence>
+			<element name="Branch_Nr" type="int" minOccurs="0"></element>
+			<element name="Intch_Nr" type="int" minOccurs="0"></element>
+			<element name="Branch_Address" type="string" minOccurs="0"></element>			
+			<element name="Branch_Def_Cy" type="string" minOccurs="0"></element>			
+			<element name="Branch_Def_Tax_Cd" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_Due_Date" type="int" minOccurs="0"></element>
+			<element name="Branch_Def_Lang" type="string" minOccurs="0"></element>
+			<element name="Branch_Active_Startdate" type="string" minOccurs="0"></element>
+			<element name="Branch_Active_Enddate" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_Invoice_Type" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_Invoice_Cycle" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_Pay_Term_Cd" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_Appl_Lang" type="int" minOccurs="0"></element>
+			<element name="Branch_Def_Purchs_Option" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_CPI_Ind" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_Period_Cd" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_Term_Count" type="int" minOccurs="0"></element>
+			<element name="Branch_Def_Insrnc_Plan_Cd" type="string" minOccurs="0"></element>
+			<element name="Branch_Def_Intch_Copies" type="int" minOccurs="0"></element>
+			<element name="Branch_Def_Rate_Copies" type="int" minOccurs="0"></element>
+			<element name="Branch_Def_Rebill_Copies" type="int" minOccurs="0"></element>
+			<element name="Branch_Def_Other_Copies" type="int" minOccurs="0"></element>
+			<element name="Stop_Billing_At_Contract_End" type="string" minOccurs="0"></element>
+			<element name="Stop_Accrual_At_Contract_End" type="string" minOccurs="0"></element>
+			<element name="Stop_Clac_FCR_At_Contract_End" type="string" minOccurs="0"></element>
+			<element name="Stop_Auto_Credit" type="string" minOccurs="0"></element>
+			<element name="Show_RV_Column_In_Rates" type="string" minOccurs="0"></element>
+			<element name="Branch_Logo" type="string" minOccurs="0"></element>
+			<element name="Days_to_Reservation_Warning" type="int" minOccurs="0"></element>
+			<element name="Handheld_Activated" type="string" minOccurs="0"></element>
+			<element name="Service_Type1" type="string" minOccurs="0"></element>
+			<element name="Service_Type2" type="string" minOccurs="0"></element>
+			<element name="Service_Type3" type="string" minOccurs="0"></element>
+			<element name="Service_Type4" type="string" minOccurs="0"></element>
+			<element name="is_RefID_Active" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SupplierCurrency">
+		<sequence>
+			<element name="Legacy_Curr" type="string" minOccurs="0"></element>
+			<element name="Curr_Code" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SupplierStatus">
+		<sequence>
+			<element name="Ref_Id" type="int" minOccurs="0"></element>
+			<element name="Ref_Id_Desc" type="string" minOccurs="0"></element>
+			<element name="Ref_Id_Reserved" type="string" minOccurs="0"></element>
+			<element name="Ref_Id_Desc_Display" type="string" minOccurs="0"></element>
+			<element name="Text_Cd" type="string" minOccurs="0"></element>
+			<element name="Entity_Cd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="VendorPriority">
+		<sequence>
+			<element name="Vendor_Priority" type="string" minOccurs="0"></element>
+			<element name="Vendor_Priority_Desc" type="string" minOccurs="0"></element>
+			<element name="Text_Cd" type="string" minOccurs="0"></element>
+			<element name="Entity_Cd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="CompanyBranchData">
+		<sequence>
+			<element name="Branch_Id" type="string" minOccurs="0"></element>
+			<element name="Branch_Nr" type="int" minOccurs="0"></element>
+			<element name="Branch_Name" type="string" minOccurs="0"></element>
+			<element name="Entity_Id" type="string" minOccurs="0"></element>
+			<element name="Company_Nr" type="int" minOccurs="0"></element>
+			<element name="Country_Cd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SupplierData">
+		<sequence>
+			<element name="Vendor_Name" type="string" minOccurs="0"></element>
+			<element name="Vendor_Id" type="int" minOccurs="0"></element>
+			<element name="Consolidated_Po" type="string" minOccurs="0"></element>
+			<element name="Is_Getremote" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="MasterDataDynamicResponse">
+		<sequence>
+			<element name="CountryDetailsLst" type="tns:CountryDetails"	maxOccurs="unbounded"></element>
+			<element name="CompanyDetailsLst" type="tns:CompanyDetails"	maxOccurs="unbounded"></element>
+			<element name="LanguageDetailsLst" type="tns:LanguageDetails"	maxOccurs="unbounded"></element>
+			<element name="EntitlementInvoiceDropdownDetailsLst" type="tns:EntitlementInvoiceDetails"	maxOccurs="unbounded"></element>
+			<element name="EntitlementLORDropdownDetailsLst" type="tns:EntitlementLORDetails"	maxOccurs="unbounded"></element>
+			<element name="AddressTypeDropdownDetailsLst" type="tns:AddressTypeDetails"	maxOccurs="unbounded"></element>
+			<element name="ParkingLocationDetailsLst" type="tns:ParkingLocationDetails"	maxOccurs="unbounded"></element>
+			<element name="AssetOperationalStatusDetailsLst" type="tns:AssetOperationalStatusDetails"	maxOccurs="unbounded"></element>
+			<element name="CustomerRefTypeValuesDetailsLst" type="tns:CustomerRefTypeValuesDetails"	maxOccurs="unbounded"></element>
+			<element name="TpuRefTypeValuesDetailsLst" type="tns:TpuRefTypeValuesDetails"	maxOccurs="unbounded"></element>
+			<element name="EquipDynamicTabsLst" type="tns:EquipDynamicTabsDetails"	maxOccurs="unbounded"></element>
+			<element name="EquipDynamicTabFieldsLst" type="tns:EquipDynamicTabFields"	maxOccurs="unbounded"></element>
+			<element name="EquipDynamicTabFieldPossibleValuesLst" type="tns:EquipDynamicTabFieldPossibleValues"	maxOccurs="unbounded"></element>
+			<element name="EquipmentTypesLst" type="tns:EquipmentTypes"	maxOccurs="unbounded"></element>
+			<element name="EquipmentCountryLst" type="tns:EquipmentCountryDetails"	maxOccurs="unbounded"></element>
+			<element name="EntitlementPoValidLst" type="tns:EntitlementPoValidDetails"	maxOccurs="unbounded"></element>
+			<element name="TyreBrandsLst" type="tns:TyreBrands"	maxOccurs="unbounded"></element>
+			<element name="BranchSettingsLst" type="tns:BranchSettings"	maxOccurs="unbounded"></element>
+			<element name="CurrencyList" type="tns:SupplierCurrency"	maxOccurs="unbounded"></element>
+			<element name="SupplierStatusList" type="tns:SupplierStatus"	maxOccurs="unbounded"></element>
+			<element name="SupplierPriorityList" type="tns:VendorPriority"	maxOccurs="unbounded"></element>
+			<element name="SupplierCategoryList" type="tns:SupplierStatus"	maxOccurs="unbounded"></element>
+			<element name="CompanyBranchMappingList" type="tns:CompanyBranchData"	maxOccurs="unbounded"></element>
+			<element name="SupplierDetailsList" type="tns:SupplierData"	maxOccurs="unbounded"></element>
+			<element name="SupplierTIPTankerIndLst" type="tns:SupplierTIPTankerData"	maxOccurs="unbounded"></element>
+			<element name="MsuCapabilitiesList" type="tns:MsuCapabilities"	maxOccurs="unbounded"></element>
+			<element name="SupplierContractTypesList" type="tns:SupplierContract"	maxOccurs="unbounded"></element>
+			<element name="SupplierDocInsuStatusList" type="tns:SupplierDocInsuStatus"	maxOccurs="unbounded"></element>
+			<element name="SupplierCapMotOptionsList" type="tns:SupplierCapMotOptions"	maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="MsuCapabilities">
+		<sequence>
+			<element name="Capability_Id" type="int" minOccurs="0"></element>
+			<element name="Capability_Desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	 <complexType name="SupplierTIPTankerData">
+		<sequence>
+			<element name="tipTankerIndId" type="int" minOccurs="0"></element>
+			<element name="tipTankerIndDesc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SupplierContract">
+		<sequence>
+			<element name="Contract_Type" type="string" minOccurs="0"></element>
+			<element name="Contract_Type_Desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SupplierDocInsuStatus">
+		<sequence>
+			<element name="Status_Id" type="int" minOccurs="0"></element>
+			<element name="Status_Desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SupplierCapMotOptions">
+		<sequence>
+			<element name="Mot_Ind" type="int" minOccurs="0"></element>
+			<element name="Mot_Desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

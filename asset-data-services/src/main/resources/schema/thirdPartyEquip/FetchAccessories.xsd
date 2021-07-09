@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchAccessories" xmlns:tns="http://www.example.org/FetchAccessories" elementFormDefault="qualified">
+	<complexType name="AccessoryRequest">
+		<sequence>
+			<element name="Equipment_Nr" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

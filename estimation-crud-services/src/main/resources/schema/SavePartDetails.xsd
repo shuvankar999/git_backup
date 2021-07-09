@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SavePartDetails" xmlns:tns="http://www.example.org/SavePartDetails" elementFormDefault="qualified">
+	<complexType name="SavePartDetailsRequest">
+		<sequence>
+		
+			<element name="EstnPartsList" type="tns:SaveEstnPartsObject" maxOccurs="unbounded"></element>
+			
+		</sequence>
+	</complexType>
+	
+	<complexType name="SaveEstnPartsObject">
+		<sequence>
+			
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="partNumber" type="string" minOccurs="0"></element>
+			<element name="partDescription" type="string" minOccurs="0"></element>
+			<element name="qty" type="int" minOccurs="0"></element>
+			<element name="oeListPrice" type="decimal" minOccurs="0"></element>
+			<element name="costPrice" type="decimal" minOccurs="0"></element>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="currency" type="string" minOccurs="0"></element>
+			<element name="ssoId" type="string"	minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

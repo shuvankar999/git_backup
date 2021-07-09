@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Insurance"
+	xmlns:tns="http://www.example.org/Insurance" elementFormDefault="qualified">
+	
+	<complexType name="InsuranceRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="InsuranceResponse">
+		<sequence>
+			<element name="InsuranceLinesList" type="tns:InsuranceLinesObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="ActiveInsuranceDocumentList" type="tns:ActiveInsuranceDocumentObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="ArchivedInsuranceDocumentList" type="tns:ActiveInsuranceDocumentObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="InsuranceStatusResponseList" type="tns:InsuranceStatusObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="InsuranceLinesObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="groupDesc" type="string" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="subGroupDesc" type="string" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="itemDesc" type="string" minOccurs="0"></element>
+			<element name="insuranceTypeDesc" type="string" minOccurs="0"></element>
+			<element name="Insured_Amount" type="decimal" minOccurs="0"></element>
+			<element name="Expiry_Date" type="string" minOccurs="0"></element>
+			<element name="Insurance_Status" type="int" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ActiveInsuranceDocumentObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="insuranceTypeId" type="int" minOccurs="0"></element>
+			<element name="insuranceTypeDesc" type="string" minOccurs="0"></element>
+			<element name="insuredAmount" type="decimal" minOccurs="0"></element>
+			<element name="expiryDate" type="string" minOccurs="0"></element>
+			<element name="docName" type="string" minOccurs="0"></element>
+			<element name="docStatus" type="int" minOccurs="0"></element>
+			<element name="docuwareDocId" type="int" minOccurs="0"></element>
+			<element name="createUser" type="string" minOccurs="0"></element>
+			<element name="createDate" type="string" minOccurs="0"></element>
+			<element name="maintUser" type="string" minOccurs="0"></element>
+			<element name="maintDate" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="InsuranceStatusObject">
+		<sequence>
+			<element name="Supplier_Id" type="int" minOccurs="0"></element>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Status_Id" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	
+</schema>

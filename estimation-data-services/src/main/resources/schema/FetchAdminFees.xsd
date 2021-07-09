@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchAdminFees"
+	xmlns:tns="http://www.example.org/FetchAdminFees" elementFormDefault="qualified">
+	
+		<complexType name="FetchAdminFeesRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="FetchAdminFeesResponse">
+		<sequence>
+			<element name="AdminFeesResponseList" type="tns:FeeObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="FeeObject">
+		<sequence>
+			<element name="feesgroupId" type="int" minOccurs="0"></element>
+			<element name="feessubgroupId" type="int" minOccurs="0"></element>
+			<element name="feesitemId" type="int" minOccurs="0"></element>
+			<element name="feeDesc" type="string" minOccurs="0"></element>
+			<element name="fee" type="decimal" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

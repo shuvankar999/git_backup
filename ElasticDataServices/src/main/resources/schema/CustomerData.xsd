@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CustomerData"
+	xmlns:tns="http://www.example.org/CustomerData" elementFormDefault="qualified">
+
+	<complexType name="CustomerData">
+		<sequence>
+			<element name="customer_direct_debit_term_cd" type="string"	minOccurs="0"></element>
+			<element name="customer_recharge_labour_rate" type="string"	minOccurs="0"></element>
+			<element name="customer_spv_st_exposure" type="string" minOccurs="0"></element>
+			<element name="customer_sales_phone" type="string" minOccurs="0"></element>
+			<element name="status_ref" type="int" minOccurs="0"></element>
+			<element name="type" type="string" minOccurs="0"></element>
+			<element name="customer_spv_lt_exposure" type="int"	minOccurs="0"></element>
+			<element name="customer_added_date" type="string" minOccurs="0"></element>
+			<element name="customer_status_cd" type="string" minOccurs="0"></element>
+			<element name="customer_bank_name" type="string" minOccurs="0"></element>
+			<element name="sfdc_internal_account_id" type="string" minOccurs="0"></element>
+			<element name="tsinvoice_flag" type="string" minOccurs="0"></element>
+			<element name="customer_sp_associate_skey" type="int" minOccurs="0"></element>
+			<element name="customer_credit_limit_curr_cd" type="string"	minOccurs="0"></element>
+			<element name="customer_original_branch_nr" type="int" minOccurs="0"></element>
+			<element name="customer_city" type="string" minOccurs="0"></element>
+			<element name="create_user_id" type="string" minOccurs="0"></element>
+			<element name="company_type_ref" type="int" minOccurs="0"></element>
+			<element name="partner_flag" type="string" minOccurs="0"></element>
+			<element name="customer_country_cd" type="string" minOccurs="0"></element>
+			<element name="customer_street_addr" type="string" minOccurs="0"></element>
+			<element name="workshop_flag" type="string" minOccurs="0"></element>
+			<element name="sfdc_external_account_id" type="string" minOccurs="0"></element>
+			<element name="sign_date" type="string" minOccurs="0"></element>
+			<element name="risk_parent_cd" type="string" minOccurs="0"></element>
+			<element name="road_tax_flag" type="string" minOccurs="0"></element>
+			<element name="customer_spv_lt_exp_units" type="int" minOccurs="0"></element>
+			<element name="customer_sp_end_date" type="string" minOccurs="0"></element>
+			<element name="customer_business_cd" type="string" minOccurs="0"></element>
+			<element name="update_group" type="int" minOccurs="0"></element>
+			<element name="customer_present_st_exposure" type="string" minOccurs="0"></element>
+			<element name="customer_trailer_sales_ind" type="string" minOccurs="0"></element>
+			<element name="customer_visit_date" type="string" minOccurs="0"></element>
+			<element name="customer_bank_sort_id" type="string"	minOccurs="0"></element>
+			<element name="customer_credit_limit_amnt" type="int" minOccurs="0"></element>
+			<element name="customer_present_st_exp_units" type="int" minOccurs="0"></element>
+			<element name="iban" type="string" minOccurs="0"></element>
+			<element name="customer_billing_branch_nr" type="int" minOccurs="0"></element>
+			<element name="parent_company_id" type="string" minOccurs="0"></element>
+			<element name="customer_coll_start_date" type="string" minOccurs="0"></element>
+			<element name="customer_affltn_cd" type="int" minOccurs="0"></element>
+			<element name="customer_s_i_c_cd" type="string" minOccurs="0"></element>
+			<element name="customer_number_combi" type="int" minOccurs="0"></element>
+			<element name="tax_exempt_reason_cd" type="string" minOccurs="0"></element>
+			<element name="maint_date" type="string" minOccurs="0"></element>
+			<element name="spv_mandate_id" type="string" minOccurs="0"></element>
+			<element name="customer_attention_line" type="string" minOccurs="0"></element>
+			<element name="mandate_id" type="int" minOccurs="0"></element>
+			<element name="customer_credit_limit_k_amnt" type="int"	minOccurs="0"></element>
+			<element name="customer_credit_limit_units" type="int" minOccurs="0"></element>
+			<element name="is_supplier" type="string" minOccurs="0"></element>
+			<element name="customer_coll_create_user_id" type="string" minOccurs="0"></element>
+			<element name="customer_branch_nr" type="int" minOccurs="0"></element>
+			<element name="customer_name_abbreviation" type="string" minOccurs="0"></element>
+			<element name="amlat_check_flag" type="string" minOccurs="0"></element>
+			<element name="customer_invoice_sep_cd" type="string" minOccurs="0"></element>
+			<element name="legacy_update_flag" type="string" minOccurs="0"></element>
+			<element name="read_group" type="int" minOccurs="0"></element>
+			<element name="company_entity_type_ref" type="string" minOccurs="0"></element>
+			<element name="customer_invoice_seq" type="string" minOccurs="0"></element>
+			<element name="customer_company_nr" type="int" minOccurs="0"></element>
+			<element name="customer_turnover_cd" type="string" minOccurs="0"></element>
+			<element name="customer_sp_create_user_id" type="string" minOccurs="0"></element>
+			<element name="customer_consolid_invoice_ind" type="string"	minOccurs="0"></element>
+			<element name="customer_alfa_nr" type="string" minOccurs="0"></element>
+			<element name="default_dealer_id" type="int" minOccurs="0"></element>
+			<element name="timestamp" type="string" minOccurs="0"></element>
+			<element name="data_privacy_id" type="int" minOccurs="0"></element>
+			<element name="customer_telex_fax" type="string" minOccurs="0"></element>
+			<element name="customer_name" type="string" minOccurs="0"></element>
+			<element name="customer_special_billing_cd" type="string" minOccurs="0"></element>
+			<element name="customer_operations_postal_cd" type="string"	minOccurs="0"></element>
+			<element name="total_assets" type="int" minOccurs="0"></element>
+			<element name="vat_number" type="string" minOccurs="0"></element>
+			<element name="supplier_type" type="string" minOccurs="0"></element>
+			<element name="remarketing_dealer_type" type="string" minOccurs="0"></element>
+			<element name="account_nbr" type="string" minOccurs="0"></element>
+			<element name="pan_eu_parent_cd" type="string" minOccurs="0"></element>
+			<element name="vendor_flag" type="string" minOccurs="0"></element>
+			<element name="competitor_flag" type="string" minOccurs="0"></element>
+			<element name="customer_language_cd" type="string" minOccurs="0"></element>
+			<element name="customer_credit_limit_exp_date" type="string" minOccurs="0"></element>
+			<element name="customer_sp_create_date" type="string" minOccurs="0"></element>
+			<element name="create_date" type="string" minOccurs="0"></element>
+			<element name="ar_switch" type="string" minOccurs="0"></element>
+			<element name="delete_group" type="int" minOccurs="0"></element>
+			<element name="customer_nr" type="int" minOccurs="0"></element>
+			<element name="sales_disposition_ref" type="int" minOccurs="0"></element>
+			<element name="customer_bank_account_id" type="string" minOccurs="0"></element>
+			<element name="late_payment_int_flag" type="string"	minOccurs="0"></element>
+			<element name="customer_legal_transfer_ind" type="string" minOccurs="0"></element>
+			<element name="customer_direct_debit_type_cd" type="string"	minOccurs="0"></element>
+			<element name="sales_parent_company_id" type="string" minOccurs="0"></element>
+			<element name="customer_tax_exemption_cd" type="string"	minOccurs="0"></element>
+			<element name="company_skey" type="int" minOccurs="0"></element>
+			<element name="customer_registration_nr" type="string" minOccurs="0"></element>
+			<element name="name" type="string" minOccurs="0"></element>
+			<element name="customer_spv_st_exp_units" type="string"	minOccurs="0"></element>
+			<element name="customer_present_lt_exp_units" type="string"	minOccurs="0"></element>
+			<element name="employees" type="string" minOccurs="0"></element>
+			<element name="prod_profile_flag" type="string" minOccurs="0"></element>
+			<element name="customer_sp_start_date" type="string" minOccurs="0"></element>
+			<element name="customer_tax_cd" type="string" minOccurs="0"></element>
+			<element name="customer_employee_count_cd" type="string" minOccurs="0"></element>
+			<element name="sales_territory_ref" type="int" minOccurs="0"></element>
+			<element name="customer_present_lt_exposure" type="string" minOccurs="0"></element>
+			<element name="dunning_exempt_flag" type="string" minOccurs="0"></element>
+			<element name="customer_collection_phone" type="string"	minOccurs="0"></element>
+			<element name="customer_taxable_cd" type="string" minOccurs="0"></element>
+			<element name="customer_billing_company_nr" type="int" minOccurs="0"></element>
+			<element name="electronic_invoice" type="string" minOccurs="0"></element>
+			<element name="dealer_flag" type="string" minOccurs="0"></element>
+			<element name="upper_name" type="string" minOccurs="0"></element>
+			<element name="version" type="string" minOccurs="0"></element>
+			<element name="customer_fleet_size_cd" type="string" minOccurs="0"></element>
+			<element name="pan_eu_parent" type="string" minOccurs="0"></element>
+			<element name="customer_traffic_cd" type="string" minOccurs="0"></element>
+			<element name="year_end" type="int" minOccurs="0"></element>
+			<element name="customer_coll_end_date" type="string" minOccurs="0"></element>
+			<element name="maint_user_id" type="string" minOccurs="0"></element>
+			<element name="customer_coll_create_date" type="string"	minOccurs="0"></element>
+			<element name="customer_print_statement_ind" type="string" minOccurs="0"></element>
+			<element name="revenues" type="string" minOccurs="0"></element>
+			<element name="customer_consolid_invoice_seq" type="string"	minOccurs="0"></element>
+			<element name="customer_mailing_label_ind" type="string" minOccurs="0"></element>
+			<element name="customer_insurance_exp_date" type="string" minOccurs="0"></element>
+			<element name="customer_invoice_postal_cd" type="string" minOccurs="0"></element>
+			<element name="spv_sign_date" type="string" minOccurs="0"></element>
+			<element name="pan_eu_group" type="string" minOccurs="0"></element>
+			<element name="customer_skey" type="int" minOccurs="0"></element>
+			<element name="customer_coll_associate_skey" type="int"	minOccurs="0"></element>
+			<element name="sales_parent_cd" type="string" minOccurs="0"></element>
+			<element name="bic" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ArrayOfCustomerData">
+		<sequence>
+			<element name="customerDataItem" type="tns:CustomerData"
+				maxOccurs="unbounded"></element>
+			<element name="count" type="long" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="RequestTextSearch">
+		<sequence>
+			<element name="text" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ResponseCount">
+		<sequence>
+			<element name="count" type="long" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ElasticSearchRequest">
+		<sequence>
+			<!-- <element name="entity" type="string" minOccurs="0"></element> <element 
+				name="screenName" type="string" minOccurs="0"></element> <element name="screenKey" 
+				type="string" minOccurs="0"></element> -->
+			<element name="searchText" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

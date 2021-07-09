@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EquipCab" xmlns:tns="http://www.example.org/EquipCab" elementFormDefault="qualified">
+	<complexType name="EquipmentCabRequest">
+		<sequence>
+			<element name="Equipment_Nr" type="int" minOccurs="0"></element>
+			<element name="Lang_Id" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EquipmentCabResponse">
+		<sequence>
+			<element name="CabFuel" type="double" minOccurs="0"></element>
+			<element name="CabInspList" type="tns:CabInspObj" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="CabInspObj">
+		<sequence>
+			<element name="CabInspCd" type="string" minOccurs="0"></element>
+			<element name="CabInspCnt" type="int" minOccurs="0"></element>
+			<element name="CabDesc" type="string" minOccurs="0"></element>
+			<element name="CabInspInd" type="string" minOccurs="0"></element>
+			<element name="CabInspRemarks" type="string" minOccurs="0"></element>
+			<element name="CabImageLoc" type="string" minOccurs="0"></element>
+			<element name="cabInspType" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

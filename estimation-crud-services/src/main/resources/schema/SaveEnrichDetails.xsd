@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/SaveEnrichDetails"
+	xmlns:tns="http://www.example.org/SaveEnrichDetails"
+	elementFormDefault="qualified">
+
+
+	<!-- Used in save supplementary service -->
+
+
+
+
+	<complexType name="SaveEnrichDetails">
+		<sequence>
+			<element name="EstnHeaderList" type="tns:EnrichHeaderObject" minOccurs="0"></element>
+			<element name="EstnUnMatchedPartLists" type="tns:EnrichPartsObject" maxOccurs="unbounded"></element>
+			<element name="TyreSpeclist" type="tns:EnrichTyreSpecsObject" maxOccurs="unbounded"></element>
+			<element name="TyreServicelist" type="tns:EnrichTyreServiceObject" maxOccurs="unbounded"></element>
+			<element name="EstnBundleLists" type="tns:BundleHeader" maxOccurs="unbounded"></element>
+			<element name="EstnConsumablesDetails" type="tns:EnrichConsumablesObject" maxOccurs="unbounded"></element>
+			<element name="EstnFeeList" type="tns:EnrichFeeObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichHeaderObject">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="concession" type="decimal" minOccurs="0"></element>
+			<element name="custNotes" type="string" minOccurs="0"></element>
+			<element name="internalNotes" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="saveAs" type="string" minOccurs="0"></element>
+			<element name="estnStatusId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="EstnWoList" type="tns:EnrichWorkOrderObject"
+				maxOccurs="unbounded"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichHeaderResponse">
+		<sequence>
+
+			<element name="VersionList" type="tns:VersionObject"
+				minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="VersionObject">
+		<sequence>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="versionDate" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="EnrichWorkOrderObject">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="loCommentsCustomers" type="string"
+				minOccurs="0"></element>
+			<element name="loCommentsInternal" type="string"
+				minOccurs="0"></element>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="EstnWotList" type="tns:EnrichWotObject"
+				maxOccurs="unbounded"></element>
+			<element name="estnMatchedPartLists"
+				type="tns:EnrichPartsObject" maxOccurs="unbounded"></element>
+			<element name="labourTime" type="string" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichWotObject">
+		<sequence>
+
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="labourTime" type="string" minOccurs="0"></element>
+			<element name="soldTime" type="float" minOccurs="0"></element>
+			<element name="labourRate" type="double" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="taskComments" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichPartsObject">
+		<sequence>
+
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="partNumber" type="string" minOccurs="0"></element>
+			<element name="partDesc" type="string" minOccurs="0"></element>
+			<element name="quantity" type="int" minOccurs="0"></element>
+			<element name="oeListPrice" type="decimal" minOccurs="0"></element>
+			<element name="costPrice" type="decimal" minOccurs="0"></element>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="currency" type="string" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+			<element name="retailPrice" type="decimal" minOccurs="0"></element>
+			<element name="costToTip" type="decimal" minOccurs="0"></element>
+			<element name="fixedPrice" type="decimal" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichTyreSpecsObject">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="tyreSpecgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreSpecsubgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreSpecItemId" type="int" minOccurs="0"></element>
+			<element name="tyreSize" type="string" minOccurs="0"></element>
+			<element name="application" type="int" minOccurs="0"></element>
+			<element name="brand" type="string" minOccurs="0"></element>
+			<element name="tyreStatus" type="string" minOccurs="0"></element>
+			<element name="chargeType" type="string" minOccurs="0"></element>
+			<element name="lostMM" type="int" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="charges" type="decimal" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichTyreServiceObject">
+		<sequence>
+
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="tyreServicegrpId" type="int" minOccurs="0"></element>
+			<element name="tyreServicesubgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreServiceItemId" type="int" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="charges" type="decimal" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichConsumablesObject">
+		<sequence>
+
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="consmblegroupId" type="int" minOccurs="0"></element>
+			<element name="consmblesubGroupId" type="int" minOccurs="0"></element>
+			<element name="consmbleitemId" type="int" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="minAmount" type="decimal" minOccurs="0"></element>
+			<element name="maxAmount" type="decimal" minOccurs="0"></element>
+			<element name="percentage" type="decimal" minOccurs="0"></element>
+			<element name="fee" type="decimal" minOccurs="0"></element>
+			<element name="charges" type="decimal" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="BundleHeader">
+		<sequence>
+
+			<element name="bundleName" type="string" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="listOfBundle" type="tns:BundleObject" maxOccurs="unbounded"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+	
+	<complexType name="BundleObject">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="bundleName" type="string" minOccurs="0"></element>
+			<element name="dnaCode" type="string" minOccurs="0"></element>
+			<element name="groupCdDesc" type="string" minOccurs="0"></element>
+			<element name="subGroup" type="string" minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="actionCd" type="string" minOccurs="0"></element>
+			<element name="maintenanceAction" type="string" minOccurs="0"></element>
+			<element name="manufacturerId" type="string" minOccurs="0"></element>
+			<element name="fee" type="decimal" minOccurs="0"></element>
+			<element name="manufacturer" type="string" minOccurs="0"></element>
+			<element name="supplierPartNr" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichResponse">
+		<sequence>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Version_Object" type="tns:VersionObject"
+				minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EnrichFeeObject">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="feesgroupId" type="int" minOccurs="0"></element>
+			<element name="feessubgroupId" type="int" minOccurs="0"></element>
+			<element name="feesitemId" type="int" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="fee" type="decimal" minOccurs="0"></element>
+			<element name="charges" type="decimal" minOccurs="0"></element>
+			<element name="showHide" type="string" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			<element name="rejectedReason" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

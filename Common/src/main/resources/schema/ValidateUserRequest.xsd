@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ValidateUserRequest" xmlns:tns="http://www.example.org/ValidateUserRequest" elementFormDefault="qualified">
+	<complexType name="LoginRequest">
+		<sequence>
+			<element name="Sso_Id" type="string" minOccurs="0"></element>
+			<element name="Password" type="string" minOccurs="0"></element>  
+			<element name="App_Cd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

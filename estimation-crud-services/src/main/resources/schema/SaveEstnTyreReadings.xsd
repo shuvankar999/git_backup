@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveEstnTyreReadings" xmlns:tns="http://www.example.org/SaveEstnTyreReadings" elementFormDefault="qualified">
+	<complexType name="SaveEstnTyreRdngRequest">
+		<sequence>
+		
+		   <element name="EstnTyreReadingList" type="tns:EstnTyreReadingObject" maxOccurs="unbounded"></element>
+			
+		</sequence>
+	</complexType>
+
+	<complexType name="EstnTyreReadingObject">
+	<sequence>
+	
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="tyreCd" type="string" minOccurs="0"></element>
+			<element name="tyreDepth" type="float" minOccurs="0"></element>
+			<element name="tyrePsi" type="float" minOccurs="0"></element>
+			<element name="tyreBar" type="float" minOccurs="0"></element>
+			<element name="tyreMake" type="string" minOccurs="0"></element>
+			<element name="tyreSerialNr" type="string" minOccurs="0"></element>
+			<element name="tyreSize" type="string" minOccurs="0"></element>
+			<element name="application" type="string" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+				
+	</sequence>
+	</complexType>
+	</schema>

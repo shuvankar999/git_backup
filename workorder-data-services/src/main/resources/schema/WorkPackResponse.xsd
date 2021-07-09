@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/WorkPackResponse"
+	xmlns:tns="http://www.example.org/WorkPackResponse" elementFormDefault="qualified">
+
+	<complexType name="WorkPackResponse">
+		<sequence>
+			<element name="Asset_Number" type="int" minOccurs="0"></element>
+			<element name="Customer_Reference_Nr" type="string" minOccurs="0"></element>
+			<element name="Registration_Nr" type="string" minOccurs="0"></element>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Require_Done_Date" type="string" minOccurs="0"></element>
+			<element name="Total_Guide_Time" type="double" minOccurs="0"></element>
+			<element name="Customer_Nr" type="int" minOccurs="0"></element>
+			<element name="Customer_name" type="string" minOccurs="0"></element>
+			<element name="Chassis_Number" type="string" minOccurs="0"></element>
+			<element name="Wo_Cnt" type="int" minOccurs="0"></element>
+			<element name="Comments" type="string" minOccurs="0"></element>
+			<element name="Supplier_Id" type="int" minOccurs="0"></element>
+			<element name="Supplier_Name" type="string" minOccurs="0"></element>
+			<element name="Driver_Waiting_Flag" type="string" minOccurs="0"></element>
+			<element name="Status_Id" type="int" minOccurs="0"></element>
+			<element name="Status" type="string" minOccurs="0"></element>
+			<element name="Actual_Time" type="double" minOccurs="0"></element>
+			<element name="Alert" type="string" minOccurs="0"></element>
+			<element name="Stop_Reason_Cd" type="int" minOccurs="0"></element>
+			<element name="Stop_Reason_Desc" type="string" minOccurs="0"></element>
+			<element name="Road_Worthy" type="string" minOccurs="0"></element>
+			<element name="Technician_Comments" type="string" minOccurs="0"></element>
+			<element name="Mot_Doc_Date" type="string" minOccurs="0"></element>
+			<element name="Total_Photos" type="int" minOccurs="0"></element>
+			<element name="UnMatchedPartList" type="tns:Parts" maxOccurs="unbounded"></element>
+			<element name="WorkOrderList" type="tns:WorkOrder" maxOccurs="unbounded"></element>
+			<element name="TechnicianList" type="tns:Technician" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="WorkOrder">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Work_Order_Nr" type="int" minOccurs="0"></element>
+			<element name="Level1" type="string" minOccurs="0"></element>
+			<element name="Group_Desc" type="string" minOccurs="0"></element>
+			<element name="Wot_Cnt" type="int" minOccurs="0"></element>
+			<element name="Guide_Time" type="double" minOccurs="0"></element>
+			<element name="Actual_Time" type="double" minOccurs="0"></element>
+			<element name="Diff" type="double" minOccurs="0"></element>
+			<element name="Workorder_Comments" type="string" minOccurs="0"></element>
+			<element name="Wo_Status" type="int" minOccurs="0"></element>
+			<element name="Wo_Status_Desc" type="string" minOccurs="0"></element>
+			<element name="Reason_Cd" type="int" minOccurs="0"></element>
+			<element name="Reason" type="string" minOccurs="0"></element>
+			<element name="Validation_Status" type="string" minOccurs="0"></element>
+			<element name="Supplier_Id" type="int" minOccurs="0"></element>
+			<element name="Supplier_Name" type="string" minOccurs="0"></element>
+			<element name="Payment_Vendor_Id" type="int" minOccurs="0"></element>
+			<element name="Payment_Vendor_Currency_Cd" type="string" minOccurs="0"></element>
+			<element name="Purchase_Order_Nr" type="string" minOccurs="0"></element>
+			<element name="Alert" type="string" minOccurs="0"></element>
+			<element name="TechCommentsObjectList" type="tns:TechCommentsObject" maxOccurs="unbounded"></element>
+			<element name="WorkOrderTaskList" type="tns:WorkOrderTask" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="WorkOrderTask">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Work_Order_Nr" type="int" minOccurs="0"></element>
+			<element name="Work_Order_Task_Nr" type="int" minOccurs="0"></element>
+			<element name="Wot_Status_Id" type="int" minOccurs="0"></element>
+			<element name="Wot_Status_Desc" type="string" minOccurs="0"></element>
+			<element name="Level1" type="string" minOccurs="0"></element>
+			<element name="Group_Desc" type="string" minOccurs="0"></element>
+			<element name="Level2" type="string" minOccurs="0"></element>
+			<element name="Sub_Group" type="string" minOccurs="0"></element>
+			<element name="Level3" type="string" minOccurs="0"></element>
+			<element name="Activity" type="string" minOccurs="0"></element>
+			<element name="Failure_Cause_Desc" type="string" minOccurs="0"></element>
+			<element name="Failure_Cause" type="string" minOccurs="0"></element>
+			<element name="Action_Cd" type="string" minOccurs="0"></element>
+			<element name="Action" type="string" minOccurs="0"></element>
+			<element name="Reason_Cd" type="string" minOccurs="0"></element>
+			<element name="Reason" type="string" minOccurs="0"></element>
+			<element name="Position_Id" type="string" minOccurs="0"></element>
+			<element name="Description" type="string" minOccurs="0"></element>
+			<element name="Guide_Time" type="double" minOccurs="0"></element>
+			<element name="Actual_Time" type="double" minOccurs="0"></element>
+			<element name="Validation_Status" type="string" minOccurs="0"></element>
+			<element name="Alert" type="string" minOccurs="0"></element>
+			<element name="Stop_Reason_Cd" type="int" minOccurs="0"></element>
+			<element name="Stop_Reason_Desc" type="string" minOccurs="0"></element>
+			<element name="Actual_Time_Comments" type="string" minOccurs="0"></element>
+			<element name="Work_Done_By" type="string" minOccurs="0"></element>
+			<element name="PartsList" type="tns:Parts" maxOccurs="unbounded"></element>
+			<element name="AddtimeList" type="tns:AddTimeObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Parts">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Work_Order_Nr" type="int" minOccurs="0"></element>
+			<element name="Work_Order_Task_Nr" type="int" minOccurs="0"></element>
+			<element name="Part_Nr" type="string" minOccurs="0"></element>
+			<element name="Supplier_Part_Nr" type="string" minOccurs="0"></element>
+			<element name="Oe_Part_Nr" type="string" minOccurs="0"></element>
+			<element name="Tip_Part_Nr" type="string" minOccurs="0"></element>
+			<element name="Parts_Qty" type="int" minOccurs="0"></element>
+			<element name="Cost_Cd" type="string" minOccurs="0"></element>
+			<element name="Cost_Sub_Cd" type="string" minOccurs="0"></element>
+			<element name="Repair_Id" type="string" minOccurs="0"></element>
+			<element name="Position_Cd" type="string" minOccurs="0"></element>
+			<element name="Reason" type="string" minOccurs="0"></element>
+			<element name="Discount" type="decimal" minOccurs="0"></element>
+			<element name="List_Price" type="decimal" minOccurs="0"></element>
+			<element name="Cost_Price" type="decimal" minOccurs="0"></element>
+			<element name="Part_Status" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+		
+	<complexType name="AddTimeObject">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Work_Order_Nr" type="int" minOccurs="0"></element>
+			<element name="Work_Order_Task_Nr" type="int" minOccurs="0"></element>
+			<element name="Add_Time_Reason_Cd" type="int" minOccurs="0"></element>
+			<element name="Add_Time_Reason" type="string" minOccurs="0"></element>
+			<element name="Time_Added" type="double" minOccurs="0"></element>
+			<element name="Add_Time_Comments" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="TechCommentsObject">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Work_Order_Nr" type="int" minOccurs="0"></element>
+			<element name="Work_Order_Task_Nr" type="int" minOccurs="0"></element>
+			<element name="Inspection_Type" type="string" minOccurs="0"></element>
+			<element name="Road_Worthy" type="string" minOccurs="0"></element>
+			<element name="Technician_Comments" type="string" minOccurs="0"></element>
+			<element name="Manager_Comments" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Technician">
+		<sequence>
+			<element name="Technician_Id" type="string" minOccurs="0"></element>
+			<element name="Technician_Name" type="string" minOccurs="0"></element>
+			<element name="Primary_Flag" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

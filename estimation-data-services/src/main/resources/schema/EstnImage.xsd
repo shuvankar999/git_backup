@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EstnImage" xmlns:tns="http://www.example.org/EstnImage" elementFormDefault="qualified">
+
+<complexType name="EstnImageRequest">
+		<sequence>
+			<element name="estimationId" type="string" minOccurs="0"></element>
+			<element name="estnworkorderId" type="string" minOccurs="0"></element>
+			<element name="estnWotId" type="string" minOccurs="0"></element>
+			<element name="photoType" type="string" minOccurs="0"></element>
+			<element name="photoName" type="string" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="appCd" type="string" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+	
+	
+	<complexType name="UploadEstnImageResponse">
+		<sequence>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

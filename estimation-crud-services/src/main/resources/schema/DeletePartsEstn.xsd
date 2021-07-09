@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/DeletePartsEstn" xmlns:tns="http://www.example.org/DeletePartsEstn" elementFormDefault="qualified">
+	<complexType name="DeletePartsRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="partNumber" type="string" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="DeletePartsResponse">
+		<sequence>
+			<element name="errorCd" type="string"	minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

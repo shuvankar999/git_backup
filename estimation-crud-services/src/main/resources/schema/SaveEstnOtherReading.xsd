@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveEstnOtherReading" xmlns:tns="http://www.example.org/SaveEstnOtherReading" elementFormDefault="qualified">
+	<complexType name="SaveEstnOtherReadingRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="hubReading" type="int" minOccurs="0"></element>
+			<element name="electricHours" type="int" minOccurs="0"></element>
+			<element name="deiselHours" type="int" minOccurs="0"></element>
+			<element name="fuel" type="float" minOccurs="0"></element>
+			<element name="loaded" type="string" minOccurs="0"></element>
+			<element name="fuelCapaicty" type="float" minOccurs="0"></element>
+			<element name="fuelMeterBroken" type="string" minOccurs="0"></element>
+			<element name="operatorName" type="string" minOccurs="0"></element>
+			<element name="noHubodometer" type="string" minOccurs="0"></element>
+			<element name="hubodometerBroken" type="string" minOccurs="0"></element>
+			<element name="motDocDate" type="date" minOccurs="0"></element>
+			<element name="fridgeManufacturer" type="string" minOccurs="0"></element>
+			<element name="fridgeModel" type="string" minOccurs="0"></element>
+			<element name="fridgeSerialNr" type="string" minOccurs="0"></element>
+			<element name="monthOfManufacturer" type="string" minOccurs="0"></element>
+			<element name="yearOfManufacturer" type="int" minOccurs="0"></element>
+			<element name="pressureTestDate" type="string" minOccurs="0"></element>
+			<element name="tailliftManufacturer" type="string" minOccurs="0"></element>
+			<element name="tailliftModel" type="string" minOccurs="0"></element>
+			<element name="tailliftSerialNr" type="string" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SaveEstnOtherReadingResponse">
+	<sequence>
+	
+		<element name="errorCd" type="string" minOccurs="0"></element>
+
+	</sequence>
+	</complexType>
+	
+	
+</schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EstnEmailReportRequest" xmlns:tns="http://www.example.org/EstnEmailReportRequest" elementFormDefault="qualified">
+
+	<complexType name="EstnEmailReportRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>							
+			<element name="emailFrom" type="string" minOccurs="0"></element>
+			<element name="emailTo" type="string" minOccurs="0"></element>
+			<element name="emailSubject" type="string" minOccurs="0"></element>
+			<element name="emailBody" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

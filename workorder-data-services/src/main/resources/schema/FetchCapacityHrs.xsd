@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ResourcePipelineResponse"
+	xmlns:tns="http://www.example.org/ResourcePipelineResponse"
+	elementFormDefault="qualified">
+	
+	<complexType name="CapacityHrsRequest">
+		<sequence>
+			<element name="branchId" type="string" minOccurs="0"></element>
+			<element name="periodType" type="string"	minOccurs="0"></element>
+			<element name="startDate" type="string" minOccurs="0"></element>
+			<element name="endDate" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

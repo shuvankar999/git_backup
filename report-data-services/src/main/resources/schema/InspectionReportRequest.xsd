@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/InspectionReportRequest" xmlns:tns="http://www.example.org/InspectionReportRequest" elementFormDefault="qualified">
+
+	<complexType name="InspectionReportRequest">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Work_Order_Nr" type="int" minOccurs="0"></element>
+			<element name="Work_Order_Task_Nr" type="int" minOccurs="0"></element>
+			<element name="Lang_Id" type="int" minOccurs="0"></element>			
+			<element name="Sso_Id" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

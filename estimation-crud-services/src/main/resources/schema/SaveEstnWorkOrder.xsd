@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveEstnWorkOrder" xmlns:tns="http://www.example.org/SaveEstnWorkOrder" elementFormDefault="qualified">
+		<complexType name="SaveEstnWorkOrderRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="EstnWorkOrderList" type="tns:EstnWorkOrderObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="EstnWorkOrderObject">
+		<sequence>
+			<element name="estnworkorderId" type="int" minOccurs="0"></element>																		
+			<element name="groupCd" type="string" minOccurs="0"></element>
+			<element name="woCustComments" type="string" minOccurs="0"></element>
+			<element name="woIntComments" type="string" minOccurs="0"></element>
+			<element name="supplierId" type="int" minOccurs="0"></element>			
+																				
+			<element name="EstnWorkOrderTaskList" type="tns:EstnWorkOrderTaskObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="EstnWorkOrderTaskObject">
+		<sequence>
+																			
+			<element name="estnWOTId" type="int" minOccurs="0"></element>		
+			<element name="subgroupCd" type="string" minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="failureCause" type="string" minOccurs="0"></element>
+			<element name="action" type="string" minOccurs="0"></element>
+			<element name="position" type="string" minOccurs="0"></element>
+			<element name="targetTime" type="float" minOccurs="0"></element>
+			<element name="reason" type="string" minOccurs="0"></element>																					
+			<element name="taskComments" type="string" minOccurs="0"></element>
+			<element name="labourTime" type="string" minOccurs="0"></element>
+			<element name="soldTime" type="float" minOccurs="0"></element>			
+			<element name="labourRate" type="double" minOccurs="0"></element>														
+			<element name="showHide" type="string" minOccurs="0"></element>														
+																	
+		</sequence>
+	</complexType>
+
+</schema>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MsuData"
+	xmlns:tns="http://www.example.org/MsuData" elementFormDefault="qualified">
+
+	<complexType name="MsuDataRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MsuDataResponse">
+		<sequence>
+			<element name="MsuDataResponseList" type="tns:MsuDataObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="MsuCapabilitiesResponseList" type="tns:MsuCapabilitiesObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="MsuStatusResponseList" type="tns:MsuStatusObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="MsuDataObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="msuSeqId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="groupDesc" type="string" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="subGroupDesc" type="string" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="itemDesc" type="string" minOccurs="0"></element>
+			<element name="Reg_Nr" type="string" minOccurs="0"></element>
+			<element name="Fleet_Nr" type="string" minOccurs="0"></element>
+			<element name="Direct_Contact_Ind" type="string" minOccurs="0"></element>
+			<element name="Dialing_Cd" type="string" minOccurs="0"></element>
+			<element name="Phone_Nr" type="string" minOccurs="0"></element>
+			<element name="Bus_Hr_Cov_Rad" type="decimal" minOccurs="0"></element>
+			<element name="Non_Bus_Hr_Cov_Rad" type="decimal" minOccurs="0"></element>
+			<element name="Bus_Hr_Area" type="string" minOccurs="0"></element>
+			<element name="Ops_Area" type="string" minOccurs="0"></element>
+			<element name="Is_Active" type="string" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MsuCapabilitiesObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="msuSeqId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="groupDesc" type="string" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="Sub_Group_Desc" type="string" minOccurs="0"></element>
+			<element name="Capability_Id" type="int" minOccurs="0"></element>
+			<element name="Item_Desc" type="string" minOccurs="0"></element>
+			<element name="Cap_Ind" type="string" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="MsuStatusObject">
+		<sequence>
+			<element name="Supplier_Id" type="int" minOccurs="0"></element>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Status_Id" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

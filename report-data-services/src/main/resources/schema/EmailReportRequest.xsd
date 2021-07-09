@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EmailReportRequest" xmlns:tns="http://www.example.org/EmailReportRequest" elementFormDefault="qualified">
+
+	<complexType name="EmailReportRequest">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Work_Order_Nr" type="int" minOccurs="0"></element>
+			<element name="Work_Order_Task_Nr" type="int" minOccurs="0"></element>
+			<element name="Lang_Id" type="int" minOccurs="0"></element>			
+			<element name="Sso_Id" type="string" minOccurs="0"></element>
+			<element name="Trailer_Nr" type="int" minOccurs="0"></element>
+			<element name="Inspect_Type" type="string" minOccurs="0"></element>			
+			<element name="From" type="string" minOccurs="0"></element>
+			<element name="To" type="string" minOccurs="0"></element>
+			<element name="Subject" type="string" minOccurs="0"></element>
+			<element name="Body" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

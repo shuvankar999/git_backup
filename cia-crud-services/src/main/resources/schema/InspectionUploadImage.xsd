@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/InspectionUploadImage"
+	xmlns:tns="http://www.example.org/InspectionUploadImage" elementFormDefault="qualified">
+	
+	<complexType name="InspectionUploadImageResponse">
+		<sequence>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Doc_Id" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="BaseModel">
+		<sequence>
+			<element name="Asset_Details" type="tns:AssetDetails" minOccurs="0"></element>
+			<element name="Inspection_Performed_By" type="tns:InspectionPerformDetails" minOccurs="0"></element>
+			<element name="Customer_Details" type="tns:CustomerDetails" minOccurs="0"></element>
+			<element name="Inspection_Details" type="tns:InspectionPDFDetails" minOccurs="0"></element>
+			
+			<element name="listOfImages" type="tns:ImageDetails" maxOccurs="unbounded"></element>
+			<element name="ListInspectionItems" type="tns:InspectionItems" maxOccurs="unbounded"></element>
+			<element name="ListInspectionDamageData" type="tns:InspectionDamageData" maxOccurs="unbounded"></element>
+			
+			<element name="Notes" type="string" minOccurs="0"></element>
+			<element name="Comments" type="string" minOccurs="0"></element>
+			<element name="LogoUrl" type="string" minOccurs="0"></element>
+			<element name="Report_Loc" type="string" minOccurs="0"></element>
+			<element name="version" type="int" minOccurs="0"></element>
+			<element name="supplementary" type="int" minOccurs="0"></element>
+			<element name="Insp_Id" type="string" minOccurs="1"></element>
+			<element name="Insp_Type" type="string" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<complexType name="InspectionUploadImageRequest">
+		<sequence>
+			<element name="App_Cd" type="string" minOccurs="0"></element>
+			<element name="Insp_Id" type="string" minOccurs="1"></element>
+			<element name="Insp_Cd" type="string" minOccurs="1"></element>
+			<element name="Insp_Type" type="string" minOccurs="1"></element>
+			<element name="Damage_Line_Nr" type="string" minOccurs="1"></element>
+			<element name="Damage_Description" type="string" minOccurs="0"></element>
+			<element name="Img_Type" type="string" minOccurs="1"></element>
+			<element name="Img_Name" type="string" minOccurs="1"></element>
+			<element name="Img_Comment" type="string" minOccurs="0"></element>
+			<element name="Img_Count" type="string" minOccurs="1"></element>
+			<element name="Img_Path" type="string" minOccurs="1"></element>
+			<element name="Device_Serial_Nr" type="string" minOccurs="1"></element>
+			<element name="Prev_Img_Path" type="string" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspectionDetails">
+		<sequence>
+			<element name="Insp_Id" type="decimal" minOccurs="0"></element>
+			<element name="Group_Id" type="int" minOccurs="0"></element>
+			<element name="Group_Short_Desc" type="string" minOccurs="0"></element>	
+			<element name="Group_Desc" type="string" minOccurs="0"></element>
+			<element name="Sub_Group_Id" type="int" minOccurs="0"></element>
+			<element name="Sub_Group_Desc" type="string" minOccurs="0"></element>
+			<element name="Item_Id" type="int" minOccurs="0"></element>
+			<element name="Item_Short_Desc" type="string" minOccurs="0"></element>
+			<element name="Item_Desc" type="string" minOccurs="0"></element>
+			<element name="Item_Val_Type" type="int" minOccurs="0"></element>
+			<element name="Item_Order" type="int" minOccurs="0"></element>
+			<element name="Item_Data_Type" type="string" minOccurs="0"></element>
+			<element name="Item_Module" type="string" minOccurs="0"></element>
+			<element name="Item_Value" type="string" minOccurs="0"></element>
+			<element name="Val_Type" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspectionItems">
+		<sequence>
+			<element name="Insp_Cd" type="string" minOccurs="0"></element>
+			<element name="Insp_Ind" type="string" minOccurs="0"></element>
+			<element name="Insp_Ind_Desc" type="string" minOccurs="0"></element>
+			<element name="Insp_Desc" type="string" minOccurs="0"></element>
+			<element name="Insp_Comments" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>
+	<complexType name="InspectionDamageData">
+		<sequence>
+			<element name="Damage_Line_Nr" type="int" minOccurs="0"></element>
+			<element name="Insp_Cd" type="string" minOccurs="0"></element>
+			<element name="DNA_Cd" type="string" minOccurs="0"></element>
+			<element name="Description" type="string" minOccurs="0"></element>
+			<element name="Damage_Description" type="string" minOccurs="0"></element>
+			<element name="Damage_Type" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>		
+	<complexType name="ImageDetails">
+		<sequence>
+			<element name="Insp_Cd" type="string" minOccurs="0"></element>
+			<element name="Damage_Line_Nr" type="int" minOccurs="0"></element>
+			<element name="Damage_Description" type="string" minOccurs="0"></element>
+			<element name="Img_Type" type="string" minOccurs="0"></element>
+			<element name="Img_Name" type="string" minOccurs="0"></element>
+			<element name="Img_Comment" type="string" minOccurs="0"></element>
+			<element name="Img_Count" type="int" minOccurs="0"></element>
+			<element name="Img_Path" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>	
+	
+	<complexType name="AssetDetails">
+		<sequence>
+			<element name="Title" type="string" minOccurs="0"></element>
+			<element name="EquipmentNumber" type="int" minOccurs="0"></element>
+			<element name="CustomerEquipmentRefNumber" type="string" minOccurs="0"></element>
+			<element name="EquipmentLicenseNumber" type="string" minOccurs="0"></element>
+			<element name="EquipmentType" type="string" minOccurs="0"></element>
+			<element name="EquipmentNumberHeader" type="string" minOccurs="0"></element>
+			<element name="CustomerEquipmentRefNumberHeader" type="string" minOccurs="0"></element>
+			<element name="EquipmentLicenseNumberHeader" type="string" minOccurs="0"></element>
+			<element name="EquipmentTypeHeader" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>		
+	<complexType name="InspectionPerformDetails">
+		<sequence>
+			<element name="Title" type="string" minOccurs="0"></element>
+			<element name="InspectedBy" type="string" minOccurs="0"></element>
+			<element name="EmailAddress" type="string" minOccurs="0"></element>
+			<element name="PhoneNumber" type="string" minOccurs="0"></element>
+			<element name="HomeLocation" type="string" minOccurs="0"></element>
+			<element name="WorkingFor" type="string" minOccurs="0"></element>
+			<element name="InspectedByHeader" type="string" minOccurs="0"></element>
+			<element name="EmailAddressHeader" type="string" minOccurs="0"></element>
+			<element name="PhoneNumberHeader" type="string" minOccurs="0"></element>
+			<element name="HomeLocationHeader" type="string" minOccurs="0"></element>
+			<element name="WorkingForHeader" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>	
+	
+	<complexType name="CustomerDetails">
+		<sequence>
+			<element name="Title" type="string" minOccurs="0"></element>
+			<element name="CustomerNameAndNumber" type="string" minOccurs="0"></element>
+			<element name="CustomerNameAndNumberHeader" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>
+	
+	<complexType name="InspectionPDFDetails">
+		<sequence>
+			<element name="Title" type="string" minOccurs="0"></element>
+			<element name="InspectedDate" type="string" minOccurs="0"></element>
+			<element name="InspectedType" type="string" minOccurs="0"></element>
+			<element name="InspectedLocation" type="string" minOccurs="0"></element>
+			<element name="Longitude" type="string" minOccurs="0"></element>
+			<element name="Latitude" type="string" minOccurs="0"></element>
+			<element name="InspectedDateHeader" type="string" minOccurs="0"></element>
+			<element name="InspectedTypeHeader" type="string" minOccurs="0"></element>
+			<element name="InspectedLocationHeader" type="string" minOccurs="0"></element>
+			<element name="LongitudeHeader" type="string" minOccurs="0"></element>
+			<element name="LatitudeHeader" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>
+				
+	<complexType name="Status">
+		<sequence>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>
+</schema>

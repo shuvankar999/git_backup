@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/PartsAgreement"
+	xmlns:tns="http://www.example.org/PartsAgreement" elementFormDefault="qualified">
+	
+	<complexType name="PartsAgreementRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="PartsAgreementResponse">
+		<sequence>
+			<element name="SupplierPartsAgreementsList" type="tns:PartsAgreementObjects"
+				maxOccurs="unbounded"></element>
+
+			<element name="SupplierPartsLineList" type="tns:PartsLineObjects"
+				maxOccurs="unbounded"></element>	
+				
+			<element name="errorCd" type="string" minOccurs="0"></element>	
+		</sequence>
+	</complexType>
+	
+	<complexType name="PartsAgreementObjects">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="groupShortDesc" type="string" minOccurs="0"></element>
+			<element name="groupDesc" type="string" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="subGroupDesc" type="string" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="itemShortDesc" type="string" minOccurs="0"></element>
+			<element name="itemDesc" type="string" minOccurs="0"></element>
+			<element name="itemReq" type="string" minOccurs="0"></element>
+			<element name="itemValType" type="string" minOccurs="0"></element>
+			<element name="itemOrder" type="int" minOccurs="0"></element>
+			<element name="itemDataType" type="string" minOccurs="0"></element>
+
+			<element name="itemModule" type="string" minOccurs="0"></element>
+			<element name="itemValue" type="string" minOccurs="0"></element>
+			<element name="isEnabled" type="string" minOccurs="0"></element>
+
+			<element name="valType" type="string" minOccurs="0"></element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="PartsLineObjects">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="dnaCode" type="string" minOccurs="0"></element>
+			<element name="groups" type="string" minOccurs="0"></element>
+			<element name="subGroup" type="string" minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="maintActionCd" type="string" minOccurs="0"></element>
+			<element name="actionDesc" type="string" minOccurs="0"></element>
+			<element name="fixedPrice" type="decimal" minOccurs="0"></element>
+			<element name="costPlus" type="decimal" minOccurs="0"></element>
+			<element name="discount" type="decimal" minOccurs="0"></element>
+			<element name="isActive" type="string" minOccurs="0"></element>
+			<element name="isEnabled" type="string" minOccurs="0"></element>
+			<element name="manufacturerId" type="string" minOccurs="0"></element>
+			<element name="manufacturer" type="string" minOccurs="0"></element>
+
+			<element name="quality" type="string" minOccurs="0"></element>
+			<element name="oePartNr" type="string" minOccurs="0"></element>
+			<element name="supplierPartNr" type="string" minOccurs="0"></element>
+
+			<element name="partsDescription" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>	
+	
+</schema>

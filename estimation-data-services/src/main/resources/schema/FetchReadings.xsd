@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchReadings" xmlns:tns="http://www.example.org/FetchReadings" elementFormDefault="qualified">
+
+<complexType name="FetchReadingsRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="FetchReadingsResponse">
+	<sequence>
+		<element name="EstnTyreRdngList" type="tns:EstnTyreRdngObject" maxOccurs="unbounded"></element>
+			<element name="EstnBrakeRdngList" type="tns:EstnBrakeRdngObject" maxOccurs="unbounded"></element>
+			<element name="EstnAssetRdngList" type="tns:EstnAssetRdngObject" maxOccurs="unbounded"></element>
+			<element name="EstnOperRdngList" type="tns:EstnOperRdngObject" maxOccurs="unbounded"></element>
+			<element name="EstnTailliftRdngList" type="tns:EstnTailliftRdngObject" maxOccurs="unbounded"></element>
+			<element name="EstnFridgeRdngList" type="tns:EstnFridgeRdngObject" maxOccurs="unbounded"></element>
+	</sequence>
+	</complexType>
+	
+	<complexType name="EstnTyreRdngObject">
+	<sequence>
+		<element name="tyreCd" type="string" minOccurs="0"></element>
+		<element name="tyreDepth" type="float" minOccurs="0"></element>
+		<element name="tyrePsi" type="float" minOccurs="0"></element>
+		<element name="tyreBar" type="float" minOccurs="0"></element>
+		<element name="tyreMake" type="string" minOccurs="0"></element>
+		<element name="tyreMakeDesc" type="string" minOccurs="0"></element>
+		<element name="tyreSerialNr" type="string" minOccurs="0"></element>
+		<element name="tyreSize" type="string" minOccurs="0"></element>
+		<element name="application" type="string" minOccurs="0"></element>
+		
+	
+	</sequence>
+	</complexType>
+
+
+	<complexType name="EstnBrakeRdngObject">
+	<sequence>
+			
+		<element name="brakeCd" type="decimal" minOccurs="0"></element>
+		<element name="liningRemPer" type="float" minOccurs="0"></element>
+		<element name="liningRemMM" type="float" minOccurs="0"></element>
+	
+	</sequence>
+	</complexType>
+	
+	
+	<complexType name="EstnAssetRdngObject">
+	<sequence>
+		<element name="assetReadingType" type="string" minOccurs="0"></element>
+		<element name="previous" type="int" minOccurs="0"></element>
+		<element name="currentReading" type="int" minOccurs="0"></element>
+	
+	</sequence>
+	</complexType>
+	
+	<complexType name="EstnOperRdngObject">
+	<sequence>
+		<element name="operatorName" type="string" minOccurs="0"></element>
+		<element name="loaded" type="string" minOccurs="0"></element>
+		<element name="motDocDate" type="string" minOccurs="0"></element>
+		<element name="pressureTestDate" type="string" minOccurs="0"></element>
+		<element name="assetType" type="string" minOccurs="0"></element>
+		<element name="noHubometer" type="string" minOccurs="0"></element>
+		<element name="hubometerBroken" type="string" minOccurs="0"></element>
+		<element name="fuelMeterBroken" type="string" minOccurs="0"></element>
+		
+	
+	</sequence>
+	</complexType>
+	
+	<complexType name="EstnTailliftRdngObject">
+	<sequence>
+		<element name="tailliftManufacturer" type="string" minOccurs="0"></element>
+		<element name="tailliftModel" type="string" minOccurs="0"></element>
+		<element name="tailliftSerialNr" type="string" minOccurs="0"></element>
+		
+	
+	</sequence>
+	</complexType>
+	
+	<complexType name="EstnFridgeRdngObject">
+	<sequence>
+		<element name="fridgeManufacturer" type="string" minOccurs="0"></element>
+		<element name="fridgeModel" type="string" minOccurs="0"></element>
+		<element name="fridgeSerialNr" type="string" minOccurs="0"></element>
+		<element name="monthOfManufacturer" type="string" minOccurs="0"></element>
+		<element name="yearOfManufacturer" type="int" minOccurs="0"></element>
+		
+	
+	</sequence>
+	</complexType>
+	
+	
+</schema>

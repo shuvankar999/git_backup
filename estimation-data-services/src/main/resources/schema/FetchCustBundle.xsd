@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchCustBundle" xmlns:tns="http://www.example.org/FetchCustBundle" elementFormDefault="qualified">
+
+	<complexType name="FetchCustBundleRequest">
+		<sequence>
+			<element name="custNr" type="int" minOccurs="0"></element>
+			<element name="custCmpNr" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="FetchCustBundleResponse">
+		<sequence>
+			<element name="bundleName" type="string" minOccurs="0"></element>
+			<element name="listOfBundle" type="tns:BundleDetails" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="BundleDetails">
+		<sequence>
+			<element name="bundleName" type="string" minOccurs="0"></element>
+			<element name="dnaCode" type="string" minOccurs="0"></element>
+			<element name="groups" type="string" minOccurs="0"></element>
+			<element name="subGroup" type="string" minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="maintenanceAction" type="string" minOccurs="0"></element>
+			<element name="manufacturerId" type="string" minOccurs="0"></element>
+			<element name="manufacturer" type="string" minOccurs="0"></element>
+			<element name="oePartNr" type="string" minOccurs="0"></element>
+			<element name="supplierPartNr" type="string" minOccurs="0"></element>
+			<element name="partsDescription" type="string" minOccurs="0"></element>
+			<element name="fees" type="decimal" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

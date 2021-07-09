@@ -1,0 +1,1427 @@
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.europe.pocketmobile.ese.ef.ge.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" targetNamespace="http://service.europe.pocketmobile.ese.ef.ge.com">
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://service.europe.pocketmobile.ese.ef.ge.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified" targetNamespace="http://service.europe.pocketmobile.ese.ef.ge.com">
+            <!--
+             ******************** COMMON COMPLEX TYPES STARTS *********************
+            -->
+            <complexType name="Damages">
+                <sequence>
+                    <element name="intchKey" nillable="false" type="xsd:long"/>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="lineNr" nillable="false" type="xsd:int"/>
+                    <element name="workOrderNr" nillable="true" type="xsd:int"/>
+                    <element name="description" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfDamages">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:Damages"/>
+                </sequence>
+            </complexType>
+            <complexType name="Accessories">
+                <sequence>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="accssryInOutInd" nillable="false" type="xsd:string"/>
+                    <element name="accssryCd" nillable="false" type="xsd:string"/>
+                    <!--  intchKey Should Be NULL during the CheckOut Save  -->
+                    <element name="intchKey" nillable="true" type="xsd:long"/>
+                    <element name="accssryCount" nillable="true" type="xsd:int"/>
+                    <element name="accssryDamageInd" nillable="true" type="xsd:string"/>
+                    <element name="accssryRemarks" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAccessories">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:Accessories"/>
+                </sequence>
+            </complexType>
+            <complexType name="CheckoutDamages">
+                <sequence>
+                    <element name="intch_Key" nillable="false" type="xsd:long"/>
+                    <element name="unit_Nr" nillable="false" type="xsd:int"/>
+                    <element name="line_Nr" nillable="false" type="xsd:int"/>
+                    <!--  intchKey Should Be NULL during the CheckOut Save  -->
+                    <element name="work_Order_Nr" nillable="true" type="xsd:long"/>
+                    <element name="description" nillable="true" type="xsd:string"/>
+                    <element name="x_Pos" nillable="true" type="xsd:int"/>
+                    <element name="y_Pos" nillable="true" type="xsd:int"/>
+                    <element name="sketch_Type" nillable="true" type="xsd:string"/>
+                    <element name="device_Serial_Nr" nillable="true" type="xsd:string"/>
+                    <element name="is_Used_In_CI" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfCheckoutDamages">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:CheckoutDamages"/>
+                </sequence>
+            </complexType>
+            <complexType name="Customer">
+                <sequence>
+                    <element name="customerCompanyNr" nillable="false" type="xsd:int"/>
+                    <element name="customerNr" nillable="false" type="xsd:int"/>
+                    <element name="customerNumberCombi" nillable="false" type="xsd:string"/>
+                    <element name="addressTypeRef" nillable="true" type="xsd:int"/>
+                    <element name="name" nillable="false" type="xsd:string"/>
+                    <element name="addr" nillable="true" type="xsd:string"/>
+                    <element name="city" nillable="true" type="xsd:string"/>
+                    <element name="zipCd" nillable="true" type="xsd:string"/>
+                    <element name="countryName" nillable="true" type="xsd:string"/>
+                    <element name="checkinBillingFlag" nillable="true" type="xsd:string"/>
+                    <element name="checkinBillingText" nillable="true" type="xsd:string"/>
+                    <element name="checkoutMiscFlag" nillable="true" type="xsd:string"/>
+                    <element name="checkoutMiscText" nillable="true" type="xsd:string"/>
+                    <element name="checkinMiscText" nillable="true" type="xsd:string"/>
+                    <element name="checkinMiscFlag" nillable="true" type="xsd:string"/>
+                    <element name="customerOperationalEmail" nillable="true" type="xsd:string"/>
+                    <element name="customerOperationalFax" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="IntchTyre">
+                <sequence>
+                    <element name="tyreCd" nillable="false" type="xsd:string"/>
+                    <element name="tyreInOutInd" nillable="false" type="xsd:string"/>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <!--  intchKey Should Be NULL during the CheckOut Save  -->
+                    <element name="intchKey" nillable="true" type="xsd:long"/>
+                    <element name="tyreProfileDepth" nillable="true" type="xsd:float"/>
+                    <element name="tyreMake" nillable="true" type="xsd:string"/>
+                    <element name="tyreAtmosphere" nillable="true" type="xsd:float"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfIntchTyre">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:IntchTyre"/>
+                </sequence>
+            </complexType>
+            <complexType name="Reservations">
+                <sequence>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="branchNr" nillable="false" type="xsd:int"/>
+                    <element name="companyNr" nillable="false" type="xsd:int"/>
+                    <element name="customerNr" nillable="false" type="xsd:int"/>
+                    <element name="resrvdOutDate" nillable="false" type="xsd:string"/>
+                    <element name="resrvdInDate" nillable="true" type="xsd:string"/>
+                    <element name="resrvdRemarks" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfReservations">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:Reservations"/>
+                </sequence>
+            </complexType>
+            <complexType name="ServiceEvents">
+                <sequence>
+                    <element name="serviceTypeCd" nillable="false" type="xsd:string"/>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="serviceEnteredDate" nillable="false" type="xsd:string"/>
+                    <element name="serviceEventScheduledDate" nillable="true" type="xsd:string"/>
+                    <element name="serviceEventScheduledReadin" nillable="true" type="xsd:int"/>
+                    <element name="serviceEventStatus" nillable="false" type="xsd:string"/>
+                    <element name="serviceEventRemark" nillable="true" type="xsd:string"/>
+                    <element name="serviceEventDocumentRef" nillable="true" type="xsd:string"/>
+                    <element name="serviceTypeRevisitAfter" nillable="true" type="xsd:int"/>
+                    <element name="serviceEventDoneDate" nillable="true" type="xsd:string"/>
+                    <element name="serviceEventDoneReading" nillable="true" type="xsd:int"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfServiceEvents">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:ServiceEvents"/>
+                </sequence>
+            </complexType>
+            <complexType name="Unit">
+                <sequence>
+                    <element name="handheldActivated" nillable="true" type="xsd:string"/>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="unitPhysicalCompanyNr" nillable="false" type="xsd:int"/>
+                    <element name="unitPhysicalBranchNr" nillable="false" type="xsd:int"/>
+                    <element name="unitOperationalStatus" nillable="false" type="xsd:string"/>
+                    <element name="unitCatgrpCode" nillable="false" type="xsd:string"/>
+                    <element name="unitSerialNr" nillable="true" type="xsd:string"/>
+                    <element name="unitManufacturer" nillable="true" type="xsd:string"/>
+                    <element name="unitModelYear" nillable="true" type="xsd:int"/>
+                    <element name="unitLicenceNr" nillable="true" type="xsd:string"/>
+                    <element name="unitLicenceCountryCd" nillable="true" type="xsd:string"/>
+                    <element name="unitCd" nillable="false" type="xsd:string"/>
+                    <element name="unitCustomerRefrnc" nillable="true" type="xsd:string"/>
+                    <element name="unitInOutStatus" nillable="true" type="xsd:string"/>
+                    <element name="unitStatus" nillable="true" type="xsd:string"/>
+                    <element name="unitStatusComment" nillable="true" type="xsd:string"/>
+                    <element name="unitLastParkLocCd" nillable="true" type="xsd:string"/>
+                    <element name="unitLastIntchKey" nillable="true" type="xsd:long"/>
+                    <element name="unitLastDateOut" nillable="false" type="xsd:string"/>
+                    <element name="unitLastKm" nillable="true" type="xsd:int"/>
+                    <element name="unitLastKmSecond" nillable="true" type="xsd:int"/>
+                    <element name="unitLastElectricHours" nillable="true" type="xsd:int"/>
+                    <element name="unitLastDieselHours" nillable="true" type="xsd:int"/>
+                    <element name="unitLastDieselLitres" nillable="true" type="xsd:int"/>
+                </sequence>
+            </complexType>
+            <complexType name="Contract">
+                <sequence>
+                    <element name="leaseType" nillable="false" type="xsd:string"/>
+                    <!--  LTL (Long Term Lease) or STR(Short Term Lease)  -->
+                    <element name="earlyTerm" nillable="true" type="xsd:string"/>
+                    <!--  Flag Y / N  -->
+                    <element name="netNet" nillable="false" type="xsd:string"/>
+                    <!--  Flag Y / N  -->
+                    <element name="fleetCare" nillable="true" type="xsd:string"/>
+                    <!--  Flag Y / N  -->
+                    <element name="tyreCare" nillable="true" type="xsd:string"/>
+                    <!--  Flag Y / N  -->
+                    <element name="mdp" nillable="true" type="xsd:string"/>
+                    <!--  Flag Y / N  -->
+                    <element name="maintanenceResposibility" nillable="true" type="xsd:string"/>
+                    <!--  Full Service /Net-Net/PS  -->
+                    <element name="typeOfFleetCareCoverage" nillable="true" type="xsd:string"/>
+                    <!--  DP no contrb /DP w contr/TIPSURE  -->
+                    <element name="isSwapUnit" nillable="false" type="xsd:string"/>
+                    <!--  Flag Y / N  -->
+                    <element name="isNotReeferUnit" nillable="false" type="xsd:string"/>
+                    <!--  Flag Y / N  -->
+                </sequence>
+            </complexType>
+            <simpleType name="ServiceStatus">
+                <restriction base="string">
+                    <enumeration value="SUCCESS"/>
+                    <enumeration value="GENERAL_ERROR"/>
+                    <enumeration value="DATABASE_ERROR"/>
+                    <enumeration value="INVALID_REQUEST"/>
+                    <enumeration value="INVALID_SESSION_ID"/>
+                    <enumeration value="IN_PROGRESS"/>
+                </restriction>
+            </simpleType>
+            <complexType name="BaseReponse">
+                <sequence>
+                    <element name="errorObject" nillable="true" type="impl:ArrayOfErrorObject"/>
+                    <element name="status" nillable="false" type="impl:ServiceStatus"/>
+                </sequence>
+            </complexType>
+            <complexType name="AuthenticationResponse">
+                <complexContent>
+                    <extension base="impl:BaseReponse">
+                        <sequence>
+                            <element name="authToken" nillable="true" type="xsd:string"/>
+                            <element name="authenticated" nillable="false" type="xsd:boolean"/>
+                            <element maxOccurs="unbounded" minOccurs="0" name="applAccess" nillable="true" type="xsd:string"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <complexType name="AuthenticationTestResponse">
+                <complexContent>
+                    <extension base="impl:BaseReponse">
+                        <sequence>
+                            <element name="authenticated" nillable="false" type="xsd:boolean"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <complexType name="ErrorObject">
+                <sequence>
+                    <element name="Code" type="xsd:string"/>
+                    <element name="Description" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfErrorObject">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:ErrorObject"/>
+                </sequence>
+            </complexType>
+            <!--
+             ******************** COMMON COMPLEX TYPES ENDS *********************
+            -->
+            <!--
+             ******************** SEARCH SERVICE STARTS *********************
+            -->
+            <element name="search">
+                <complexType>
+                    <sequence>
+                        <element name="sessionId" nillable="false" type="xsd:string"/>
+                        <element name="branchNr" nillable="false" type="xsd:int"/>
+                        <element name="search" type="impl:SearchInput" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="SearchInput">
+                <sequence>
+                    <element name="unitNr" nillable="true" type="xsd:int"/>
+                    <element name="registrationCd" nillable="true" type="xsd:string"/>
+                    <element name="chassisNr" nillable="true" type="xsd:string"/>
+                    <element name="customerNr" nillable="true" type="xsd:int"/>
+                    <!--  Pickupdate should be in dd/mm/yyyy format  -->
+                    <element name="pickupDate" nillable="true" type="xsd:string"/>
+                    <element name="branchNr" nillable="false" type="xsd:int"/>
+                </sequence>
+            </complexType>
+            <!--
+             ******************** getBranches STARTS *********************
+            -->
+            <element name="searchBranchesRequest">
+                <complexType>
+                    <sequence>
+                        <!--
+                                                <element name="sessionId" nillable="false" type="xsd:string"></element>
+                        -->
+                        <element name="SSO" nillable="false" type="xsd:int"/>
+                        <!--
+                                                <element name="search" type="impl:SearchInput" nillable="false"/>
+                        -->
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="searchBranchesResponse">
+                <complexType>
+                    <choice>
+                        <element name="getBranchesReturn" type="impl:ArrayOfBranchList"/>
+                    </choice>
+                </complexType>
+            </element>
+            <complexType name="BranchList">
+                <sequence>
+                    <element name="BranchNr" nillable="false" type="xsd:int"/>
+                    <element name="BranchName" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfBranchList">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:BranchList"/>
+                </sequence>
+            </complexType>
+            <!--
+             ******************** getTranslations STARTS *********************
+            -->
+            <element name="searchTranslationsRequest">
+                <complexType>
+                    <sequence>
+                        <!--
+                                                <element name="sessionId" nillable="false" type="xsd:string"></element>
+                        -->
+                        <element name="Branch" nillable="false" type="xsd:string"/>
+                        <element name="LanguageId" nillable="true" type="xsd:string"/>
+                        <!--
+                                                <element name="search" type="impl:SearchInput" nillable="false"/>
+                        -->
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="searchTranslationsResponse">
+                <complexType>
+                    <choice>
+                        <element name="getTranslationsReturn" type="impl:ArrayOfTranslationsList"/>
+                    </choice>
+                </complexType>
+            </element>
+            <complexType name="TranslationsList">
+                <sequence>
+                    <element name="LanguageId" nillable="false" type="xsd:int"/>
+                    <element name="TextCd" nillable="true" type="xsd:string"/>
+                    <element name="Text" nillable="true" type="xsd:string"/>
+                    <element name="EntityCd" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfTranslationsList">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:TranslationsList"/>
+                </sequence>
+            </complexType>
+            <!--
+             ******************** getImageChunks STARTS *********************
+            -->
+            <element name="searchImageChunksRequest">
+                <complexType>
+                    <sequence>
+                        <!--
+                                                <element name="sessionId" nillable="false" type="xsd:string"></element>
+                        -->
+                        <element name="ImageName" nillable="false" type="xsd:string"/>
+                        <element name="BaseCode" nillable="false" type="xsd:string"/>
+                        <element name="Parts" nillable="true" type="xsd:string"/>
+                        <!--
+                                                <element name="search" type="impl:SearchInput" nillable="false"/>
+                        -->
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="searchImageChunksResponse">
+                <complexType>
+                    <complexContent>
+                        <extension base="impl:BaseReponse"/>
+                    </complexContent>
+                </complexType>
+            </element>
+            <!--
+             ******************** CHECK-IN SEARCH RETURN STARTS *********************
+            -->
+            <complexType name="CheckInSearchReturn">
+                <sequence>
+                    <element name="searchReturn" type="impl:SearchResults"/>
+                </sequence>
+            </complexType>
+            <complexType name="Interchange">
+                <sequence>
+                    <element name="intchKey" nillable="false" type="xsd:long"/>
+                    <element name="companyNr" nillable="true" type="xsd:int"/>
+                    <element name="branchNr" nillable="true" type="xsd:int"/>
+                    <element name="intchNr" nillable="false" type="xsd:int"/>
+                    <element name="intchType" nillable="false" type="xsd:string"/>
+                    <element name="intchOutParkingLocation" nillable="true" type="xsd:string"/>
+                    <element name="mstrlsNr" nillable="false" type="xsd:int"/>
+                    <element name="rateNr" nillable="false" type="xsd:int"/>
+                    <element name="customerNr" nillable="false" type="xsd:int"/>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="intchOneWayBranchNr" nillable="true" type="xsd:int"/>
+                    <element name="intchOneWayCompanyNr" nillable="true" type="xsd:int"/>
+                    <element name="intchOutDate" nillable="false" type="xsd:string"/>
+                    <element name="intchOutKM" nillable="true" type="xsd:int"/>
+                    <element name="intchOutKMSecond" nillable="true" type="xsd:int"/>
+                    <element name="intchOutElectricHours" nillable="true" type="xsd:int"/>
+                    <element name="intchOutDieselHours" nillable="true" type="xsd:int"/>
+                    <element name="intchOutDownloadTime" nillable="true" type="xsd:string"/>
+                    <element name="intchOutDriverName" nillable="true" type="xsd:string"/>
+                    <element name="intchOutDriverLicense" nillable="true" type="xsd:string"/>
+                    <element name="intchInCompanyNr" nillable="true" type="xsd:int"/>
+                    <element name="intchInBranchNr" nillable="true" type="xsd:int"/>
+                    <element name="intchInDate" nillable="true" type="xsd:string"/>
+                    <element name="intchInKM" nillable="true" type="xsd:int"/>
+                    <element name="intchInKMSecond" nillable="true" type="xsd:int"/>
+                    <element name="intchInElectricHours" nillable="true" type="xsd:int"/>
+                    <element name="intchInDieselHours" nillable="true" type="xsd:int"/>
+                    <element name="intchInDownloadTime" nillable="true" type="xsd:string"/>
+                    <element name="intchInDriverName" nillable="true" type="xsd:string"/>
+                    <element name="intchInDriverLicense" nillable="true" type="xsd:string"/>
+                    <element name="intchAdjKM" nillable="true" type="xsd:int"/>
+                    <element name="intchAdjElectricHours" nillable="true" type="xsd:int"/>
+                    <element name="intchAdjDieselHours" nillable="true" type="xsd:int"/>
+                    <element name="intchRemarks" nillable="true" type="xsd:string"/>
+                    <element name="intchOutDriverCompany" nillable="true" type="xsd:string"/>
+                    <element name="intchInDriverCompany" nillable="true" type="xsd:string"/>
+                    <element name="ratesMaintrspRungearInd" nillable="true" type="xsd:string"/>
+                    <element name="ratesMaintrspTyresInd" nillable="true" type="xsd:string"/>
+                    <element name="ratesMaintrspReeferInd" nillable="true" type="xsd:string"/>
+                    <element name="ratesMaintCertfctRenwlInd" nillable="true" type="xsd:string"/>
+                    <element name="ratesMaintBrakeCapInd" nillable="true" type="xsd:string"/>
+                    <element name="ratesMaintTyreCapInd" nillable="true" type="xsd:string"/>
+                    <element name="ratesMaintTestsInd" nillable="true" type="xsd:string"/>
+                    <element name="ratesInsrncPlanCd" nillable="true" type="xsd:string"/>
+                    <element name="ratesInsrncMartmCovrg" nillable="true" type="xsd:string"/>
+                    <element name="fleetCare" nillable="true" type="xsd:string"/>
+                    <element name="tyreCare" nillable="true" type="xsd:string"/>
+                    <element name="mdp" nillable="true" type="xsd:string"/>
+                    <element name="intchFreeDays" nillable="true" type="xsd:int"/>
+                    <element name="intchTermCount" nillable="true" type="xsd:int"/>
+                    <element name="leasePeriodCd" nillable="true" type="xsd:string"/>
+                    <element name="intchExpectedReturnDate" nillable="true" type="xsd:string"/>
+                    <element name="roadTaxIndicator" nillable="true" type="xsd:string"/>
+                    <element name="intchInParkingLocation" nillable="true" type="xsd:string"/>
+                    <element name="intchVoidTime" nillable="true" type="xsd:string"/>
+                    <element name="intchOutDieselLitres" nillable="true" type="xsd:int"/>
+                </sequence>
+            </complexType>
+            <complexType name="SearchResults">
+                <complexContent>
+                    <extension base="impl:BaseReponse">
+                        <sequence>
+                            <element name="accessories" nillable="true" type="impl:ArrayOfAccessories"/>
+                            <element name="customer" nillable="true" type="impl:Customer"/>
+                            <element name="intchTyre" nillable="true" type="impl:ArrayOfIntchTyre"/>
+                            <element name="interchange" nillable="true" type="impl:Interchange"/>
+                            <element name="reservations" nillable="true" type="impl:ArrayOfReservations"/>
+                            <element name="serviceEvents" nillable="true" type="impl:ArrayOfServiceEvents"/>
+                            <element name="unit" nillable="false" type="impl:Unit"/>
+                            <element name="contract" nillable="false" type="impl:Contract"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <!--
+             ******************** CHECK-IN SEARCH RETURN ENDS *********************
+            -->
+            <!--
+             ***************** CHECK-OUT SEARCH RETURN STARTS ******************
+            -->
+            <complexType name="ReservedUnit">
+                <sequence>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="companyNr" nillable="false" type="xsd:int"/>
+                    <element name="customerNr" nillable="false" type="xsd:int"/>
+                    <element name="customerName" nillable="true" type="xsd:string"/>
+                    <element name="unitStatus" nillable="true" type="xsd:string"/>
+                    <element name="resrvdRemarks" nillable="true" type="xsd:string"/>
+                    <element name="resrvdOutDate" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfReservedUnits">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:ReservedUnit"/>
+                </sequence>
+            </complexType>
+            <complexType name="CheckOutSearchResults">
+                <complexContent>
+                    <extension base="impl:BaseReponse">
+                        <sequence>
+                            <element name="unitsList" nillable="true" type="impl:ArrayOfReservedUnits"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <complexType name="CheckOutSearchReturn">
+                <choice>
+                    <!--
+                     Service will return impl:SearchResults when there are more than one unit
+                    -->
+                    <element name="searchReturn" type="impl:CheckOutSearchResults"/>
+                    <!--
+                     Service will return impl:FetchResults when there is only one unit
+                    -->
+                    <element name="fetchReturn" type="impl:FetchResults"/>
+                </choice>
+            </complexType>
+            <!--
+             ***************** CHECK-OUT SEARCH RETURN ENDS ******************
+            -->
+            <element name="searchResponse">
+                <complexType>
+                    <choice>
+                        <element name="checkInSearchReturn" type="impl:CheckInSearchReturn"/>
+                        <element name="checkOutSearchReturn" type="impl:CheckOutSearchReturn"/>
+                    </choice>
+                </complexType>
+            </element>
+            <!--
+             ******************** CHECK-IN SEARCH SERVICE END *********************
+            -->
+            <!--
+             ***************** CHECK-OUT FETCH SERVICE STARTS ******************
+            -->
+            <element name="fetch">
+                <complexType>
+                    <sequence>
+                        <element name="sessionId" nillable="false" type="xsd:string"/>
+                        <element name="branchNr" nillable="false" type="xsd:int"/>
+                        <element name="fetch" type="impl:FetchInput" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="FetchInput">
+                <sequence>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="companyNr" nillable="false" type="xsd:int"/>
+                    <element name="customerNr" nillable="false" type="xsd:int"/>
+                    <element name="branchNr" nillable="false" type="xsd:int"/>
+                </sequence>
+            </complexType>
+            <element name="fetchResponse">
+                <complexType>
+                    <sequence>
+                        <element name="fetchReturn" type="impl:FetchResults"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="FetchResults">
+                <complexContent>
+                    <extension base="impl:BaseReponse">
+                        <sequence>
+                            <element name="accessories" nillable="true" type="impl:ArrayOfAccessories"/>
+                            <element name="customer" nillable="true" type="impl:Customer"/>
+                            <element name="intchTyre" nillable="true" type="impl:ArrayOfIntchTyre"/>
+                            <element name="contract" nillable="true" type="impl:Contract"/>
+                            <element name="unit" nillable="false" type="impl:Unit"/>
+                            <element name="serviceEvents" nillable="true" type="impl:ArrayOfServiceEvents"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <!--
+             ***************** CHECK-OUT FETCH SERVICE ENDS ******************
+            -->
+            <!--  fetch damage details begin   -->
+            <element name="getDamangeDetailsRequest">
+                <complexType>
+                    <sequence>
+                        <element name="sessionId" nillable="false" type="xsd:string"/>
+                        <element name="branchNr" nillable="false" type="xsd:int"/>
+                        <element name="getDamangeDetailsRequest" type="impl:getDamageDetailsInput" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="getDamageDetailsInput">
+                <sequence>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="intchkey" nillable="false" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="getDamangeDetailsResponse">
+                <complexType>
+                    <sequence>
+                        <element name="getDamangeDetailsReturn" type="impl:getDamangeDetailsResults"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="getDamangeDetailsResults">
+                <complexContent>
+                    <extension base="impl:BaseReponse">
+                        <sequence>
+                            <element name="damageDetails" nillable="true" type="impl:ArrayOfCheckoutDamages"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <!--  fetch damage details end  -->
+            <!--
+             *********************** LOGIN SERVICE STARTS ********************
+            -->
+            <element name="login">
+                <complexType>
+                    <sequence>
+                        <element name="branchNr" nillable="false" type="xsd:int"/>
+                        <element name="authToken" type="impl:AuthenticationToken" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="AuthenticationToken">
+                <sequence>
+                    <element name="password" nillable="false" type="xsd:string"/>
+                    <element name="userId" nillable="false" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="loginResponse">
+                <complexType>
+                    <sequence>
+                        <element name="loginReturn" type="impl:AuthenticationResponse"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <!--
+             *********************** LOGIN SERVICE ENDS ********************
+            -->
+            <!--
+             *********************** LOGIN TEST SERVICE STARTS ********************
+            -->
+            <element name="loginTest">
+                <complexType>
+                    <sequence>
+                        <element name="password" nillable="false" type="xsd:string"/>
+                        <element name="userId" nillable="false" type="xsd:string"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="loginTestResponse">
+                <complexType>
+                    <sequence>
+                        <element name="loginTestReturn" type="impl:AuthenticationTestResponse"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <!--
+             *********************** LOGIN SERVICE ENDS ********************
+            -->
+            <!--
+             *********************** FETCH STATIC LIST SERVICE STARTS ********************
+            -->
+            <simpleType name="ListKey">
+                <restriction base="string">
+                    <enumeration value="AccessoryCode"/>
+                    <enumeration value="AccessoryTranslations"/>
+                    <enumeration value="Branches"/>
+                    <enumeration value="CategoryGroupTranslations"/>
+                    <enumeration value="DamageMatrix"/>
+                    <enumeration value="ParkingLocations"/>
+                    <enumeration value="ServiceTypes"/>
+                    <enumeration value="TyreBrandsTranslations"/>
+                    <enumeration value="TyreTranslations"/>
+                    <enumeration value="ServiceTypeTranslations"/>
+                    <enumeration value="CustomerNameList"/>
+                    <enumeration value="All"/>
+                </restriction>
+            </simpleType>
+            <element name="fetchStaticList">
+                <complexType>
+                    <sequence>
+                        <element name="sessionId" nillable="false" type="xsd:string"/>
+                        <element name="branchNr" nillable="false" type="xsd:int"/>
+                        <element name="key" type="impl:ListKey" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="fetchStaticListResponse">
+                <complexType>
+                    <sequence>
+                        <element name="fetchStaticListReturn" type="impl:FetchStaticListResults"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="AccessoryCode">
+                <sequence>
+                    <element name="accssryCd" nillable="false" type="xsd:string"/>
+                    <element name="accssryDesc" nillable="true" type="xsd:string"/>
+                    <element name="accssryType" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAccessoryCode">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:AccessoryCode"/>
+                </sequence>
+            </complexType>
+            <complexType name="Translations">
+                <sequence>
+                    <element name="entityCd" nillable="false" type="xsd:string"/>
+                    <element name="languageId" nillable="false" type="xsd:string"/>
+                    <element name="languageName" nillable="false" type="xsd:string"/>
+                    <element name="text" nillable="false" type="xsd:string"/>
+                    <element name="textCd" nillable="false" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfTranslations">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:Translations"/>
+                </sequence>
+            </complexType>
+            <complexType name="Branches">
+                <sequence>
+                    <element name="branchAddress" nillable="false" type="xsd:string"/>
+                    <element name="branchDefCy" nillable="false" type="xsd:string"/>
+                    <element name="branchDefLang" nillable="true" type="xsd:string"/>
+                    <element name="branchEmail" nillable="true" type="xsd:string"/>
+                    <element name="branchNr" nillable="true" type="xsd:string"/>
+                    <element name="companyNr" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfBranches">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:Branches"/>
+                </sequence>
+            </complexType>
+            <complexType name="CategoryGroupTrans">
+                <complexContent>
+                    <extension base="impl:Translations">
+                        <sequence>
+                            <element name="catgrType" nillable="true" type="xsd:string"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfCategoryGroupTrans">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:CategoryGroupTrans"/>
+                </sequence>
+            </complexType>
+            <complexType name="DamageMatrix">
+                <sequence>
+                    <element name="category" nillable="false" type="xsd:string"/>
+                    <element name="languageId" nillable="false" type="xsd:string"/>
+                    <element name="languageName" nillable="false" type="xsd:string"/>
+                    <element name="level2" nillable="false" type="xsd:string"/>
+                    <element name="level2Description" nillable="false" type="xsd:string"/>
+                    <element name="level3" nillable="false" type="xsd:string"/>
+                    <element name="text" nillable="false" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfDamageMatrix">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:DamageMatrix"/>
+                </sequence>
+            </complexType>
+            <complexType name="ParkingLocations">
+                <sequence>
+                    <element name="branchNr" nillable="false" type="xsd:string"/>
+                    <element name="companyNr" nillable="false" type="xsd:string"/>
+                    <element name="parkingLocationCd" nillable="false" type="xsd:string"/>
+                    <element name="parkingLoctnDesc" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfParkingLocations">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:ParkingLocations"/>
+                </sequence>
+            </complexType>
+            <complexType name="ServiceTypes">
+                <sequence>
+                    <element name="blockOnHire" nillable="true" type="xsd:string"/>
+                    <element name="serviceTypeCd" nillable="true" type="xsd:string"/>
+                    <element name="serviceTypeCompare" nillable="true" type="xsd:string"/>
+                    <element name="serviceTypeDatatype" nillable="true" type="xsd:string"/>
+                    <element name="serviceTypeDesc" nillable="true" type="xsd:string"/>
+                    <element name="serviceTypeOnIntch" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfServiceTypes">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:ServiceTypes"/>
+                </sequence>
+            </complexType>
+            <complexType name="FetchStaticListResults">
+                <complexContent>
+                    <extension base="impl:BaseReponse">
+                        <sequence>
+                            <element name="accessoryCodes" nillable="true" type="impl:ArrayOfAccessoryCode"/>
+                            <element name="accessoryTranslations" nillable="true" type="impl:ArrayOfTranslations"/>
+                            <element name="branches" nillable="true" type="impl:ArrayOfBranches"/>
+                            <element name="categoryGroupTranslations" nillable="true" type="impl:ArrayOfCategoryGroupTrans"/>
+                            <element name="damageMatrix" nillable="true" type="impl:ArrayOfDamageMatrix"/>
+                            <element name="parkingLocations" nillable="true" type="impl:ArrayOfParkingLocations"/>
+                            <element name="serviceTypes" nillable="true" type="impl:ArrayOfServiceTypes"/>
+                            <element name="tyreBrandTranslations" nillable="true" type="impl:ArrayOfTranslations"/>
+                            <element name="tyreTranslations" nillable="true" type="impl:ArrayOfTranslations"/>
+                            <element name="serviceTypeTranslations" nillable="true" type="impl:ArrayOfTranslations"/>
+                            <!--  Added as part of Check Out # START #   -->
+                            <element name="customerNameList" nillable="true" type="impl:ArrayOfCustomerName"/>
+                            <!--  Added as part of Check Out # END #   -->
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <!--  Added as part of Check Out Changes  # START #  -->
+            <complexType name="CustomerName">
+                <sequence>
+                    <element name="companyNr" nillable="false" type="xsd:int"/>
+                    <element name="customerNr" nillable="false" type="xsd:int"/>
+                    <element name="customerName" nillable="false" type="xsd:string"/>
+                    <element name="customerBranchNr" nillable="false" type="xsd:int"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfCustomerName">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:CustomerName"/>
+                </sequence>
+            </complexType>
+            <!--  Added as part of Check Out Changes # END #  -->
+            <!--
+             *********************** FETCH STATIC LIST SERVICE ENDS ********************
+            -->
+            <!--
+             *********************** CHECK-IN SAVE SERVICE STARTS ********************
+            -->
+            <element name="save">
+                <complexType>
+                    <sequence>
+                        <element name="sessionId" nillable="false" type="xsd:string"/>
+                        <element name="transactionId" nillable="false" type="xsd:string"/>
+                        <element name="branchNr" nillable="false" type="xsd:int"/>
+                        <element name="saveRequest" type="impl:SaveInput" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="SaveInput">
+                <sequence>
+                    <element name="interchange" nillable="false" type="impl:SaveInterchange"/>
+                    <element name="intchTyre" nillable="true" type="impl:ArrayOfIntchTyre"/>
+                    <element name="damages" nillable="true" type="impl:ArrayOfDamages"/>
+                    <element name="accessories" nillable="true" type="impl:ArrayOfAccessories"/>
+                </sequence>
+            </complexType>
+            <element name="saveResponse">
+                <complexType>
+                    <sequence>
+                        <element name="saveReturn" type="impl:SaveResults"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="SaveResults">
+                <complexContent>
+                    <extension base="impl:BaseReponse"></extension>
+                </complexContent>
+            </complexType>
+            <complexType name="SaveInterchange">
+                <sequence>
+                    <element name="intchKey" type="xsd:long"/>
+                    <element name="rateNr" type="xsd:int"/>
+                    <element name="mstrlsNr" type="xsd:int"/>
+                    <element name="leasePeriodCd" nillable="false" type="xsd:string"/>
+                    <element name="unitNr" type="xsd:int"/>
+                    <element name="customerNr" type="xsd:int"/>
+                    <element name="intchOutDate" nillable="false" type="xsd:string"/>
+                    <element name="intchInCompanyNr" nillable="true" type="xsd:int"/>
+                    <element name="intchInBranchNr" nillable="true" type="xsd:int"/>
+                    <element name="intchInDate" nillable="false" type="xsd:string"/>
+                    <element name="intchInKM" nillable="true" type="xsd:int"/>
+                    <element name="intchInKMSecond" nillable="true" type="xsd:int"/>
+                    <element name="intchInElectricHours" nillable="true" type="xsd:int"/>
+                    <element name="intchInDieselHours" nillable="true" type="xsd:int"/>
+                    <element name="intchInDriverName" nillable="true" type="xsd:string"/>
+                    <element name="intchInDriverLicense" nillable="true" type="xsd:string"/>
+                    <element name="intchAdjKm" nillable="true" type="xsd:int"/>
+                    <element name="intchAdjElectricHours" nillable="true" type="xsd:int"/>
+                    <element name="intchAdjDieselHours" nillable="true" type="xsd:int"/>
+                    <element name="intchInDriverCompany" nillable="true" type="xsd:string"/>
+                    <element name="intchInParkingLocation" nillable="true" type="xsd:string"/>
+                    <element name="fleetCare" nillable="true" type="xsd:string"/>
+                    <element name="ssoId" nillable="false" type="xsd:string"/>
+                    <!--
+                     New Fields added as a part fo the PDF generation CR START
+                    -->
+                    <element name="intchInDieselLitres" nillable="true" type="xsd:int"/>
+                    <element name="intchInDriverComments" nillable="true" type="xsd:string"/>
+                    <element name="timezoneOffset" nillable="false" type="xsd:string"/>
+                    <!--
+                     New Fields added as a part fo the PDF generation CR END
+                    -->
+                </sequence>
+            </complexType>
+            <!--
+             *********************** CHECK-IN SAVE SERVICE ENDS ********************
+            -->
+            <!--
+             *********************** CHECK-OUT SAVE SERVICE STARTS ********************
+            -->
+            <element name="checkOutSave">
+                <complexType>
+                    <sequence>
+                        <element name="sessionId" nillable="false" type="xsd:string"/>
+                        <element name="transactionId" nillable="false" type="xsd:string"/>
+                        <element name="branchNr" nillable="false" type="xsd:int"/>
+                        <element name="saveRequest" type="impl:CheckOutSaveInput" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="CheckOutSaveInput">
+                <sequence>
+                    <element name="interchange" nillable="false" type="impl:CheckOutSaveInterchange"/>
+                    <element name="intchTyre" nillable="true" type="impl:ArrayOfIntchTyre"/>
+                    <element name="accessories" nillable="true" type="impl:ArrayOfAccessories"/>
+                    <element name="checkoutDamages" nillable="true" type="impl:ArrayOfCheckoutDamages"/>
+                </sequence>
+            </complexType>
+            <element name="checkOutSaveResponse">
+                <complexType>
+                    <sequence>
+                        <element name="saveReturn" type="impl:CheckOutSaveResults"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="CheckOutSaveInterchange">
+                <sequence>
+                    <element name="unitNr" nillable="false" type="xsd:int"/>
+                    <element name="customerNr" nillable="false" type="xsd:int"/>
+                    <element name="companyNr" nillable="false" type="xsd:int"/>
+                    <element name="branchNr" nillable="false" type="xsd:int"/>
+                    <element name="intchOneWayBranchNr" nillable="true" type="xsd:int"/>
+                    <element name="intchOneWayCompanyNr" nillable="true" type="xsd:int"/>
+                    <element name="intchOutDate" nillable="true" type="xsd:string"/>
+                    <element name="intchOutKM" nillable="true" type="xsd:int"/>
+                    <element name="intchOutKMSecond" nillable="true" type="xsd:int"/>
+                    <element name="intchOutElectricHours" nillable="true" type="xsd:int"/>
+                    <element name="intchOutDieselHours" nillable="true" type="xsd:int"/>
+                    <element name="intchOutDownloadTime" nillable="true" type="xsd:string"/>
+                    <element name="intchOutDriverName" nillable="true" type="xsd:string"/>
+                    <element name="intchOutDriverLicense" nillable="true" type="xsd:string"/>
+                    <element name="intchOutDriverCompany" nillable="true" type="xsd:string"/>
+                    <element name="intchOutParkingLocation" nillable="true" type="xsd:string"/>
+                    <element name="ssoId" nillable="false" type="xsd:string"/>
+                    <!--
+                     New Fields added as a part fo the PDF generation CR START
+                    -->
+                    <element name="intchOutDieselLitres" nillable="true" type="xsd:int"/>
+                    <element name="intchOutDriverComments" nillable="true" type="xsd:string"/>
+                    <element name="timezoneOffset" nillable="false" type="xsd:string"/>
+                    <!--
+                     New Fields added as a part fo the PDF generation CR END
+                    -->
+                </sequence>
+            </complexType>
+            <complexType name="CheckOutSaveResults">
+                <complexContent>
+                    <extension base="impl:BaseReponse">
+                        <sequence>
+                            <element name="intchKey" type="xsd:long"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <!--
+             *********************** CHECK-OUT SAVE SERVICE ENDS ********************
+            -->
+            <!--
+             *********************** DOCUMENT UPLOAD SERVICE STARTS ********************
+            -->
+            <complexType name="Document">
+                <sequence>
+                    <!--
+                     Name should be INSRPRT_<<intch_key>>_COI.pdf for Check OUT and
+                                                            INSRPRT_<<Intch_Key>>_CII.pdf for Check IN
+                    -->
+                    <element name="name" type="xsd:string"/>
+                    <element name="binaryData" type="xsd:base64Binary" xmime:expectedContentTypes="application/pdf"/>
+                </sequence>
+            </complexType>
+            <element name="docUploadRequest">
+                <complexType>
+                    <sequence>
+                        <element name="intchKey" type="xsd:long" nillable="false"/>
+                        <!--
+                         Inspection Type should be COI for Check OUT and CII for Check In
+                        -->
+                        <element name="inspectionType" type="xsd:string" nillable="false"/>
+                        <element name="document" type="impl:Document" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="docUploadResponse">
+                <complexType>
+                    <complexContent>
+                        <extension base="impl:BaseReponse"/>
+                    </complexContent>
+                </complexType>
+            </element>
+            <!--
+             *********************** DOCUMENT UPLOAD SERVICE ENDS ********************
+            -->
+            <!--
+             ********************* image Upload Web Service START    ******************
+            -->
+            <complexType name="image">
+                <sequence>
+                    <element name="name" type="string" nillable="false"/>
+                    <element name="binarydata" type="base64Binary" nillable="false"/>
+                </sequence>
+            </complexType>
+            <!--
+             commented by Divyesh
+                        <complexType name="damageDraws">
+                            <sequence>
+                                <element name="draw" type="impl:image" maxOccurs="unbounded" minOccurs="0"/>
+                            </sequence>
+                            <attribute name="noOfDraws" type="int" />
+                        </complexType>
+
+            -->
+            <complexType name="picture">
+                <sequence>
+                    <element name="picture" type="impl:image" nillable="true"/>
+                    <element name="comment" type="string" nillable="true"/>
+                    <element name="lineNr" type="int" nillable="true"/>
+                    <element name="description" type="string" nillable="true"/>
+                </sequence>
+            </complexType>
+            <!--
+             commented by Divyesh
+                        <complexType name="damagePictures">
+                            <sequence>
+                                <element name="item" type="impl:picture" maxOccurs="unbounded" minOccurs="0" />
+                            </sequence>
+                            <attribute name="noOfPics" type="int" />
+                        </complexType>
+
+            -->
+            <element name="imgUploadRequest">
+                <complexType>
+                    <sequence>
+                        <element name="intchKey" type="long" nillable="false"/>
+                        <element name="insType" type="string" nillable="false"/>
+                        <element name="noOfPics" type="string" nillable="false"/>
+                        <element name="picType" type="string" nillable="false"/>
+                        <element name="signOrDD" type="impl:image" nillable="true"/>
+                        <element name="damagePic" type="impl:picture" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="imgUploadResponse">
+                <complexType>
+                    <complexContent>
+                        <extension base="impl:BaseReponse"/>
+                    </complexContent>
+                </complexType>
+            </element><!-- ********************* image Upload Web Service ENDS ****************** --><!--  generate document service -->
+            <element name="generateDocuRequest">
+                <complexType>
+                    <sequence>
+                        <element name="intchKey" type="long" nillable="false"/>
+                        <element name="insType" type="string" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="generateDocuResponse">
+                <complexType>
+                    <complexContent>
+                        <extension base="impl:BaseReponse"/>
+                    </complexContent>
+                </complexType>
+            </element><!-- - ******** Saleem Image Upload ***************** -->
+            <element name="getImageRequest">
+                <complexType>
+                    <sequence>
+                        <element name="name" type="string" nillable="true"/>
+                        <element name="imageUpload" type="impl:image" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="getImageResponse">
+                <complexType>
+                    <complexContent>
+                        <extension base="impl:BaseReponse"/>
+                    </complexContent>
+                </complexType>
+            </element>
+            <!--  - *************** Saleem Image upload end   -->
+            <!--
+             Added for CheckIn PDF Generation ###########################START
+            -->
+            <element name="generateCheckInPDFRequest">
+                <complexType>
+                    <sequence>
+                        <element name="intchKey" type="long" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="generateCheckInPDFResponse">
+                <complexType>
+                    <complexContent>
+                        <extension base="impl:BaseReponse"/>
+                    </complexContent>
+                </complexType>
+            </element>
+            <!--
+             Added for CheckIn PDF Generation######################################END
+            -->
+        </schema>
+    </wsdl:types>
+    <!--  login service  -->
+    <wsdl:message name="loginResponse">
+        <wsdl:part element="impl:loginResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="loginRequest">
+        <wsdl:part element="impl:login" name="parameters"/>
+    </wsdl:message>
+    <!--  login service  -->
+    <!--  login test service  -->
+    <wsdl:message name="loginTestResponse">
+        <wsdl:part element="impl:loginTestResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="loginTestRequest">
+        <wsdl:part element="impl:loginTest" name="parameters"/>
+    </wsdl:message>
+    <!--  login service  -->
+    <!--  fetch static list service  -->
+    <wsdl:message name="fetchStaticListResponse">
+        <wsdl:part element="impl:fetchStaticListResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="fetchStaticListRequest">
+        <wsdl:part element="impl:fetchStaticList" name="parameters"/>
+    </wsdl:message>
+    <!--  fetch static list service  -->
+    <!--  search service  -->
+    <wsdl:message name="searchRequest">
+        <wsdl:part element="impl:search" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="searchResponse">
+        <wsdl:part element="impl:searchResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  search service  -->
+    <!--  getBranches service  -->
+    <wsdl:message name="getBranchesRequest">
+        <wsdl:part element="impl:searchBranchesRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getBranchesResponse">
+        <wsdl:part element="impl:searchBranchesResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  getBranches service  -->
+    <!--  getTranslations service  -->
+    <wsdl:message name="getTranslationsRequest">
+        <wsdl:part element="impl:searchTranslationsRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getTranslationsResponse">
+        <wsdl:part element="impl:searchTranslationsResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  getTranslations service  -->
+    <!--  getImageChunks service  -->
+    <wsdl:message name="getImageChunksRequest">
+        <wsdl:part element="impl:searchImageChunksRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getImageChunksResponse">
+        <wsdl:part element="impl:searchImageChunksResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  getImageChunks service  -->
+    <!--  check-in save service  -->
+    <wsdl:message name="saveRequest">
+        <wsdl:part element="impl:save" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="saveResponse">
+        <wsdl:part element="impl:saveResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  check-in save service  -->
+    <!--  check-out save service  -->
+    <wsdl:message name="checkOutSaveRequest">
+        <wsdl:part element="impl:checkOutSave" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="checkOutSaveResponse">
+        <wsdl:part element="impl:checkOutSaveResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  check-out save service  -->
+    <!--  check-out fetch service  -->
+    <wsdl:message name="fetchRequest">
+        <wsdl:part element="impl:fetch" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="fetchResponse">
+        <wsdl:part element="impl:fetchResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  check-out fetch service  -->
+    <!--  document upload service  -->
+    <wsdl:message name="docUploadRequest">
+        <wsdl:part element="impl:docUploadRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="docUploadResponse">
+        <wsdl:part element="impl:docUploadResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  document upload service  -->
+    <!--  image upload service  -->
+    <wsdl:message name="imgUploadRequest">
+        <wsdl:part element="impl:imgUploadRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="imgUploadResponse">
+        <wsdl:part element="impl:imgUploadResponse" name="parametersResponse"/>
+    </wsdl:message><!-- document generate service -->
+    <wsdl:message name="generateDocuRequest">
+        <wsdl:part element="impl:generateDocuRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="generateDocuResponse">
+        <wsdl:part element="impl:generateDocuResponse" name="parametersResponse"/>
+    </wsdl:message><!-- saleem image upload service -->
+    <wsdl:message name="getImageRequest">
+        <wsdl:part element="impl:getImageRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getImageResponse">
+        <wsdl:part element="impl:getImageResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  CheckInPDFService  -->
+    <wsdl:message name="generateCheckInPDFRequest">
+        <wsdl:part element="impl:generateCheckInPDFRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="generateCheckInPDFResponse">
+        <wsdl:part element="impl:generateCheckInPDFResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  CheckInPDFService  -->
+    <!--  getDamageDetails service  -->
+    <wsdl:message name="getDamangeDetailsRequest">
+        <wsdl:part element="impl:getDamangeDetailsRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getDamangeDetailsResponse">
+        <wsdl:part element="impl:getDamangeDetailsResponse" name="parametersResponse"/>
+    </wsdl:message>
+    <!--  getDamageDetails service  -->
+    <wsdl:portType name="PocketMobileService">
+        <wsdl:operation name="search">
+            <wsdl:input message="impl:searchRequest" name="searchRequest"/>
+            <wsdl:output message="impl:searchResponse" name="searchResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBranches">
+            <wsdl:input message="impl:getBranchesRequest" name="getBranchesRequest"/>
+            <wsdl:output message="impl:getBranchesResponse" name="getBranchesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTranslations">
+            <wsdl:input message="impl:getTranslationsRequest" name="getTranslationsRequest"/>
+            <wsdl:output message="impl:getTranslationsResponse" name="getTranslationsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getImageChunks">
+            <wsdl:input message="impl:getImageChunksRequest" name="getImageChunksRequest"/>
+            <wsdl:output message="impl:getImageChunksResponse" name="getImageChunksResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="login">
+            <wsdl:input message="impl:loginRequest" name="loginRequest"/>
+            <wsdl:output message="impl:loginResponse" name="loginResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="loginTest">
+            <wsdl:input message="impl:loginTestRequest" name="loginTestRequest"/>
+            <wsdl:output message="impl:loginTestResponse" name="loginTestResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="fetchStaticList">
+            <wsdl:input message="impl:fetchStaticListRequest" name="fetchStaticListRequest"/>
+            <wsdl:output message="impl:fetchStaticListResponse" name="fetchStaticListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="save">
+            <wsdl:input message="impl:saveRequest" name="saveRequest"/>
+            <wsdl:output message="impl:saveResponse" name="saveResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="checkOutSave">
+            <wsdl:input message="impl:checkOutSaveRequest" name="checkOutSaveRequest"/>
+            <wsdl:output message="impl:checkOutSaveResponse" name="checkOutSaveResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="fetch">
+            <wsdl:input message="impl:fetchRequest" name="fetchRequest"/>
+            <wsdl:output message="impl:fetchResponse" name="fetchResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="documentUpload">
+            <wsdl:input message="impl:docUploadRequest" name="docUploadRequest"/>
+            <wsdl:output message="impl:docUploadResponse" name="docUploadResponse"/>
+        </wsdl:operation>
+        <!--  image upload service starts  -->
+        <wsdl:operation name="imageUpload">
+            <wsdl:input message="impl:imgUploadRequest" name="imgUploadRequest"/>
+            <wsdl:output message="impl:imgUploadResponse" name="imgUploadResponse"/>
+        </wsdl:operation><!-- image upload service ends --><!-- image upload service starts -->
+        <wsdl:operation name="generateDocument">
+            <wsdl:input message="impl:generateDocuRequest" name="generateDocuRequest"/>
+            <wsdl:output message="impl:generateDocuResponse" name="generateDocuResponse"/>
+        </wsdl:operation><!-- image upload service ends --><!-- saleem image upload service starts -->
+        <wsdl:operation name="getImage">
+            <wsdl:input message="impl:getImageRequest" name="getImageRequest"/>
+            <wsdl:output message="impl:getImageResponse" name="getImageResponse"/>
+        </wsdl:operation>
+        <!--  saleem image upload service ends  -->
+        <!--  CheckIn PDF Service starts -->
+        <wsdl:operation name="generateCheckInPDF">
+            <wsdl:input message="impl:generateCheckInPDFRequest" name="generateCheckInPDFRequest"/>
+            <wsdl:output message="impl:generateCheckInPDFResponse" name="generateCheckInPDFResponse"/>
+        </wsdl:operation>
+        <!--  CheckIn PDF Service ends  -->
+        <wsdl:operation name="getDamangeDetails">
+            <wsdl:input message="impl:getDamangeDetailsRequest" name="getDamangeDetailsRequest"/>
+            <wsdl:output message="impl:getDamangeDetailsResponse" name="getDamangeDetailsResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PocketMobileServiceSoapBinding" type="impl:PocketMobileService">
+        <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="search">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="searchRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="searchResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBranches">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getBranchesRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getBranchesResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTranslations">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getTranslationsRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getTranslationsResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getImageChunks">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getImageChunksRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getImageChunksResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="login">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="loginRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="loginResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="loginTest">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="loginTestRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="loginTestResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="fetchStaticList">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="fetchStaticListRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="fetchStaticListResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="save">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="saveRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="saveResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="checkOutSave">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="checkOutSaveRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="checkOutSaveResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="fetch">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="fetchRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="fetchResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="documentUpload">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="docUploadRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="docUploadResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="imageUpload">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="imgUploadRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="imgUploadResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="generateDocument">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="generateDocuRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="generateDocuResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getImage">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getImageRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getImageResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <!--  For CheckIn PDF Service  -->
+        <wsdl:operation name="generateCheckInPDF">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="generateCheckInPDFRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="generateCheckInPDFResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <!--  For CheckIn PDF Service -->
+        <!--  For getDamageDetails Service  -->
+        <wsdl:operation name="getDamangeDetails">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getDamangeDetailsRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDamangeDetailsResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <!--  For CheckIn PDF Service -->
+    </wsdl:binding>
+    <wsdl:service name="PocketMobileServiceService">
+        <wsdl:port binding="impl:PocketMobileServiceSoapBinding" name="PocketMobileService">
+            <wsdlsoap:address location="https://www.tip-europe.com/UAT/PMALSCheckInServices/PocketMobileService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

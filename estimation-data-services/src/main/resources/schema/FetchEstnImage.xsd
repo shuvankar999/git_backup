@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchEstnImage"
+	xmlns:tns="http://www.example.org/FetchEstnImage" elementFormDefault="qualified">
+
+	<complexType name="FetchEstnImageRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnworkorderId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="FetchEstnImageResponse">
+		<sequence>
+			<element name="EstnImagelist" type="tns:ImageList"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ImageList">
+		<sequence>
+		
+			<element name="photoType" type="string" minOccurs="0"></element>
+			<element name="photoName" type="string" minOccurs="0"></element>
+			<element name="photoLoc" type="string" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+
+</schema>

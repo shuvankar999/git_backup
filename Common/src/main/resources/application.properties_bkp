@@ -1,0 +1,15 @@
+spring.datasource.url=jdbc:sybase:Tds:10.236.187.13:5555/OPSals
+spring.datasource.username=devuser
+spring.datasource.password=rizzo123
+spring.datasource.driver-class-name=com.sybase.jdbc3.jdbc.SybDriver
+# Number of ms to wait before throwing an exception if no connection is available.
+spring.datasource.tomcat.max-wait=10000
+
+# Maximum number of active connections that can be allocated from this pool at the same time.
+spring.datasource.tomcat.max-active=50
+
+# Validate the connection before borrowing it from the pool.
+spring.datasource.tomcat.test-on-borrow=true
+
+logging.level.root=WARN
+logging.level.org.springframework.web=DEBUG

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SearchWpHistoryRequest" xmlns:tns="http://www.example.org/SearchWpHistoryRequest" elementFormDefault="qualified">
+	<complexType name="SearchRange">
+		<sequence>
+			<element name="Branch_Id" type="string" minOccurs="0"></element>
+			<element name="From_Date" type="string" minOccurs="0"></element>
+			<element name="To_Date" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

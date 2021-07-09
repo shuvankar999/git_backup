@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FeeCardDetails"
+	xmlns:tns="http://www.example.org/FeeCardDetails" elementFormDefault="qualified">
+	
+	<complexType name="FeeCardDetailsRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="FeeCardDetailsResponse">
+		<sequence>
+			<element name="SupplierFeeDetailsList" type="tns:FeeDetailsObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="FeeDetailsObject">
+		<sequence>
+			<element name="supplierId" type="int"
+				minOccurs="0"></element>
+			<element name="feeGroupId" type="int" minOccurs="0"></element>
+			<element name="feeSubgrpId" type="int" minOccurs="0"></element>
+			<element name="feeItemId" type="int"
+				minOccurs="0"></element>
+			<element name="dnaCode" type="string" minOccurs="0"></element>
+			<element name="groups" type="string" minOccurs="0"></element>
+			<element name="subGroup" type="string"
+				minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="maintActionCd" type="string" minOccurs="0"></element>
+			<element name="actionDesc" type="string"
+				minOccurs="0"></element>	
+			<element name="fee" type="string" minOccurs="0"></element>
+			<element name="isActive" type="string" minOccurs="0"></element>	
+			<element name="isEnabled" type="string" minOccurs="0"></element>		
+		</sequence>
+	</complexType>
+	
+</schema>

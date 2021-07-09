@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ValidateService" xmlns:tns="http://www.example.org/ValidateService" elementFormDefault="qualified">
+	<complexType name="ValidSerialNrRequest">
+		<sequence>
+			<element name="Equipment_Nr" type="int" minOccurs="0"></element>
+			<element name="serialNr" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="ValidLicenseRequest">
+		<sequence>
+			<element name="Equipment_Nr" type="int" minOccurs="0"></element>
+			<element name="licenceCountryCd" type="string" minOccurs="0"></element>
+			<element name="licenceNr" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

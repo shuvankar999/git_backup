@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  
+spring:
+  profiles:
+    active: LOCAL
+  datasource:
+    driverClassName: com.sybase.jdbc3.jdbc.SybDriver
+    password: rizzo123
+    url: jdbc:sybase:Tds:10.236.187.13:5555/OPSwshp
+    username: devuser
+  http:
+    multipart:
+     max-file-size: -1
+     max-request-size: -1
+    
+elasticsearch:
+  clustername: TIP-application
+  host: 10.236.185.9
+  port: 9300
+  host1: 10.236.185.9
+  port1: 9300

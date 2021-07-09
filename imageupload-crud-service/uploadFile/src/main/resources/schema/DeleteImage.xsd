@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/DeleteImage" xmlns:tns="http://www.example.org/DeleteImage" elementFormDefault="qualified">
+	<complexType name="DeleteImageRequest">
+		<sequence>
+			<element name="Work_Pack_Nr" type="string" minOccurs="0"></element>
+			<element name="Work_Order_Nr" type="string" minOccurs="0"></element>
+			<element name="Work_Order_Task_Nr" type="string" minOccurs="0"></element>
+			<element name="Image_Type" type="string" minOccurs="0"></element>
+			<element name="Image_Name" type="string" minOccurs="0"></element>
+			<element name="Image_Location" type="string" minOccurs="0"></element>
+			<element name="App_Cd" type="string" minOccurs="0"></element>
+			<element name="Insp_Type" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

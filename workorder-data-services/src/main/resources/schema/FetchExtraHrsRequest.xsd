@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchExtraHrsRequest" xmlns:tns="http://www.example.org/FetchExtraHrsRequest" elementFormDefault="qualified">
+	
+	<complexType name="ExtraHrsRequest">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Language_Id" type="int"	minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

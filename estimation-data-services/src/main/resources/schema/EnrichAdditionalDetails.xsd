@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EnrichAdditionalDetails" xmlns:tns="http://www.example.org/EnrichAdditionalDetails" elementFormDefault="qualified">
+	
+	
+	<complexType name="EnrichAddtionalRequest">
+	<sequence>
+			<element name= "estimationId" type="decimal" minOccurs="0"></element>
+			<element name= "langId" type="int" minOccurs="0"></element>
+	
+	
+	</sequence>
+	</complexType>
+	
+		<complexType name="EnrichAddtionalResponse">
+	<sequence>
+			<element name="estnWoList"  type="tns:EnrichWoObject" maxOccurs="unbounded"></element>
+			<element name="estnUnMatchedPartLists" type="tns:EnrichAddtnlPartsObject" maxOccurs="unbounded"></element>
+					
+	</sequence>
+	</complexType>
+			
+			<complexType name="EnrichWoObject">
+		<sequence>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="supplierName" type="string" minOccurs="0"></element>
+			<element name="groupCd" type="string" minOccurs="0"></element>
+			<element name="groupCdDesc" type="string" minOccurs="0"></element>		   																			
+			<element name="LoTaskCount" type="int" minOccurs="0"></element>
+			<element name="PartsCount" type="int" minOccurs="0"></element>
+			<element name="estnTyreCnt" type="int" minOccurs="0"></element>
+			<element name="loCommentsInternal" type="string" minOccurs="0"></element>
+			<element name="loCommentsCustomers" type="string" minOccurs="0"></element>					
+			 <element name="totTagetTime" type="decimal" minOccurs="0"></element>
+			 <element name="labourTime" type="string" minOccurs="0"></element>		
+			 <element name="estnLabourRatesList" type="tns:EnrichLabourRatesObject" maxOccurs="unbounded"></element>
+			<element name="etsnTyreLabourRatesList"  type="tns:EnrichTyreLabourRatesObject" maxOccurs="unbounded"></element>													
+			<element name="estnWotList" type="tns:EnrichAddtnlWotObject" maxOccurs="unbounded"></element>
+			<element name="estnMatchedPartLists" type="tns:EnrichAddtnlPartsObject" maxOccurs="unbounded"></element>	
+			
+		</sequence>
+	</complexType>
+	
+	<complexType name="EnrichAddtnlWotObject">
+		<sequence>
+																			
+			<element name="estnWOId" type="int" minOccurs="0"></element>		
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="groupCd" type="string" minOccurs="0"></element>	
+			<element name="subgroupCd" type="string" minOccurs="0"></element>
+			<element name="activityCd" type="string" minOccurs="0"></element>	
+			<element name="failureCauseCd" type="string" minOccurs="0"></element>			
+			<element name="actionCd" type="string" minOccurs="0"></element>
+			<element name="positionCd" type="string" minOccurs="0"></element>
+			<element name="targetTime" type="decimal" minOccurs="0"></element>		
+			<element name="reasonCd" type="string" minOccurs="0"></element>
+			<element name="groupCdDesc" type="string" minOccurs="0"></element>	
+			<element name="subGroup" type="string" minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>	
+			<element name="failureCause" type="string" minOccurs="0"></element>			
+			<element name="action" type="string" minOccurs="0"></element>
+			<element name="reason" type="string" minOccurs="0"></element>
+			<element name="position" type="string" minOccurs="0"></element>		
+			<element name="soldTime" type="double" minOccurs="0"></element>
+			<element name="labourRate" type="decimal" minOccurs="0"></element>	
+			<element name="labourTime" type="string" minOccurs="0"></element>
+			<element name="showHide" type="boolean" minOccurs="0"></element>	
+			<element name="taskComments" type="string" minOccurs="0"></element>			
+			<element name="wshpWPNr" type="decimal" minOccurs="0"></element>
+			<element name="wshpWONr" type="int" minOccurs="0"></element>
+			<element name="wshpWOTNr" type="int" minOccurs="0"></element>		
+			<element name="Attribute" type="boolean" minOccurs="0"></element>	
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>	
+												
+		</sequence>
+	</complexType>
+	
+	<complexType name="EnrichAddtnlPartsObject">
+		<sequence>
+	
+			<element name="partNumber" type="string" minOccurs="0"></element>
+			<element name="partDesc" type="string" minOccurs="0"></element>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="currency" type="string" minOccurs="0"></element>
+			<element name="quantity" type="int" minOccurs="0"></element>
+			<element name="costToTip" type="decimal" minOccurs="0"></element>
+			<element name="costPlus" type="decimal" minOccurs="0"></element>
+			<element name="retailPrice" type="decimal" minOccurs="0"></element>
+			<element name="dicount" type="decimal" minOccurs="0"></element>
+			<element name="showHide" type="boolean" minOccurs="0"></element>	
+			 <element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="fixedPrice" type="decimal" minOccurs="0"></element>
+			<element name="isApproved" type="string" minOccurs="0"></element>
+			<element name="isRejected" type="string" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+	
+	<complexType name="EnrichLabourRatesObject">
+		<sequence>
+				<element name="labourTime" type="string" minOccurs="0"></element>
+				<element name="rate" type="decimal" minOccurs="0"></element>
+		
+		</sequence>
+		</complexType>
+				
+	<complexType name="EnrichTyreLabourRatesObject">
+		<sequence>
+				<element name="labourCd" type="string" minOccurs="0"></element>
+				<element name="labourTime" type="string" minOccurs="0"></element>
+				<element name="tyreLabourTime" type="string" minOccurs="0"></element>
+				<element name="rate" type="decimal" minOccurs="0"></element>
+		
+		</sequence>
+		</complexType>
+		
+</schema>

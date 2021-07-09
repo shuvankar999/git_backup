@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/TechnicianResponse" xmlns:tns="http://www.example.org/TechnicianResponse" elementFormDefault="qualified">
+
+	<complexType name="TechnicianDetails">
+		<sequence>
+			<element name="Technician_Id" type="string" minOccurs="0"></element>
+			<element name="Technician_Name" type="string" minOccurs="0"></element>
+			<element name="Technician_Status" type="string" minOccurs="0"></element>
+			<element name="wpCount" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

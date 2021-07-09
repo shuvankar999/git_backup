@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveCiaInspection"
+	xmlns:tns="http://www.example.org/SaveCiaInspection" elementFormDefault="qualified">
+
+	<complexType name="SaveCiaInspectionRequest">
+		<sequence>
+			<element name="InspectionHeaderDataList" type="tns:InspectionHeaderDataObject"
+				maxOccurs="unbounded"></element>
+			<element name="InspectionItemDataList" type="tns:InspectionItemDataObject"
+				maxOccurs="unbounded"></element>
+			<element name="InspectionDamageDataList" type="tns:InspectionDamageDataObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspectionHeaderDataObject">
+		<sequence>
+			<element name="Device_Insp_Id" type="string" minOccurs="0"></element>
+			<element name="Insp_Type" type="string" minOccurs="0"></element>
+			<element name="Customer_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Unit_Nr" type="int" minOccurs="1"></element>
+			<element name="Insp_Date" type="string" minOccurs="0"></element>
+			<element name="Insp_Location" type="string" minOccurs="0"></element>
+			<element name="Insp_Loc_Longitude" type="decimal" minOccurs="0"></element>
+			<element name="Insp_Loc_Latitude" type="decimal" minOccurs="0"></element>
+			<element name="Insp_Loc_Altitude" type="decimal" minOccurs="0"></element>
+			<element name="Insp_Driver_Company" type="string" minOccurs="0"></element>
+			<element name="Insp_Remarks" type="string" minOccurs="0"></element>
+			<element name="User_Email" type="string" minOccurs="1"></element>
+			<element name="Time_Zone_Offset" type="string" minOccurs="0"></element>
+			<element name="Insp_Id" type="int" minOccurs="0"></element>
+			<element name="RejCd" type="int" minOccurs="0"></element>
+			<element name="RejMsg" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+		
+	<complexType name="InspectionItemDataObject">
+		<sequence>
+			<element name="Insp_Id" type="decimal" minOccurs="1"></element>
+			<element name="Insp_Cd" type="string" minOccurs="1"></element>
+			<element name="Insp_Ind" type="string" minOccurs="1"></element>
+			<element name="Insp_Desc" type="string" minOccurs="1"></element>
+			<element name="rejCd" type="int" minOccurs="0"></element>
+			<element name="rejDesc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspectionDamageDataObject">
+		<sequence>
+			<element name="Insp_Id" type="decimal" minOccurs="1"></element>
+			<element name="Unit_Nr" type="int" minOccurs="1"></element>
+			<element name="Line_Nr" type="int" minOccurs="1"></element>
+			<element name="Insp_Cd" type="string" minOccurs="1"></element>
+			<element name="dna_Cd" type="string" minOccurs="1"></element>
+			<element name="Description" type="string" minOccurs="0"></element>
+			<element name="Device_Serial_Nr" type="string" minOccurs="0"></element>
+			<element name="Damage_Type" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="SaveCiaInspectionResponse">
+		<sequence>
+			<element name="InspectionHeaderResponseList" type="tns:InspectionHeaderResponseObject"
+				maxOccurs="unbounded"></element>
+			<element name="InspectionItemResponseList" type="tns:InspectionItemResponseObject"
+				maxOccurs="unbounded"></element>
+			<element name="InspectionDamageResponseList" type="tns:InspectionDamageResponseObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="InspectionHeaderResponseObject">
+		<sequence>
+			<element name="Insp_Id" type="decimal" minOccurs="0"></element>
+			<element name="Device_Insp_Id" type="string" minOccurs="0"></element>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Error_Desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspectionItemResponseObject">
+		<sequence>
+			<element name="Insp_Id" type="decimal" minOccurs="0"></element>
+			<element name="Insp_Cd" type="string" minOccurs="0"></element>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Error_Desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InspectionDamageResponseObject">
+		<sequence>
+			<element name="Insp_Id" type="decimal" minOccurs="0"></element>
+			<element name="Line_Nr" type="int" minOccurs="0"></element>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Error_Desc" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

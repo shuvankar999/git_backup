@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/AssetImage" xmlns:tns="http://www.example.org/AssetImage" elementFormDefault="qualified">
+
+	<complexType name="AssetImageRequest">
+		<sequence>
+			<element name="unit_nr" type="string" minOccurs="0"></element>
+			<element name="app_cd" type="string" minOccurs="0"></element>
+			<element name="sso_id" type="string" minOccurs="0"></element>
+			<element name="asset_type" type="string" minOccurs="0"></element>
+			<element name="imageType" type="string" minOccurs="0"></element>  
+		</sequence>
+	</complexType>
+	
+	<!-- <complexType name="AssetImageRequest">
+		<sequence>
+			<element name="unit_nr" type="string" minOccurs="0"></element>
+			<element name="app_cd" type="string" minOccurs="0"></element>
+			<element name="sso_id" type="string" minOccurs="0"></element>
+			<element name="asset_type" type="string" minOccurs="0"></element>
+			<element name="imageType" type="string" minOccurs="0"></element>  
+			<element name="langId" type="string" minOccurs="0"></element>    
+		</sequence>
+	</complexType> -->
+	
+	<complexType name="AssetImageResponse">
+		<sequence>
+			<element name="StandardImages" type="tns:AssetImageDetails" maxOccurs="unbounded"></element>
+			<element name="AdditionalImages" type="tns:AssetImageDetails" maxOccurs="unbounded"></element>
+			<element name="ErrorMsg" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="AssetImageDetails">
+		<sequence>
+			<element name="imagePath" type="string" minOccurs="0"></element>
+			<element name="imageName" type="string" minOccurs="0"></element>
+			<element name="imageType" type="string" minOccurs="0"></element>
+			<element name="imageLable" type="string" minOccurs="0"></element>
+			<element name="assetType" type="string" minOccurs="0"></element>
+			<element name="imageId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="UploadAssetImageResponse">
+		<sequence>
+			<element name="Msg" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="DeleteAssetImageRequest">
+		<sequence>
+			<element name="unit_nr" type="string" minOccurs="0"></element>
+			<element name="app_cd" type="string" minOccurs="0"></element>
+			<element name="sso_id" type="string" minOccurs="0"></element>
+			<element name="asset_type" type="string" minOccurs="0"></element>
+			<element name="imageType" type="string" minOccurs="0"></element>
+			<element name="imageId" type="int" minOccurs="0"></element>
+			<element name="imageName" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="DeleteAssetImageResponse">
+		<sequence>
+			<element name="Msg" type="string" minOccurs="0"></element> 
+		</sequence>
+	</complexType>
+
+</schema>

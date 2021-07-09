@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveEstnBrakeReadings" xmlns:tns="http://www.example.org/SaveEstnBrakeReadings" elementFormDefault="qualified">
+	<complexType name="SaveEstnBrakeRdngRequest">
+		<sequence>
+		
+		<element name="EstnBrakeReadingList" type="tns:EstnBrakeReadingObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EstnBrakeReadingObject">
+	<sequence>
+	
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="brakeCd" type="string" minOccurs="0"></element>
+			<element name="liningRemPer" type="float" minOccurs="0"></element>
+			<element name="liningRemMM" type="float" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+				
+	</sequence>
+	</complexType>
+	</schema>

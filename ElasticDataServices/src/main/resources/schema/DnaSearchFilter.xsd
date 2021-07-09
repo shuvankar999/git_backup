@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/DnaSearchFilter"
+	xmlns:tns="http://www.example.org/DnaSearchFilter" elementFormDefault="qualified">
+
+	<complexType name="FilterRequest">
+		<sequence>
+			<element name="lang_id" type="string" minOccurs="0"></element>
+			<element name ="SearchTextList" type="string" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+
+	<complexType name="FilterResponse">
+		<sequence>
+			<element name="DnaListDetails" type="tns:DnaListObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="DnaListObject">
+		<sequence>
+		
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="activity_desc" type="string" minOccurs="0"></element>
+			<element name="group_desc" type="string" minOccurs="0"></element>
+			<element name="lang_id" type="string" minOccurs="0"></element>
+			<element name="dna_cd" type="string" minOccurs="0"></element>
+			<element name="subgroup_cd" type="string" minOccurs="0"></element>
+			<element name="subgroup_desc" type="string" minOccurs="0"></element>
+			<element name="group_cd" type="string" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+
+</schema>

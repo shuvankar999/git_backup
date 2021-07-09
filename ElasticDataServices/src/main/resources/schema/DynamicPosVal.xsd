@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/DynamicPosVal" xmlns:tns="http://www.example.org/DynamicPosVal" elementFormDefault="qualified">
+
+	<complexType name="DynamicPosVal">
+		<sequence>
+			<element name="specgr_id" type="int" minOccurs="0"></element>
+			<element name="specitm_seq" type="int"	minOccurs="0"></element>
+			<element name="specval_seq" type="int" minOccurs="0"></element>			
+			<element name="specval_descr" type="string"	minOccurs="0"></element>
+			<element name="specval_shortcode" type="string"	minOccurs="0"></element>			      
+		</sequence>
+	</complexType>
+	
+	<complexType name="ArrayOfDynamicPosVal">
+		<sequence>
+			<element name="dynamicPosVals" type="tns:DynamicPosVal" maxOccurs="unbounded"></element>	
+			<element name="count" type="long" minOccurs="0"></element>		 
+		</sequence>
+	</complexType>
+
+</schema>

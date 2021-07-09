@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CryptoRsa" xmlns:tns="http://www.example.org/CryptoRsa" elementFormDefault="qualified">
+
+	<complexType name="SsoId">
+		<sequence>
+			<element name="Sso_Id" type="string" minOccurs="0"></element>
+			<element name="Public_K" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Keys">
+		<sequence>
+			<element name="Sso_Id" type="string" minOccurs="0"></element>
+			<element name="Public_K" type="string" minOccurs="0"></element>
+			<element name="Private_K" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

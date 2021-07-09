@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveEquipmentStatic" xmlns:tns="http://www.example.org/SaveEquipmentStatic" elementFormDefault="qualified">
+	<complexType name="SaveEquipStaticRequest">
+		<sequence>
+			<element name="Unit_Nr" type="int" minOccurs="0"></element>
+			<element name="Catgr_Id" type="int" minOccurs="0"></element>
+			<element name="Unit_Comment" type="string" minOccurs="0"></element>
+			<element name="Catgrp_Code" type="string" minOccurs="0"></element>
+			<element name="Serial_Nr" type="string" minOccurs="0"></element>
+			<element name="Category_Cd" type="string" minOccurs="0"></element>
+			<element name="Group_Cd" type="string" minOccurs="0"></element>
+			<element name="Manufacturer" type="string" minOccurs="0"></element>
+			<element name="Model_Year" type="int" minOccurs="0"></element>
+			<element name="Licence_Nr" type="string" minOccurs="0"></element>
+			<element name="Licence_Country_Cd" type="string" minOccurs="0"></element>
+			<element name="Available_For_Sale_Ind" type="string" minOccurs="0"></element>
+			<element name="Lien_Cd" type="string" minOccurs="0"></element>
+			<element name="Aquired_Company" type="string" minOccurs="0"></element>
+			<element name="Aquired_Refrnc" type="string" minOccurs="0"></element>
+			<element name="Customer_Refrnc" type="string" minOccurs="0"></element>
+			<element name="Branch_Nr" type="int" minOccurs="0"></element>
+			<element name="Status_Comment" type="string" minOccurs="0"></element>
+			<element name="Operational_Status" type="string" minOccurs="0"></element>
+			<element name="Sold_Date" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveCiaInspection"
+	xmlns:tns="http://www.example.org/SaveCiaInspection" elementFormDefault="qualified">
+
+	<complexType name="AddCiaAssestRequest">
+		<sequence>
+			<element name="equipmentNr" type="string" minOccurs="0"></element>
+			<element name="branchNr" type="int" minOccurs="0"></element>
+			<element name="companyNr" type="int" minOccurs="0"></element>
+			<element name="licenceCountryCd" type="string" minOccurs="0"></element>
+			<element name="licenceNr" type="string" minOccurs="0"></element>
+			<element name="custEquipRefNr" type="string" minOccurs="0"></element>
+			<element name="serialNr" type="string" minOccurs="0"></element>
+			<element name="equipManufacturer" type="string" minOccurs="0"></element>
+			<element name="subManufacturer" type="string" minOccurs="0"></element>
+			<element name="equipType" type="string" minOccurs="0"></element>
+			<element name="noOfAxles" type="int" minOccurs="0"></element>
+			<element name="customerNr" type="int" minOccurs="0"></element>
+			<element name="singleTyre" type="string" minOccurs="0"></element>
+			<element name="twinTyre" type="string" minOccurs="0"></element>
+			<element name="catGrpCode" type="string" minOccurs="0"></element>
+			<element name="equipmentStatus" type="int" minOccurs="0"></element>
+			<element name="userEmail" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="AddCiaAssestResponse">
+		<sequence>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+			<element name="equipmentNr" type="int" minOccurs="0"></element>
+			<element name="customerName" type="string" minOccurs="0"></element>
+			<element name="custEquipRef" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/TechnicianRequest" xmlns:tns="http://www.example.org/TechnicianRequest" elementFormDefault="qualified">
+	<complexType name="TechnicianDetailsRequest">
+		<sequence>
+			<element name="Branch_Id" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

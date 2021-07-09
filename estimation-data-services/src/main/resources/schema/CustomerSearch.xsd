@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CustomerSearch" xmlns:tns="http://www.example.org/CustomerSearch" elementFormDefault="qualified">
+
+<complexType name="CustomerSearchRequest">
+		<sequence>
+			<element name="customer" type="string" minOccurs="0"></element>
+			<element name="appCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

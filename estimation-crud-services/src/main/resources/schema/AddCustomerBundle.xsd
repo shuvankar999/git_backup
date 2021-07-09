@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/AddCustomerBundle" xmlns:tns="http://www.example.org/AddCustomerBundle" elementFormDefault="qualified">
+	<complexType name="CustomerBundleObj" >
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="bundleName" type="string" minOccurs="0"></element>
+			<element name="dnaCode" type="string" minOccurs="0"></element>
+			<element name="maintenanceAction" type="string" minOccurs="0"></element>
+			<element name="manufacturerId" type="string" minOccurs="0"></element>
+			<element name="manufacturer" type="string" minOccurs="0"></element>
+			<element name="supplierPartNr" type="string" minOccurs="0"></element>
+			<element name="fee" type="double" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	
+</schema>
+

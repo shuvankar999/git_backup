@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ResourcePipelineResponse" xmlns:tns="http://www.example.org/ResourcePipelineResponse" elementFormDefault="qualified">
+
+<complexType name="ResourcePipelineResponse">
+		<sequence>
+			<element name="PipelineDetails" type="tns:PipelineDetails" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="PipelineDetails">
+		<sequence>
+			<element name="Asset_Number" type="int" minOccurs="0"></element>
+			<element name="Customer_Reference_Nr" type="string" minOccurs="0"></element>
+			<element name="Registration_Nr" type="string" minOccurs="0"></element>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Required_Done_Date" type="string" minOccurs="0"></element>
+			<element name="Total_Guide_Time" type="double" minOccurs="0"></element>
+			<element name="Customer_Nr" type="int" minOccurs="0"></element>
+			<element name="Customer_Name" type="string" minOccurs="0"></element>
+			<element name="Chassis_Number" type="string" minOccurs="0"></element>
+			<element name="workOrder_Cnt" type="int" minOccurs="0"></element>
+			<element name="Description" type="string" minOccurs="0"></element>
+			<element name="Supplier_Id" type="int" minOccurs="0"></element>
+			<element name="Driver_Waiting" type="string" minOccurs="0"></element>
+			<element name="Work_Pack_Status_Id" type="int" minOccurs="0"></element>
+			<element name="WorkPack_Status" type="string" minOccurs="0"></element>
+			<element name="WorkPack_Priority" type="int" minOccurs="0"></element>
+			<element name="Work_Date" type="string" minOccurs="0"></element>
+			<element name="Unit_Catgrp_Code" type="string" minOccurs="0"></element>
+			<element name="Supplier_Name" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

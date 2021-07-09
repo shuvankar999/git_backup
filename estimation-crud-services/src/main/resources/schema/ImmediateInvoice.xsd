@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ImmediateInvoice" xmlns:tns="http://www.example.org/ImmediateInvoice" elementFormDefault="qualified">
+	<!-- <complexType name="InvoiceResponse">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType> -->
+	<complexType name="InvoiceRequest">
+		<sequence>
+			<element name="regular" type="tns:Workorder" maxOccurs="unbounded"></element>
+			<element name="additional" type="tns:Workorder" maxOccurs="unbounded"></element>
+			<element name="headerData" type="tns:HeaderData" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Workorder">
+		<sequence>
+			<element name="EstWoId" type="int" minOccurs="0"></element>
+			<element name="Estimation_Details" type="string" minOccurs="0"></element>
+			<element name="Type" type="string" minOccurs="0"></element>
+			<element name="estQty" type="int" minOccurs="0"></element>
+			<element name="estimatedCost" type="decimal" minOccurs="0"></element>
+			<element name="actQty" type="int" minOccurs="0"></element>
+			<element name="actualCost" type="decimal" minOccurs="0"></element>
+			<element name="Tasks" type="tns:Task" maxOccurs="unbounded"></element>
+			<element name="Parts" type="tns:Part" maxOccurs="unbounded"></element>
+			<element name="Tyres" type="tns:Tyre" maxOccurs="unbounded"></element>
+			<element name="TyreServices" type="tns:InvoiceTyreService" maxOccurs="unbounded"></element>
+			<element name="ConsumablesList" type="tns:Consumables" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Task">
+		<sequence>
+			<element name="EstWoId" type="int" minOccurs="0"></element>
+			<element name="EstWotId" type="int" minOccurs="0"></element>
+			<element name="taskNumber" type="int" minOccurs="0"></element>
+			<element name="taskName" type="string" minOccurs="0"></element>
+			<element name="estQty" type="int" minOccurs="0"></element>
+			<element name="estimatedCost" type="decimal" minOccurs="0"></element>
+			<element name="actQty" type="int" minOccurs="0"></element>
+			<element name="actualCost" type="decimal" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Tyre">
+		<sequence>
+			<element name="EstWoId" type="int" minOccurs="0"></element>
+			<element name="EstWotId" type="int" minOccurs="0"></element>
+			<element name="tyreSize" type="string" minOccurs="0"></element>
+			<element name="application" type="int" minOccurs="0"></element>
+			<element name="brand" type="string" minOccurs="0"></element>
+			<element name="tyreStatus" type="string" minOccurs="0"></element>
+			<element name="ChargeType" type="string" minOccurs="0"></element>
+			<element name="lostmm" type="int" minOccurs="0"></element>
+			<element name="tyrePrice" type="decimal" minOccurs="0"></element>
+			<element name="fees" type="string" minOccurs="0"></element>
+			<element name="feesPrice" type="decimal" minOccurs="0"></element>
+			<element name="cashingValue" type="string" minOccurs="0"></element>
+			<element name="cashingPrice" type="int" minOccurs="0"></element>
+			<element name="tyreSpecgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreSpecsubgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreSpecItemId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="InvoiceTyreService">
+		<sequence>
+			<element name="EstWoId" type="int" minOccurs="0"></element>
+			<element name="EstWotId" type="int" minOccurs="0"></element>
+			<element name="tyreService" type="string" minOccurs="0"></element>
+			<element name="charges" type="decimal" minOccurs="0"></element>
+			<element name="tyreServicegrpId" type="int" minOccurs="0"></element>
+			<element name="tyreServicesubgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreServiceItemId" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Consumables">
+		<sequence>
+			<element name="consmblegroupId" type="int" minOccurs="0"></element>
+			<element name="consmblesubGroupId" type="int" minOccurs="0"></element>
+			<element name="consmbleitemId" type="int" minOccurs="0"></element>
+			<element name="consumables" type="string" minOccurs="0"></element>
+			<element name="charges" type="decimal" minOccurs="0"></element>
+			<element name="fee" type="decimal" minOccurs="0"></element>
+			<element name="minAmount" type="decimal" minOccurs="0"></element>
+			<element name="maxAmount" type="decimal" minOccurs="0"></element>
+			<element name="percentage" type="decimal" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Part">
+		<sequence>
+			<element name="EstWoId" type="int" minOccurs="0"></element>
+			<element name="EstWotId" type="int" minOccurs="0"></element>
+			<element name="partsNumber" type="string" minOccurs="0"></element>
+			<element name="partDesc" type="string" minOccurs="0"></element>
+			<element name="estQty" type="int" minOccurs="0"></element>
+			<element name="estimatedCost" type="decimal" minOccurs="0"></element>
+			<element name="actQty" type="int" minOccurs="0"></element>
+			<element name="actualCost" type="decimal" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="HeaderData">
+		<sequence>
+			<element name="tipAssetNr" type="int" minOccurs="0"></element>
+			<element name="currency" type="string" minOccurs="0"></element>
+			<element name="vat" type="decimal" minOccurs="0"></element>
+			<element name="vatRate" type="decimal" minOccurs="0"></element>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="intchKey" type="decimal" minOccurs="0"></element>
+			<element name="custNr" type="int" minOccurs="0"></element>
+			<element name="insurerNr" type="int" minOccurs="0"></element>
+			<element name="incidentNr" type="string" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="RebillDetails">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="rebillNr" type="int" minOccurs="0"></element>
+			<element name="errorMsg" type="string" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="InvoiceBundleData">
+		<sequence>
+			<element name="bundleName" type="string" minOccurs="0"></element>
+			<element name="fee" type="decimal" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="GenerateInvoiceRequest">
+		<sequence>
+			<element name="invoiceNr" type="string" minOccurs="0"></element>
+			<element name="invoiceRunNr" type="int" minOccurs="0"></element>
+			<element name="environment" type="string" minOccurs="0"></element>
+			<element name="appCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="GetDocumentRequest">
+		<sequence>
+			<element name="documentId" type="int" minOccurs="0"></element>
+			<element name="documentName" type="string" minOccurs="0"></element>
+			<element name="appCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

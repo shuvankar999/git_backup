@@ -1,0 +1,18 @@
+spring:
+  profiles.active: default
+---
+spring:
+  profiles: default
+spring.datasource:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost/testschema?useSSL=false
+  username: root
+  password: Pa55word
+---
+spring:
+  profiles: qa
+spring.datasource:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost/testschema?useSSL=false
+  username: root
+  password: Pa55word

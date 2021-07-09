@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchEstnTyreAttribute"
+	xmlns:tns="http://www.example.org/FetchEstnTyreAttribute" elementFormDefault="qualified">
+
+	<complexType name="EstnTyreAttributeRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnworkorderId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+
+	<complexType name="EstnTyreAttributeResponse">
+		<sequence>
+			<element name="TyreSpeclist" type="tns:TyreSpecsObject"
+				maxOccurs="unbounded"></element>
+			<element name="TyreServicelist" type="tns:TyreServiceObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="TyreSpecsObject">
+		<sequence>
+			<element name="tyreSpecgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreSpecsubgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreSpecItemId" type="int" minOccurs="0"></element>
+			<element name="tyreSize" type="string" minOccurs="0"></element>
+			<element name="lostMMNew" type="double" minOccurs="0"></element>
+			<element name="lostMMRetread" type="double" minOccurs="0"></element>
+			<element name="fullNewPrice" type="double" minOccurs="0"></element>
+			<element name="fullRetreadPrice" type="double" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+
+
+	<complexType name="TyreServiceObject">
+		<sequence>
+			<element name="tyreServicegrpId" type="int" minOccurs="0"></element>
+			<element name="tyreServicesubgrpId" type="int" minOccurs="0"></element>
+			<element name="tyreServiceItemId" type="int" minOccurs="0"></element>
+			<element name="tyreService" type="string" minOccurs="0"></element>
+			<element name="charge" type="double" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+
+</schema>

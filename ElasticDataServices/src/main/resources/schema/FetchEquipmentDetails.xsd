@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchEquipmentDetails"
+	xmlns:tns="http://www.example.org/FetchEquipmentDetails"
+	elementFormDefault="qualified">
+	<complexType name="FetchEquipDetailsRequest">
+		<sequence>
+			<element name="App_Cd" type="string" minOccurs="0"></element>
+			<element name="Unit_Nr" type="int" minOccurs="0"></element>
+			<element name="Sso_Id" type="string" minOccurs="0"></element>
+			<element name="Language_Id" type="int" minOccurs="0"></element>
+			<element name="Catgr_Id" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="FetchEquipDetailsResponse">
+		<sequence>
+			<element name="ModulesDet" type="tns:Modules" minOccurs="0"></element>
+			<element name="StatusList" type="tns:Status" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Status">
+		<sequence>
+			<element name="Unit_Nr" type="int" minOccurs="0"></element>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Status_Id" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Modules">
+		<sequence>
+			<element name="DynamicModuleList" type="tns:DynamicModule" maxOccurs="unbounded"></element>
+			<element name="StaticModuleList" type="tns:StaticModule" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="DynamicModule">
+		<sequence>
+			<element name="moduleName" type="string" minOccurs="0"></element>
+			<element name="Specgr_Id" type="int" minOccurs="0"></element>
+			<element name="forms" type="tns:Form" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="StaticModule">
+		<sequence>
+			<element name="moduleName" type="string" minOccurs="0"></element>
+			<element name="forms" type="tns:Form" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Form">
+		<sequence>
+			<element name="type" type="string" minOccurs="0"></element>
+			<element name="label" type="string" minOccurs="0"></element>
+			<element name="value" type="string" minOccurs="0"></element>
+			<element name="disabled" type="boolean" minOccurs="0"></element>
+			<element name="valuetype" type="string" minOccurs="0"></element>
+			<element name="minDate" type="string" minOccurs="0"></element>
+			<element name="maxDate" type="string" minOccurs="0"></element>
+			<element name="options" type="tns:Option" maxOccurs="unbounded"></element>
+			<element name="itemLimit" type="string" minOccurs="0"></element>
+			<element name="itemReq" type="string" minOccurs="0"></element>
+			<element name="textPosMin" type="int" minOccurs="0"></element>
+			<element name="textPosMax" type="int" minOccurs="0"></element>
+			<element name="valRangeMin" type="int" minOccurs="0"></element>
+			<element name="valRangeMax" type="int" minOccurs="0"></element>
+			<element name="Specitm_Seq" type="int" minOccurs="0"></element>
+			<element name="Db_Column_Name" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Option">
+		<sequence>
+			<element name="value" type="string" minOccurs="0"></element>
+			<element name="name" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

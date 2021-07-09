@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>imageupload-crud-service</artifactId>
+        <groupId>com.tip.mos</groupId>
+        <version>1.0.3.BUILD-SNAPSHOT</version>
+    </parent>
+    <artifactId>uploadFile</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <start-class>com.tip.SpringBootWebApplication</start-class>
+    </properties>
+
+
+<!--
+
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            </dependency>
+
+            &lt;!&ndash; hot swapping, disable cache for template, enable live reload &ndash;&gt;
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>4.3.8.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sybase</groupId>
+                <artifactId>jconn3</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>net.sourceforge.jtds.jdbc.Driver</groupId>
+                <artifactId>jtds</artifactId>
+                <version>1.2.1</version>
+            </dependency>
+
+        </dependencies>
+
+        <build>
+            <plugins>
+                &lt;!&ndash; Package as an executable jar/war &ndash;&gt;
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </build>
+-->
+
+</project>

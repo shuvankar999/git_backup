@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EquipmentDetails"
+	xmlns:tns="http://www.example.org/EquipmentDetails" elementFormDefault="qualified">
+
+	<complexType name="EquipmentDetailsRequest">
+		<sequence>
+			<element name="assetNr" type="int" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EquipmentDetailsResponse">
+		<sequence>
+			<element name="EquipmentDetailslist" type="tns:EquipmentDetails" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="EquipmentDetails">
+		<sequence>
+			<element name="assetnumber" type="int" minOccurs="0"></element>
+			<element name="licenceCountryCd" type="string" minOccurs="0"></element>			
+			<element name="licenceNr" type="string" minOccurs="0"></element>
+			<element name="custEquipmentRefNr" type="string" minOccurs="0"></element>
+			<element name="serialNumber" type="string" minOccurs="0"></element>
+			<element name="equipmentType" type="string" minOccurs="0"></element>
+			<element name="equipmentTypeDesc" type="string" minOccurs="0"></element>
+			<element name="equipmentManufCd" type="string" minOccurs="0"></element>
+			<element name="equipmentManufacturer" type="string" minOccurs="0"></element>
+			<element name="numberOfaxles" type="int" minOccurs="0"></element>
+			<element name="customerName" type="string" minOccurs="0"></element>
+			<element name="customerNr" type="int" minOccurs="0"></element>
+			<element name="singleTyre" type="string" minOccurs="0"></element>
+			<element name="twinTyre" type="string" minOccurs="0"></element>
+			<element name="both" type="string" minOccurs="0"></element>
+			<element name="categorygroupCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/WpHistoryRequest" xmlns:tns="http://www.example.org/WpHistoryRequest" elementFormDefault="qualified">
+
+<complexType name="WorkPackRequest">
+		<sequence>
+			<element name="Work_Pack_Nr" type="decimal" minOccurs="0"></element>
+			<element name="Unit_Nr" type="int" minOccurs="0"></element>
+			<element name="Wp_Opened_Date" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

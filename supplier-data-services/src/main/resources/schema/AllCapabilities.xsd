@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/AllCapabilities"
+	xmlns:tns="http://www.example.org/AllCapabilities" elementFormDefault="qualified">
+
+	<complexType name="AllCapabilitiesRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="AllCapabilitiesResponse">
+		<sequence>
+			<element name="EquipmentDataResponseList" type="tns:EquipmentDataObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="AuxiliaryEquipmentDataResponseList" type="tns:AuxiliaryEquipmentDataObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="AdditionalCapabilitiesDataResponseList" type="tns:AdditionalCapabilitiesDataObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="InspectionCapabilitiesDataResponseList" type="tns:InspectionCapabilitiesObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="RepairBuilderCapabilitiesDataResponseList" type="tns:RepairBuilderCapabilitiesObject" 
+				maxOccurs="unbounded"></element>
+
+			<element name="CapabilitiesStatusResponseList" type="tns:CapabilitiesStatusObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EquipmentDataObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="groupDesc" type="string" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="subGroupDesc" type="string" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="itemDesc" type="string" minOccurs="0"></element>
+			<element name="Equip_Ind" type="string" minOccurs="0"></element>
+			<element name="Repair_Maint_Ind" type="string" minOccurs="0"></element>
+			<element name="Spare_Parts_Ind" type="string" minOccurs="0"></element>
+			<element name="msuInd" type="string" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="AuxiliaryEquipmentDataObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="groupDesc" type="string" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="subGroupDesc" type="string" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="itemDesc" type="string" minOccurs="0"></element>
+			<element name="Aux_Equip_Ind" type="string" minOccurs="0"></element>
+			<element name="Repair_Maint_Ind" type="string" minOccurs="0"></element>
+			<element name="Spare_Parts_Ind" type="string" minOccurs="0"></element>
+			<element name="msuInd" type="string" minOccurs="0"></element>
+			<element name="Outsource_Ind" type="string" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="AdditionalCapabilitiesDataObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="groupDesc" type="string" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="subGroupDesc" type="string" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="itemGroupDesc" type="string" minOccurs="0"></element>
+			<element name="itemDesc" type="string" minOccurs="0"></element>
+			<element name="Addl_Cap_Ind" type="string" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="InspectionCapabilitiesObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="dnaCd" type="string" minOccurs="0"></element>
+			<element name="groups" type="string" minOccurs="0"></element>
+			<element name="subGroup" type="string" minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="Item_Desc" type="string" minOccurs="0"></element>
+			<element name="Insp_Cap_Ind" type="string" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="RepairBuilderCapabilitiesObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="dnaCd" type="string" minOccurs="0"></element>
+			<element name="groups" type="string" minOccurs="0"></element>
+			<element name="subGroup" type="string" minOccurs="0"></element>
+			<element name="activity" type="string" minOccurs="0"></element>
+			<element name="Item_Desc" type="string" minOccurs="0"></element>
+			<element name="Cap_Ind" type="string" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="CapabilitiesStatusObject">
+		<sequence>
+			<element name="Supplier_Id" type="int" minOccurs="0"></element>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Status_Id" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+
+
+</schema>

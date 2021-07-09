@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/LabourRates"
+	xmlns:tns="http://www.example.org/LabourRates" elementFormDefault="qualified">
+
+	<complexType name="LabourRatesRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="LabourRatesResponse">
+		<sequence>
+			<element name="LabourDynamicLinesList" type="tns:LabourDynamicLinesObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="LabourStaticLinesList" type="tns:LabourStaticLinesObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="ContractDataList" type="tns:LabourStaticLinesObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="ActiveContractDocumentList" type="tns:ActiveContractDocumentObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="ArchivedContractDocumentList" type="tns:ActiveContractDocumentObject"
+				maxOccurs="unbounded"></element>
+				
+			<element name="labourLastUpdatedList" type="tns:labourLastUpdatedObject"
+				maxOccurs="unbounded"></element>
+
+			<element name="LabourRateStatusResponseList" type="tns:LabourRateStatusObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="LabourStaticLinesObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="groupId" type="int" minOccurs="0"></element>
+			<element name="groupShortDesc" type="string" minOccurs="0"></element>
+			<element name="groupDesc" type="string" minOccurs="0"></element>
+			<element name="subGroupId" type="int" minOccurs="0"></element>
+			<element name="subGroupDesc" type="string" minOccurs="0"></element>
+			<element name="itemId" type="int" minOccurs="0"></element>
+			<element name="itemShortDesc" type="string" minOccurs="0"></element>
+			<element name="itemDesc" type="string" minOccurs="0"></element>
+			<element name="itemReq" type="string" minOccurs="0"></element>
+			<element name="itemValType" type="string" minOccurs="0"></element>
+			<element name="itemOrder" type="int" minOccurs="0"></element>
+			<element name="itemDataType" type="string" minOccurs="0"></element>
+			<element name="itemModule" type="string" minOccurs="0"></element>
+			<element name="itemValue" type="string" minOccurs="0"></element>
+			<element name="isEnabled" type="string" minOccurs="0"></element>
+			<element name="valType" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="LabourDynamicLinesObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="Labour_Rate_Group_Id" type="int" minOccurs="0"></element>
+			<element name="Labour_Rate_Group_Desc" type="string"
+				minOccurs="0"></element>
+			<element name="Labour_Rate_Sub_Group_Id" type="int"
+				minOccurs="0"></element>
+			<element name="Labour_Rate_Sub_Group_Desc" type="string"
+				minOccurs="0"></element>
+			<element name="Labour_Rate_Id" type="int" minOccurs="0"></element>
+			<element name="Seq_Id" type="int" minOccurs="0"></element>
+			<element name="Labour_Rate_Desc" type="string" minOccurs="0"></element>
+			<element name="Day_Rate" type="decimal" minOccurs="0"></element>
+			<element name="Night_Rate" type="decimal" minOccurs="0"></element>
+			<element name="Mobile_Rate" type="decimal" minOccurs="0"></element>
+			<element name="Sat_Rate" type="decimal" minOccurs="0"></element>
+			<element name="Sun_Rate" type="decimal" minOccurs="0"></element>
+			<element name="Pub_Holiday_Rate" type="decimal" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ActiveContractDocumentObject">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="contractType" type="string" minOccurs="0"></element>
+			<element name="selfApprovalLimit" type="decimal" minOccurs="0"></element>
+			<element name="contractStartDate" type="string" minOccurs="0"></element>
+			<element name="contractExpireDate" type="string" minOccurs="0"></element>
+			<element name="docName" type="string" minOccurs="0"></element>
+			<element name="docStatus" type="int" minOccurs="0"></element>
+			<element name="docuwareDocId" type="int" minOccurs="0"></element>
+			<element name="createUser" type="string" minOccurs="0"></element>
+			<element name="createDate" type="string" minOccurs="0"></element>
+			<element name="maintUser" type="string" minOccurs="0"></element>
+			<element name="maintDate" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="LabourRateStatusObject">
+		<sequence>
+			<element name="Supplier_Id" type="int" minOccurs="0"></element>
+			<element name="Labour_Error_Cd" type="string" minOccurs="0"></element>
+			<element name="Status_Id" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="labourLastUpdatedObject">
+		<sequence>
+			<element name="Last_Updated_Name" type="string" minOccurs="0"></element>
+			<element name="Last_Updated_Date" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

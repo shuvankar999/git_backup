@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ContactDetails"
+	xmlns:tns="http://www.example.org/ContactDetails" elementFormDefault="qualified">
+
+	<complexType name="ContactDetailsRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ContactDetailsResponse">
+		<sequence>
+			<element name="ContactDetailsList" type="tns:ContactObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="ContactObject">
+		<sequence>
+			<element name="Supplier_Id" type="int" minOccurs="0"></element>
+			<element name="Contact_Id" type="int" minOccurs="0"></element>
+			<element name="Sub_Group_Id" type="int" minOccurs="0"></element>
+			<element name="Sub_Group_Desc" type="string" minOccurs="0"></element>
+			<element name="First_Name" type="string" minOccurs="0"></element>
+			<element name="Last_Name" type="string" minOccurs="0"></element>
+			<element name="Role" type="string" minOccurs="0"></element>
+			<element name="getRemoteEnabled" type="string" minOccurs="0"></element>
+			<element name="teleDialingCode" type="string" minOccurs="0"></element>
+			<element name="Telephone_Number" type="string" minOccurs="0"></element>
+			<element name="addTeleDialingCode" type="string" minOccurs="0"></element>
+			<element name="Additional_Telephone" type="string" minOccurs="0"></element>
+			<element name="mobDialingCode" type="string" minOccurs="0"></element>
+			<element name="Mobile_Number" type="string" minOccurs="0"></element>
+			<element name="faxDialingCode" type="string" minOccurs="0"></element>
+			<element name="Fax_Number" type="string" minOccurs="0"></element>
+			<element name="Email_Id" type="string" minOccurs="0"></element>
+			<element name="Comments" type="string" minOccurs="0"></element>
+			<element name="Last_Updated_Date" type="string" minOccurs="0"></element>
+			<element name="Primary_Cntct_Nr" type="int" minOccurs="0"></element>
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+
+</schema>

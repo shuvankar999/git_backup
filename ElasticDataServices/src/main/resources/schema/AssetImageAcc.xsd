@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/AssetImageAcc" xmlns:tns="http://www.example.org/AssetImageAcc" elementFormDefault="qualified">
+	
+	<complexType name="AssetImageAccRequest">
+		<sequence>
+			<element name="equipment_nr" type="int" minOccurs="0"></element>
+			<element name="App_Cd" type="string" minOccurs="0"></element>
+			<element name="asset_type" type="string" minOccurs="0"></element>
+			<element name="imageType" type="string" minOccurs="0"></element>
+			<element name="code" type="string" minOccurs="0"></element>
+			<element name="imageLoc" type="string" minOccurs="0"></element>     
+			<element name="seq" type="string" minOccurs="0"></element>    
+			<element name="ssoId" type="string" minOccurs="0"></element> 
+		</sequence>
+	</complexType>
+	
+</schema>

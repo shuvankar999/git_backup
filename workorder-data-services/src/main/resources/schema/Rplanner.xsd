@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Rplanner" xmlns:tns="http://www.example.org/Rplanner" elementFormDefault="qualified">
+	
+	<complexType name="ResourcePlannerRequest">
+		<sequence>
+			<element name="Branch_Id" type="string" minOccurs="0"></element>
+			<element name="Period_Type" type="string"	minOccurs="0"></element>
+			<element name="Start_Date" type="string" minOccurs="0"></element>
+			<element name="End_Date" type="string" minOccurs="0"></element>
+			<element name="Start_Time" type="string" minOccurs="0"></element>
+			<element name="End_Time" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="ResourcePlannerResponse">
+		<sequence>
+			<element name="TechnicianList" type="tns:TechnicianObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="TechnicianObject">
+	
+		<sequence>
+			<element name="Technician_Id" type="string" minOccurs="0"></element>
+			<element name="Technician_Name" type="string" minOccurs="0"></element>
+			<element name="Technician_Shortname" type="string" minOccurs="0"></element>
+			<element name="Status" type="string" minOccurs="0"></element>
+			<element name="UserRole" type="string" minOccurs="0"></element>
+			<element name="Image" type="string" minOccurs="0"></element>
+			<element name="Branch" type="string" minOccurs="0"></element>
+			<element name="Language" type="int" minOccurs="0"></element>
+			<element name="ManagerComments" type="string" minOccurs="0"></element>
+			<element name="wpCount" type="int" minOccurs="0"></element>
+			<element name="AssignedWpList" type="tns:AssignedWpObject" maxOccurs="unbounded"></element>
+			<element name="BreakDetailsList" type="tns:TechnicianBreakObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="AssignedWpObject">
+		<sequence>
+			<element name="workPackNr" type="decimal" minOccurs="0"></element>
+			<element name="technicianId" type="string"	minOccurs="0"></element>
+			<element name="groups" type="string" minOccurs="0"></element>
+			<element name="assetNumber" type="string" minOccurs="0"></element>
+			<element name="customerRefNr" type="string" minOccurs="0"></element>
+			<element name="registrationNr" type="string"	minOccurs="0"></element>
+			<element name="requiredDoneDate" type="string" minOccurs="0"></element>
+			<element name="totalTargetTime" type="double" minOccurs="0"></element>
+			<element name="customerNr" type="int" minOccurs="0"></element>
+			<element name="customerName" type="string"	minOccurs="0"></element>
+			<element name="chassisNumber" type="string" minOccurs="0"></element>
+			<element name="workOrderCnt" type="int" minOccurs="0"></element>
+			<element name="Comments" type="string" minOccurs="0"></element>
+			<element name="supplierId" type="int"	minOccurs="0"></element>
+			<element name="driverWaiting" type="string" minOccurs="0"></element>
+			<element name="workPackStatusId" type="int" minOccurs="0"></element>
+			<element name="workPackStatus" type="string" minOccurs="0"></element>
+			<element name="alert" type="string"	minOccurs="0"></element>
+			<element name="jobStartTime" type="string" minOccurs="0"></element>
+			<element name="jobEndTime" type="string" minOccurs="0"></element>
+			<element name="extraTime" type="double" minOccurs="0"></element>
+			<element name="assignedTime" type="string"	minOccurs="0"></element>
+			<element name="primarytechnician" type="string" minOccurs="0"></element>
+			<element name="assignWPPriority" type="int" minOccurs="0"></element>
+			<element name="addTimeFlag" type="string" minOccurs="0"></element>
+			<element name="timeAdded" type="double" minOccurs="0"></element>
+			<element name="extraTimeFlag" type="string" minOccurs="0"></element>
+			<element name="status" type="string" minOccurs="0"></element>
+			<element name="Assigned_Technician_List" type="tns:AssignedTechnicianObject" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="TechnicianBreakObject">
+		<sequence>
+			<element name="technicianId" type="string" minOccurs="0"></element>
+			<element name="breakType" type="string" minOccurs="0"></element>
+			<element name="breakStartTime" type="string" minOccurs="0"></element>
+			<element name="breakEndTime" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="AssignedTechnicianObject">
+		<sequence>
+			<element name="Technician_Id" type="string" minOccurs="0"></element>
+			<element name="Technician_Name" type="string" minOccurs="0"></element>
+			<element name="Technician_Shortname" type="string" minOccurs="0"></element>
+			<element name="Status" type="string" minOccurs="0"></element>
+			<element name="UserRole" type="string" minOccurs="0"></element>
+			<element name="Image" type="string" minOccurs="0"></element>
+			<element name="Branch" type="string" minOccurs="0"></element>
+			<element name="Language" type="int" minOccurs="0"></element>
+			<element name="ManagerComments" type="string" minOccurs="0"></element>
+			<element name="wpCount" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

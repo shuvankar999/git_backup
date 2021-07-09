@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/OtherFeesCard"
+	xmlns:tns="http://www.example.org/OtherFeesCard" elementFormDefault="qualified">
+	
+	<complexType name="OtherFeesCardRequest">
+		<sequence>
+			<element name="supplierId" type="int" minOccurs="0"></element>
+			<element name="langId" type="int" minOccurs="0"></element>
+			<element name="ssoId" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="OtherFeesCardResponse">
+		<sequence>
+			<element name="OtherFeeCardList" type="tns:OtherFeeObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="OtherFeeObject">
+		<sequence>
+			<element name="Supplier_Id" type="int"
+				minOccurs="0"></element>
+			<element name="Fee_Group_Id" type="int" minOccurs="0"></element>
+			<element name="Group_Desc" type="string" minOccurs="0"></element>
+			<element name="Fee_Sub_Group_Id" type="int"
+				minOccurs="0"></element>
+			<element name="Sub_Group_Desc" type="string" minOccurs="0"></element>
+			<element name="Fee_Item_Id" type="int" minOccurs="0"></element>
+			<element name="Seq_Id" type="int"
+				minOccurs="0"></element>
+			<element name="Item_Desc" type="string" minOccurs="0"></element>
+			<element name="Fee_Desc" type="string" minOccurs="0"></element>
+			<element name="Fee" type="decimal"
+				minOccurs="0"></element>	
+			<element name="Is_Active" type="string" minOccurs="0"></element>	
+			<element name="Is_Enabled" type="string" minOccurs="0"></element>			
+		</sequence>
+	</complexType>
+	
+</schema>

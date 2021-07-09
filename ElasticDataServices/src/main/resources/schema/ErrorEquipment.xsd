@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ErrorEquipment" xmlns:tns="http://www.example.org/ErrorEquipment" elementFormDefault="qualified">
+	
+	<complexType name="BaseResponse">
+		<sequence>
+			<element name="Unit_Nr" type="int" minOccurs="0"></element>
+			<element name="Error_Cd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SaveEquipmentDetails"
+	xmlns:tns="http://www.example.org/SaveEquipmentDetails"
+	elementFormDefault="qualified">
+	
+	<complexType name="SaveEquipDetailsRequest">
+		<sequence>
+			<element name="ModulesDet" type="tns:Modules" minOccurs="0"></element>
+			<element name="StatusList" type="tns:Status" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Modules">
+		<sequence>
+			<element name="DynamicModuleList" type="tns:DynamicModule" maxOccurs="unbounded"></element>
+			<element name="StaticModuleList" type="tns:StaticModule" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="DynamicModule">
+		<sequence>
+			<element name="Specgr_Id" type="int" minOccurs="0"></element>
+			<element name="forms" type="tns:Form" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="StaticModule">
+		<sequence>
+			<element name="moduleName" type="string" minOccurs="0"></element>
+			<element name="forms" type="tns:Form" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Form">
+		<sequence>
+			<element name="label" type="string" minOccurs="0"></element>
+			<element name="value" type="string" minOccurs="0"></element>
+			<element name="Specitm_Seq" type="int" minOccurs="0"></element>
+			<element name="Unitsp_Comment" type="string" minOccurs="0"></element>
+			<element name="Db_Column_Name" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Status">
+		<sequence>
+			<element name="Unit_Nr" type="int" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

@@ -1,0 +1,22 @@
+spring:
+  profiles.active: default
+---
+spring:
+  profiles: default
+  datasource:
+    hikari:
+      connection-test-query: select 1
+spring.datasource:
+  driverClassName: com.sybase.jdbc3.jdbc.SybDriver
+  url: jdbc:sybase:Tds:10.236.187.13:5555/OPSwshp
+  username: devuser
+  password: rizzo123
+  
+---
+spring:
+  profiles: qa
+spring.datasource:
+  driverClassName: com.sybase.jdbc3.jdbc.SybDriver
+  url: jdbc:sybase:Tds:10.236.187.13:5555/OPSwshp
+  username: devuser
+  password: rizzo123

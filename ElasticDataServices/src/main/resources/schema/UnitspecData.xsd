@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/UnitspecData"
+	xmlns:tns="http://www.example.org/UnitspecData" elementFormDefault="qualified">
+	
+	<complexType name="UnitSpecData">
+		<sequence>
+			<element name="unit_catgrp_code" type="string" minOccurs="0"></element>
+			<element name="unit_tsp" type="string"	minOccurs="0"></element>
+			<element name="maint_date" type="string" minOccurs="0"></element>			
+			<element name="unit_sold_date" type="string"	minOccurs="0"></element>
+			<element name="insrc_company_nr" type="string" minOccurs="0"></element>			
+			<element name="unit_model_year" type="int"	minOccurs="0"></element>
+			<element name="unit_available_for_sale_ind" type="string" minOccurs="0"></element>
+			<element name="type" type="string"	minOccurs="0"></element>
+			<element name="unit_serial_nr" type="string" minOccurs="0"></element>
+			<element name="unit_licence_country_cd" type="string"	minOccurs="0"></element>			
+			<element name="pool_group_nr" type="string" minOccurs="0"></element>
+			<element name="unit_cd" type="string"	minOccurs="0"></element>
+			<element name="unit_cost_last_refrnc" type="string" minOccurs="0"></element>
+			<element name="version" type="string"	minOccurs="0"></element>			
+			<element name="unit_category_cd" type="string" minOccurs="0"></element>			
+			<element name="unit_catgrp_optionals" type="string"	minOccurs="0"></element>			
+			<element name="unit_built" type="string" minOccurs="0"></element>					
+			<element name="unit_spec_status" type="string"	minOccurs="0"></element>			
+			<element name="unit_customer_refrnc" type="string" minOccurs="0"></element>					
+			<element name="unit_registr" type="string"	minOccurs="0"></element>			
+			<element name="unit_group_cd" type="string" minOccurs="0"></element>			
+			<element name="pool_unit_owner" type="string"	minOccurs="0"></element>			
+			<element name="regstn_date" type="string" minOccurs="0"></element>			
+			<element name="unit_manufacturer" type="string" minOccurs="0"></element>			
+			<element name="unit_comment" type="string"	minOccurs="0"></element>			
+			<element name="unit_lien_cd" type="string" minOccurs="0"></element>			
+			<element name="unit_new_used_leased_ind" type="string" minOccurs="0"></element>			
+			<element name="unit_licence_nr" type="string"	minOccurs="0"></element>			
+			<element name="maint_user" type="string" minOccurs="0"></element>			
+			<element name="unit_operational_status" type="string" minOccurs="0"></element>
+			<element name="unit_refurb_comment" type="string" minOccurs="0"></element>
+			<element name="timestamp" type="string" minOccurs="0"></element>			
+			<element name="unit_nr" type="int"	minOccurs="0"></element>			
+			<element name="unit_aquired_company" type="string" minOccurs="0"></element>			
+			<element name="reefer_maint_contract" type="string"	minOccurs="0"></element>			
+			<element name="catgr_id" type="int" minOccurs="0"></element>
+			<element name="unit_aquired_refrnc" type="string" minOccurs="0"></element>
+			<element name="unit_moddate" type="string"	minOccurs="0"></element>
+			<element name="unit_desc" type="string" minOccurs="0"></element>			
+			
+		</sequence>
+	</complexType>
+	
+	<complexType name="ArrayOfUnitSpecData">
+		<sequence>
+			<element name="unitSpecDataItem" type="tns:UnitSpecData" maxOccurs="unbounded"></element>	
+			<element name="count" type="long" minOccurs="0"></element>		 
+		</sequence>
+	</complexType>
+	
+	<complexType name="RequestTextSearch">
+		<sequence>
+			<element name="text" type="string" minOccurs="0"></element>			 
+		</sequence>
+	</complexType>
+	
+	<complexType name="ResponseCount">
+		<sequence>
+			<element name="count" type="long" minOccurs="0"></element>			 
+		</sequence>
+	</complexType>
+	
+	<complexType name="ElasticSearchRequest">
+		<sequence>
+			<!-- <element name="entity" type="string" minOccurs="0"></element>	
+			<element name="screenName" type="string" minOccurs="0"></element>
+			<element name="screenKey" type="string" minOccurs="0"></element> -->
+			<element name="searchText" type="string" minOccurs="0"></element>	 
+		</sequence>
+	</complexType>
+	
+</schema>

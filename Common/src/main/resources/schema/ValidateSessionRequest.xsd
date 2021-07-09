@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ValidateSessionRequest" xmlns:tns="http://www.example.org/ValidateSessionRequest" elementFormDefault="qualified">
+
+	<complexType name="SessionRequest">
+		<sequence>
+			<element name="Sso_Id" type="string" minOccurs="0"></element>
+			<element name="Session_Id" type="string" minOccurs="0"></element>  
+			<element name="App_Cd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

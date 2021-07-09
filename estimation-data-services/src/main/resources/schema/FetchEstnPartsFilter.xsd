@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FetchEstnPartsFilter"
+	xmlns:tns="http://www.example.org/FetchEstnPartsFilter" elementFormDefault="qualified">
+
+	<complexType name="PartsRequest">
+		<sequence>
+			<element name="companynr" type="int" minOccurs="0"></element>
+			<element name ="SearchTextList" type="tns:SearchText" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SearchText">
+	<sequence>
+			<element name="value" type="string" minOccurs="0"></element>
+	</sequence>
+	</complexType>
+
+	<complexType name="PartListResponse">
+		<sequence>
+			<element name="EstnPartsList" type="tns:PartsObjectList"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PartsObjectList">
+		<sequence>
+		
+			<element name="partsdescription" type="string" minOccurs="0"></element>
+			<element name="supplierpartnr" type="string" minOccurs="0"></element>
+			<element name="supplierid" type="int" minOccurs="0"></element>
+			<element name="costprice" type="double" minOccurs="0"></element>
+			<element name="oelistprice" type="double" minOccurs="0"></element>
+			<element name="currency" type="string" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+
+</schema>

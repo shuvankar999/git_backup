@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ValidateEstnPart"
+	xmlns:tns="http://www.example.org/ValidateEstnPart" elementFormDefault="qualified">
+
+	<complexType name="ValidatePartRequest">
+		<sequence>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="scanPartNr" type="string" minOccurs="0"></element>
+			<element name="errorCd" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ValidatePartResponse">
+		<sequence>
+			<element name="EstnPartsList" type="tns:PartsObject"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PartsObject">
+		<sequence>
+		
+			<element name="partNumber" type="string" minOccurs="0"></element>
+			<element name="partDescription" type="string" minOccurs="0"></element>
+			<element name="oeListPrice" type="decimal" minOccurs="0"></element>
+			<element name="costPrice" type="decimal" minOccurs="0"></element>
+			<element name="estimationId" type="decimal" minOccurs="0"></element>
+			<element name="estnWOId" type="int" minOccurs="0"></element>
+			<element name="estnWOTId" type="int" minOccurs="0"></element>
+			<element name="status" type="string" minOccurs="0"></element>
+			
+		</sequence>
+	</complexType>
+
+</schema>
